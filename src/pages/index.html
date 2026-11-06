@@ -28,7 +28,7 @@
   </div>
   <div class="hero__strip">
     <div class="container hero__strip-inner">
-      <a class="story-cue" href="#story">Follow the journey <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+      <a class="story-cue" href="#journey">Follow the journey <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></a>
       <p class="hero__note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Confidential enquiry. No medical records needed to start.</p>
       <svg class="hero__strip-ecg" viewBox="0 0 260 60" aria-hidden="true"><path d="M0 34h120l9-8 9 8h14l10-26 12 50 11-32 8 8h24"/><path class="h" d="M214 46c-9-7-15-12-15-19a7.5 7.5 0 0 1 15-3 7.5 7.5 0 0 1 15 3c0 7-6 12-15 19z" transform="translate(4 -2)"/></svg>
     </div>
@@ -48,116 +48,101 @@
   </div>
 </section>
 
-<section class="story" data-story aria-label="The care journey, beat by beat">
-  <div class="container story__grid">
-
-    <article class="chapter" id="chapter-1" data-title="A question">
-      <p class="chapter__label"><span class="chapter__num">1</span>Your starting point</p>
-      <h3>Someone you love needs heart care. <span class="chapter__accent">Start here.</span></h3>
-      <p>A recommended heart procedure can bring questions about treatment, providers, costs and travel. We help you understand the process and prepare for an independent provider review, one step at a time.</p>
-      <a class="text-link chapter__link" href="how-it-works.html">How the care journey works <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      <p class="chapter__reassurance"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg>No commitment to treatment or travel.</p>
-      <div class="chapter__scene">
-        <div class="scene scene--cardiac" aria-hidden="true">
-          <span class="cardiac-orbit cardiac-orbit--outer"></span>
-          <span class="cardiac-orbit cardiac-orbit--inner"></span>
-          <span class="cardiac-caption"><span class="cardiac-caption__icon"><svg class="i"><use href="#i-heart-pulse"/></svg></span><span><strong>A journey as personal as you.</strong><small>Clarity and support, one step at a time.</small></span></span>
-          <svg class="cardiac-trace" viewBox="0 0 640 160" fill="none">
-            <path class="cardiac-trace__base" d="M0 85h76l12-8 12 8h20l12-48 13 91 14-59 13 16h176l12-8 12 8h34l12-48 13 91 14-59 13 16h192"/>
-            <path class="cardiac-trace__signal" pathLength="1" d="M0 85h76l12-8 12 8h20l12-48 13 91 14-59 13 16h176l12-8 12 8h34l12-48 13 91 14-59 13 16h192"/>
-          </svg>
-          <span class="cardiac-shadow"></span>
-          <img class="scene__cardiac-image" src="assets/img/heart-hero-cutout.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
-          <span class="cardiac-pathway"><span>Understand</span><svg class="i"><use href="#i-arrow"/></svg><span>Review</span><svg class="i"><use href="#i-arrow"/></svg><span>Decide</span></span>
-        </div>
+<section class="stepper" id="journey" data-stepper aria-label="The care journey, step by step">
+  <div class="container">
+    <ol class="stepper__nav" role="tablist" aria-label="Care journey steps">
+      <li role="presentation"><button type="button" role="tab" id="step-tab-1" class="stepper__tab" aria-label="Step 1: A question" aria-controls="step-1" aria-selected="true"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-help"/></svg></span><span class="stepper__name">A question</span></button></li>
+      <li role="presentation"><button type="button" role="tab" id="step-tab-2" class="stepper__tab" aria-label="Step 2: A conversation" aria-controls="step-2" aria-selected="false" tabindex="-1"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-users"/></svg></span><span class="stepper__name">A conversation</span></button></li>
+      <li role="presentation"><button type="button" role="tab" id="step-tab-3" class="stepper__tab" aria-label="Step 3: Provider review" aria-controls="step-3" aria-selected="false" tabindex="-1"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-file"/></svg></span><span class="stepper__name">Provider review</span></button></li>
+      <li role="presentation"><button type="button" role="tab" id="step-tab-4" class="stepper__tab" aria-label="Step 4: Plan and estimate" aria-controls="step-4" aria-selected="false" tabindex="-1"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-clipboard"/></svg></span><span class="stepper__name">Plan and estimate</span></button></li>
+      <li role="presentation"><button type="button" role="tab" id="step-tab-5" class="stepper__tab" aria-label="Step 5: Your decision" aria-controls="step-5" aria-selected="false" tabindex="-1"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-check-circle"/></svg></span><span class="stepper__name">Your decision</span></button></li>
+      <li role="presentation"><button type="button" role="tab" id="step-tab-6" class="stepper__tab" aria-label="Step 6: The visit" aria-controls="step-6" aria-selected="false" tabindex="-1"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-hospital"/></svg></span><span class="stepper__name">The visit</span></button></li>
+      <li role="presentation"><button type="button" role="tab" id="step-tab-7" class="stepper__tab" aria-label="Step 7: Home" aria-controls="step-7" aria-selected="false" tabindex="-1"><span class="stepper__num" aria-hidden="true"><svg class="i"><use href="#i-home"/></svg></span><span class="stepper__name">Home</span></button></li>
+    </ol>
+    <article class="stepper__panel" id="step-1" role="tabpanel" aria-labelledby="step-tab-1">
+      <div class="step-media step-media--heart" aria-hidden="true">
+        <img class="step-heart" src="assets/img/heart-hero-cutout.webp" alt="" width="1000" height="1000" loading="lazy"><svg class="step-ecg" viewBox="0 0 640 160" aria-hidden="true"><path d="M0 85h76l12-8 12 8h20l12-48 13 91 14-59 13 16h176l12-8 12 8h34l12-48 13 91 14-59 13 16h192"/></svg><p class="step-caption"><strong>A journey as personal as you.</strong><small>Clarity and support, one step at a time.</small></p>
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 1 of 7</span>Your starting point</p>
+        <h3>Someone you love needs heart care. <span class="chapter__accent">Start here.</span></h3>
+          <p>A recommended heart procedure can bring questions about treatment, providers, costs and travel. We help you understand the process and prepare for an independent provider review, one step at a time.</p>
+          <a class="text-link chapter__link" href="how-it-works.html">How the care journey works <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="chapter__reassurance"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg>No commitment to treatment or travel.</p>
       </div>
     </article>
-
-    <article class="chapter" id="chapter-2" data-title="A conversation">
-      <p class="chapter__label"><span class="chapter__num">2</span>You start with a conversation</p>
-      <h3>Share a few details, in confidence.</h3>
-      <p>Tell us how to reach you and which heart-care question you are exploring. A coordinator explains how the process works, how privacy and consent are handled, and what happens next.</p>
-      <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span>No medical records are needed at this stage, and an enquiry does not commit you to treatment or travel.</span></p>
-      <div class="chapter__scene">
-        <div class="scene scene--photo" aria-hidden="true">
-          <img class="scene-photo" src="assets/img/care-coordination.webp" alt="" width="1000" height="600" loading="lazy">
-        </div>
+    <article class="stepper__panel" id="step-2" role="tabpanel" aria-labelledby="step-tab-2">
+      <div class="step-media" aria-hidden="true">
+        <img src="assets/img/care-coordination.webp" alt="" width="1000" height="640" loading="lazy">
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 2 of 7</span>You start with a conversation</p>
+        <h3>Share a few details, <span class="chapter__accent">in confidence.</span></h3>
+          <p>Tell us how to reach you and which heart-care question you are exploring. A coordinator explains how the process works, how privacy and consent are handled, and what happens next.</p>
+          <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span>No medical records are needed at this stage, and an enquiry does not commit you to treatment or travel.</span></p>
       </div>
     </article>
-
-    <article class="chapter" id="chapter-3" data-title="Provider review">
-      <p class="chapter__label"><span class="chapter__num">3</span>An independent provider reviews your case</p>
-      <h3>Clinicians decide what is clinically appropriate.</h3>
-      <p>With your permission, relevant records go to an independent provider. The treating clinician decides whether more information is needed, whether your case can be assessed, and what options may be appropriate.</p>
-      <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-stethoscope"/></svg><span>FastCardioCare does not diagnose or treat. The provider assesses you, recommends treatment and obtains your clinical consent.</span></p>
-      <div class="chapter__scene">
-        <div class="scene scene--photo" aria-hidden="true">
-          <img class="scene-photo" src="assets/img/cardiologist.webp" alt="" width="640" height="640" loading="lazy">
-          <span class="scene-tag scene-tag--a" style="--i:0"><svg class="i"><use href="#i-lock"/></svg>Records shared only with your consent</span>
-          <span class="scene-tag scene-tag--b" style="--i:1"><svg class="i"><use href="#i-stethoscope"/></svg>Clinical decisions: your provider</span>
-        </div>
+    <article class="stepper__panel" id="step-3" role="tabpanel" aria-labelledby="step-tab-3">
+      <div class="step-media" aria-hidden="true">
+        <img src="assets/img/cardiologist.webp" alt="" width="1000" height="640" loading="lazy">
+          <ul class="step-tags" aria-hidden="true"><li><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Records shared only with your consent</li><li><svg class="i" aria-hidden="true"><use href="#i-stethoscope"/></svg>Clinical decisions: your provider</li></ul>
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 3 of 7</span>An independent provider reviews your case</p>
+        <h3>Clinicians decide what is <span class="chapter__accent">clinically appropriate.</span></h3>
+          <p>With your permission, relevant records go to an independent provider. The treating clinician decides whether more information is needed, whether your case can be assessed, and what options may be appropriate.</p>
+          <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-stethoscope"/></svg><span>FastCardioCare does not diagnose or treat. The provider assesses you, recommends treatment and obtains your clinical consent.</span></p>
       </div>
     </article>
-
-    <article class="chapter" id="chapter-4" data-title="Plan and estimate">
-      <p class="chapter__label"><span class="chapter__num">4</span>You see the plan, and what it includes</p>
-      <h3>A written estimate, explained line by line.</h3>
-      <p>If a provider can offer care, we help you understand the proposed plan and its estimate: the expected stay, included devices and services, exclusions, likely additional charges and follow-up arrangements.</p>
-      <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span>An estimate is not a guarantee of the final bill. Clinical findings, extra devices or a longer stay can change charges.</span></p>
-      <div class="chapter__scene">
-        <div class="scene scene--photo" aria-hidden="true">
-          <img class="scene-photo" src="assets/img/chapter-estimate.webp" alt="" width="1000" height="600" loading="lazy">
-        </div>
+    <article class="stepper__panel" id="step-4" role="tabpanel" aria-labelledby="step-tab-4">
+      <div class="step-media" aria-hidden="true">
+        <img src="assets/img/chapter-estimate.webp" alt="" width="1000" height="640" loading="lazy">
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 4 of 7</span>You see the plan, and what it includes</p>
+        <h3>A written estimate, <span class="chapter__accent">explained line by line.</span></h3>
+          <p>If a provider can offer care, we help you understand the proposed plan and its estimate: the expected stay, included devices and services, exclusions, likely additional charges and follow-up arrangements.</p>
+          <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span>An estimate is not a guarantee of the final bill. Clinical findings, extra devices or a longer stay can change charges.</span></p>
       </div>
     </article>
-
-    <article class="chapter" id="chapter-5" data-title="Your decision">
-      <p class="chapter__label"><span class="chapter__num">5</span>The decision is yours</p>
-      <h3>Take the time you need.</h3>
-      <p>There is no commitment. You can ask questions, seek another opinion, talk it through with your family and your local doctor, and then decide whether to proceed.</p>
-      <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><span>Travel is booked only after the provider confirms suitability, an appointment and the practical requirements.</span></p>
-      <div class="chapter__scene">
-        <div class="scene scene--photo" aria-hidden="true">
-          <img class="scene-photo" src="assets/img/chapter-decision.webp" alt="" width="1000" height="600" loading="lazy">
-        </div>
+    <article class="stepper__panel" id="step-5" role="tabpanel" aria-labelledby="step-tab-5">
+      <div class="step-media" aria-hidden="true">
+        <img src="assets/img/chapter-decision.webp" alt="" width="1000" height="640" loading="lazy">
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 5 of 7</span>The decision is yours</p>
+        <h3>Take <span class="chapter__accent">the time you need.</span></h3>
+          <p>There is no commitment. You can ask questions, seek another opinion, talk it through with your family and your local doctor, and then decide whether to proceed.</p>
+          <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><span>Travel is booked only after the provider confirms suitability, an appointment and the practical requirements.</span></p>
       </div>
     </article>
-
-    <article class="chapter" id="chapter-6" data-title="The visit">
-      <p class="chapter__label"><span class="chapter__num">6</span>We look after the practical details</p>
-      <h3>Appointments, travel and a place to stay.</h3>
-      <p>If you proceed, we help organise agreed nonclinical items: appointments, travel, accommodation and arrangements for an accompanying family member, subject to provider rules.</p>
-      <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>The provider remains responsible for your clinical care throughout.</span></p>
-      <div class="chapter__scene">
-        <div class="scene scene--photo" aria-hidden="true">
-          <img class="scene-photo" src="assets/img/care-coordination.webp" alt="" width="720" height="480" loading="lazy">
-          <span class="scene-tag scene-tag--a" style="--i:0"><svg class="i"><use href="#i-calendar"/></svg>Appointments</span>
-          <span class="scene-tag scene-tag--b" style="--i:1"><svg class="i"><use href="#i-plane"/></svg>Travel and accommodation</span>
-          <span class="scene-tag scene-tag--c" style="--i:2"><svg class="i"><use href="#i-users"/></svg>Companion arrangements</span>
-        </div>
+    <article class="stepper__panel" id="step-6" role="tabpanel" aria-labelledby="step-tab-6">
+      <div class="step-media" aria-hidden="true">
+        <img src="assets/img/care-coordination.webp" alt="" width="1000" height="640" loading="lazy">
+          <ul class="step-tags" aria-hidden="true"><li><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Appointments</li><li><svg class="i" aria-hidden="true"><use href="#i-plane"/></svg>Travel and accommodation</li><li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Companion arrangements</li></ul>
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 6 of 7</span>We look after the practical details</p>
+        <h3>Appointments, travel and <span class="chapter__accent">a place to stay.</span></h3>
+          <p>If you proceed, we help organise agreed nonclinical items: appointments, travel, accommodation and arrangements for an accompanying family member, subject to provider rules.</p>
+          <p class="chapter__aside"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>The provider remains responsible for your clinical care throughout.</span></p>
       </div>
     </article>
-
-    <article class="chapter" id="chapter-7" data-title="Home">
-      <p class="chapter__label"><span class="chapter__num">7</span>Home, with everything you need</p>
-      <h3>Your records travel home with you.</h3>
-      <p>Before you leave, ask the treating provider for the documents your local doctor will need to continue your care, and arrange follow-up with your home clinician where possible.</p>
-      <p><a class="text-link" href="how-it-works.html">See the full care journey <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-      <div class="chapter__scene">
-        <div class="scene scene--photo" aria-hidden="true">
-          <img class="scene-photo" src="assets/img/chapter-handover.webp" alt="" width="1000" height="600" loading="lazy">
-        </div>
+    <article class="stepper__panel" id="step-7" role="tabpanel" aria-labelledby="step-tab-7">
+      <div class="step-media" aria-hidden="true">
+        <img src="assets/img/chapter-handover.webp" alt="" width="1000" height="640" loading="lazy">
+      </div>
+      <div class="step-body">
+        <p class="step-label"><span>Step 7 of 7</span>Home, with everything you need</p>
+        <h3>Your records <span class="chapter__accent">travel home with you.</span></h3>
+          <p>Before you leave, ask the treating provider for the documents your local doctor will need to continue your care, and arrange follow-up with your home clinician where possible.</p>
+          <p><a class="text-link" href="how-it-works.html">See the full care journey <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
       </div>
     </article>
-
-    <div class="story__stage" role="group" aria-label="Care journey progress">
-      <div class="stage">
-        <div class="stage__top">
-          <span class="stage__count" data-stage-count>Beat 1 of 7</span>
-          <span class="stage__title" data-stage-title>A question</span>
-          <span class="stage__bars" data-stage-bars></span>
-        </div>
-      </div>
+    <div class="stepper__controls">
+      <button type="button" class="stepper__btn" data-step-prev aria-label="Previous step"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>Previous</button>
+      <span class="stepper__count" data-step-count aria-live="polite">Step 1 of 7</span>
+      <button type="button" class="stepper__btn stepper__btn--next" data-step-next aria-label="Next step">Next<svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
     </div>
   </div>
 </section>
