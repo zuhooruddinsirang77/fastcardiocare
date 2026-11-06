@@ -142,8 +142,9 @@ html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(
   100% { opacity: 0; scale: 1.2; }
 }
 @keyframes flair-shimmer { 0%, 52% { background-position: 100% 0; } 82%, 100% { background-position: 0% 0; } }
-@keyframes flair-orbit { to { rotate: 360deg; } }
-@keyframes flair-orbit-pulse { 0%, 40%, 100% { scale: 1; } 12%, 29% { scale: 1.025; } }
+/* Orbits are centred with transform: translate(-50%, -50%), so spin/scale must live in the same transform. */
+@keyframes flair-orbit { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes flair-orbit-pulse { 0%, 40%, 100% { transform: translate(-50%, -50%) scale(1); } 12%, 29% { transform: translate(-50%, -50%) scale(1.025); } }
 @keyframes flair-badge-ring { from { opacity: 1; transform: scale(.9); } to { opacity: 0; transform: scale(1.9); } }
 
 @media (prefers-reduced-motion: reduce) {
