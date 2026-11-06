@@ -274,3 +274,10 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
 .home-page .story-intro__note { border-color: #f4c9d2; background: #fdecef; }
 .home-page .story-intro__heading h2 { position: relative; padding-bottom: 20px; }
 .home-page .story-intro__heading h2::after { content: ""; position: absolute; left: 4px; bottom: 0; width: 170px; height: 11px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 16' preserveAspectRatio='none'%3E%3Cpath d='M2 12C70 3 170 2 298 9' fill='none' stroke='%23c4002a' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat; }
+
+/* Procedure filter chips: one tidy row on phones (swipe if needed) instead of a wrapped, lopsided second line. */
+@media (max-width: 639px) {
+  .procedure-filters { flex-wrap: nowrap; justify-content: flex-start; gap: 8px; margin-inline: -16px; padding: 2px 16px 6px; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .procedure-filters::-webkit-scrollbar { display: none; }
+  .procedure-filters button { flex: none; min-height: 40px; padding: 8px 16px; font-size: 12.5px; white-space: nowrap; scroll-snap-align: start; }
+}

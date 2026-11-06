@@ -84,3 +84,12 @@ html body.home-page .hero__strip-ecg { margin-left: auto; }
   html body.home-page .hero__strip .motion-toggle { margin: 4px 0 0; }
   html body.home-page .hero__grid { padding-top: 16px; }
 }
+
+/* Phones: a compact navy strip. "Follow the journey" and "Pause motion" share a row, the note sits below. */
+@media (max-width: 959px) {
+  html body.home-page .hero__strip { padding: 40px 0 16px; }
+  html body.home-page .hero__strip-inner { flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 10px; }
+  html body.home-page .hero__strip .story-cue { order: 1; }
+  html body.home-page .hero__strip .motion-toggle { order: 2; margin: 0; }
+  html body.home-page .hero__strip .hero__note { order: 3; flex: 0 0 100%; padding-top: 12px; border-top: 1px solid #ffffff22; }
+}

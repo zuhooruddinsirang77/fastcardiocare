@@ -106,3 +106,31 @@ html.motion-ok body:not(.motion-paused) .stepper__panel.is-entering .step-media 
 @media (max-width: 479px) {
   .stepper .step-body a.text-link { width: 100%; justify-content: center; }
 }
+
+/* ---- phones: keep the heart clear of its caption, drop the watermark, leave room for the pinned consultation bar ---- */
+@media (max-width: 899px) {
+  .stepper__panel::after { content: none; }
+  .step-media--heart { aspect-ratio: 4 / 3; }
+  .step-media--heart > .step-heart { width: min(44%, 170px); margin-bottom: 64px; }
+  .step-ecg { top: 24%; height: 18%; }
+  .step-caption { left: 14px; right: 14px; bottom: 26px; padding: 10px 14px; }
+  .stepper { padding-bottom: 104px; }
+}
+
+/* ---- phones and tablets: slider arrows sit on the photo, so Next is never far below ---- */
+.step-arrows { display: none; }
+@media (max-width: 899px) {
+  .step-arrows { position: absolute; z-index: 3; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; aspect-ratio: 16 / 9; padding: 0 10px 30% ; pointer-events: none; }
+  .step-arrow { display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .94); color: #0f2547; box-shadow: 0 10px 20px -8px #0b1e3bb3; cursor: pointer; pointer-events: auto; transition: background .2s, color .2s, opacity .2s; }
+  .step-arrow .i { width: 20px; height: 20px; }
+  .step-arrow[data-step-prev] .i { transform: scaleX(-1); }
+  .step-arrow[data-step-next] { background: linear-gradient(135deg, #d4102f, #a80a26); color: #fff; }
+  .step-arrow:disabled { opacity: 0; pointer-events: none; }
+  .step-arrow:focus-visible { outline: 3px solid var(--focus, #295eac); outline-offset: 2px; }
+}
+
+/* Phones and tablets: the arrows on the photo replace the bottom Previous / Next row. */
+@media (max-width: 899px) {
+  .stepper__controls { display: none; }
+  .stepper { padding-bottom: 72px; }
+}

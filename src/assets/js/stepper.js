@@ -5,8 +5,8 @@
   if (!root) return;
   var tabs = [].slice.call(root.querySelectorAll('[role="tab"]'));
   var panels = [].slice.call(root.querySelectorAll('[role="tabpanel"]'));
-  var prev = root.querySelector('[data-step-prev]');
-  var next = root.querySelector('[data-step-next]');
+  var prevs = [].slice.call(root.querySelectorAll('[data-step-prev]'));
+  var nexts = [].slice.call(root.querySelectorAll('[data-step-next]'));
   var count = root.querySelector('[data-step-count]');
   if (!tabs.length || tabs.length !== panels.length) return;
   var current = 0;
@@ -26,8 +26,8 @@
       panel.classList.toggle('is-entering', on && !!userAction);
     });
     if (count) count.textContent = 'Step ' + (index + 1) + ' of ' + tabs.length;
-    if (prev) prev.disabled = index === 0;
-    if (next) next.disabled = index === tabs.length - 1;
+    prevs.forEach(function (b) { b.disabled = index === 0; });
+    nexts.forEach(function (b) { b.disabled = index === tabs.length - 1; });
     if (focusTab) tabs[index].focus();
   };
 
@@ -54,8 +54,8 @@
       goTo(to, true);
     });
   });
-  if (prev) prev.addEventListener('click', function () { goTo(current - 1, false); });
-  if (next) next.addEventListener('click', function () { goTo(current + 1, false); });
+  prevs.forEach(function (b) { b.addEventListener('click', function () { goTo(current - 1, false); }); });
+  nexts.forEach(function (b) { b.addEventListener('click', function () { goTo(current + 1, false); }); });
 
 
   var box = root.querySelector('.container');
