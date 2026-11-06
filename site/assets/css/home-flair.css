@@ -227,7 +227,7 @@ html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(
 @media (min-width: 960px) {
   .home-page .story { padding-top: 52px; }
   .home-page .story.is-staged .story__grid { column-gap: clamp(44px, 6vw, 96px); }
-  .home-page .story.is-staged .chapter { min-height: clamp(560px, 76vh, 740px); padding-block: 52px; }
+  .home-page .story.is-staged .chapter { min-height: clamp(360px, 46vh, 440px); padding-block: 36px; }
   .home-page .chapter h3 { max-width: 22ch; font-size: clamp(30px, 2.65vw, 42px); line-height: 1.2; letter-spacing: -.04em; margin-bottom: 22px; }
   .home-page .chapter h3 .chapter__accent { display: block; margin-top: 4px; }
   .home-page .chapter p { max-width: 48ch; font-size: 15px; line-height: 1.85; }

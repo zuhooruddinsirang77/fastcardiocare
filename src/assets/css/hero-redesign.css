@@ -27,7 +27,7 @@ html body.home-page .hero__actions .btn--outline .btn__lead { color: #c4002a; }
 /* ---- connected cards ---- */
 
 @media (min-width: 960px) {
-  html body.home-page .hero__grid { padding-block: clamp(36px, 4vw, 56px) clamp(84px, 7vw, 104px); grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr); gap: 16px; }
+  html body.home-page .hero__grid { padding-block: clamp(20px, 2.4vw, 32px) clamp(84px, 7vw, 104px); grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr); gap: 16px; }
   html body.home-page .hero__copy > .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; padding: 10px 20px 10px 14px; border: 0; border-radius: 999px; background: #fdecef; color: #c4002a; font-size: 13px; font-weight: 800; letter-spacing: .2em; line-height: 1.2; }
   html body.home-page .hero__copy > .eyebrow::before { content: none; }
   html body.home-page .hero__copy > .eyebrow .i { width: 16px; height: 16px; stroke-width: 2.2; }
@@ -52,7 +52,6 @@ html body.home-page .hero__actions .btn--outline .btn__lead { color: #c4002a; }
   html body.home-page .hero__chip--2 { top: calc(50% - 38px); right: -26px; left: auto; }
   html body.home-page .hero__chip--3 { top: auto; bottom: 15%; right: 0; left: auto; }
     html body.home-page .hero__strip-ecg { display: block; }
-  html body.home-page .hero .motion-toggle { top: 10px; bottom: auto; right: 0; }
 }
 @media (min-width: 960px) and (max-width: 1199px) {
   html body.home-page .hero__art > img { width: 58%; margin-left: -10%; }
@@ -73,4 +72,13 @@ html body.home-page .hero__actions .btn--outline .btn__lead { color: #c4002a; }
 @media (max-width: 639px) {
   html body.home-page .hero__features li { font-size: 13px; }
   html body.home-page .hero__features .i { padding: 10px; }
+}
+
+/* "Pause motion" lives in the navy strip, out of the hero content. */
+html body.home-page .hero__strip .motion-toggle { position: static; inset: auto; flex: none; margin: 0 0 0 16px; border-color: #ffffff40; background: #ffffff14; color: #dbe6f7; box-shadow: none; }
+html body.home-page .hero__strip .motion-toggle:hover { border-color: #ffffff80; background: #ffffff24; color: #fff; }
+html body.home-page .hero__strip-ecg { margin-left: auto; }
+@media (max-width: 959px) {
+  html body.home-page .hero__strip .motion-toggle { margin: 4px 0 0; }
+  html body.home-page .hero__grid { padding-top: 16px; }
 }

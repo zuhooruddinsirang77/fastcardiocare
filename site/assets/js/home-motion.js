@@ -24,7 +24,7 @@
   button.type = 'button';
   button.className = 'motion-toggle';
   button.innerHTML = '<span class="motion-toggle__icon" aria-hidden="true"></span><span class="motion-toggle__label"></span>';
-  hero.querySelector('.container').appendChild(button);
+  (hero.querySelector('.hero__strip-inner') || hero.querySelector('.container')).appendChild(button);
   var targets = [];
   var revealObserver;
   var update = function () {
