@@ -32,7 +32,7 @@ These assets were generated for this design from descriptive prompts using OpenA
 
 Medical illustrations are presentation assets, not diagnostic or instructional images. They have not received clinical accuracy review. WebP versions are optimized for web delivery.
 
-The current brand uses `fastcardiocare-logo.svg` and `fastcardiocare-logo-light.svg`: transparent vector lockups with an original heart-and-path symbol, outlined lettering, and navy/red or white/red palettes. `favicon.svg` uses the same symbol. The previous `fastcardiocare-logo-v1.png` is retained as an archived version. Vector source generation is recorded in `tmp/refine_logo.py`.
+The current brand uses `fastcardiocare-logo.svg` and `fastcardiocare-logo-light.svg`: transparent vector lockups with a balanced heart and cutout pulse, outlined semibold lettering, and navy/red or white/red palettes. `favicon.svg` uses the same symbol. The previous `fastcardiocare-logo-v1.png` is retained as an archived version. Vector source generation is recorded in `tmp/refine_logo.py`.
 
 ## Homepage support illustration prompt
 
