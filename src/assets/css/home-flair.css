@@ -259,3 +259,14 @@ html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(
   .page-progress { transition: none; }
 }
 @media print { .page-progress { display: none; } }
+
+/* Very narrow phones: the title wraps to two or three lines, so give it room above the heart. */
+@media (max-width: 379px) {
+  .home-page .story.is-slider .chapter .scene.scene--cardiac { height: 350px; }
+  .home-page .story.is-slider .scene--cardiac .scene__cardiac-image { top: 36%; left: 22%; width: 56%; height: 44%; }
+  .home-page .scene--cardiac .cardiac-orbit { top: 58%; }
+  .home-page .scene--cardiac .cardiac-trace { top: 44%; }
+  .home-page .scene--cardiac .cardiac-shadow { top: 80%; }
+  .home-page .scene--cardiac .cardiac-caption strong { font-size: 15px; }
+  .home-page .scene--cardiac .cardiac-caption small { font-size: 11px; }
+}

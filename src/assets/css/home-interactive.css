@@ -239,7 +239,7 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
 
 
 /* ---------- Spec copy restored on the home page: trust line, feature cards, process preview ---------- */
-.trust-line { margin: 0 0 14px; text-align: center; color: var(--navy); font-size: clamp(.9rem, .85rem + .25vw, 1.05rem); font-weight: 600; letter-spacing: -.005em; }
+.trust-line { margin: 22px 0 0; text-align: center; color: var(--navy); font-size: clamp(.9rem, .85rem + .25vw, 1.05rem); font-weight: 600; letter-spacing: -.005em; }
 /* Homepage process preview: spec heading and text, centred. */
 .home-page .process-preview {
   padding-block: clamp(48px, 6vw, 88px);
