@@ -31,8 +31,18 @@
     if (focusTab) tabs[index].focus();
   };
 
+  // Scroll mode: the section pins while the page scrolls, and scroll position picks the step.
+  var scrollMode = false, stepPx = 0, rootTop = 0;
+  var goTo = function (i, focusTab) {
+    i = Math.max(0, Math.min(tabs.length - 1, i));
+    if (scrollMode) {
+      window.scrollTo({ top: rootTop + i * stepPx + stepPx * 0.2, behavior: 'instant' });
+      show(i, focusTab, true);
+    } else show(i, focusTab, true);
+  };
+
   tabs.forEach(function (tab, i) {
-    tab.addEventListener('click', function () { show(i, false, true); });
+    tab.addEventListener('click', function () { goTo(i, false); });
     tab.addEventListener('keydown', function (e) {
       var k = e.key, to = -1;
       if (k === 'ArrowRight' || k === 'ArrowDown') to = (current + 1) % tabs.length;
@@ -41,14 +51,65 @@
       else if (k === 'End') to = tabs.length - 1;
       if (to < 0) return;
       e.preventDefault();
-      show(to, true, true);
+      goTo(to, true);
     });
   });
-  if (prev) prev.addEventListener('click', function () { show(current - 1, false, true); });
-  if (next) next.addEventListener('click', function () { show(current + 1, false, true); });
+  if (prev) prev.addEventListener('click', function () { goTo(current - 1, false); });
+  if (next) next.addEventListener('click', function () { goTo(current + 1, false); });
+
+
+  var box = root.querySelector('.container');
+  var header = document.querySelector('.site-header');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var ticking = false;
+
+  var measure = function () {
+    // Tallest step decides the pinned height, so the card never jumps while scrolling.
+    var keep = current, tallest = 0;
+    box.style.minHeight = '';
+    panels.forEach(function (panel, i) {
+      panel.hidden = false;
+      for (var k = 0; k < panels.length; k++) if (k !== i) panels[k].hidden = true;
+      tallest = Math.max(tallest, box.offsetHeight);
+    });
+    panels.forEach(function (panel, i) { panel.hidden = i !== keep; });
+    return tallest;
+  };
+
+  var layout = function () {
+    var top = (header ? header.offsetHeight : 70) + 14;
+    var boxH = measure();
+    var fits = boxH + top + 14 <= window.innerHeight && !reduce.matches && window.innerWidth >= 900;
+    if (!fits) {
+      if (scrollMode) { scrollMode = false; root.classList.remove('is-scroll'); root.style.height = ''; box.style.minHeight = ''; box.style.top = ''; }
+      return;
+    }
+    scrollMode = true;
+    root.classList.add('is-scroll');
+    stepPx = Math.round(window.innerHeight * 0.5);
+    box.style.minHeight = boxH + 'px';
+    box.style.top = top + 'px';
+    root.style.height = (boxH + (tabs.length - 1) * stepPx + Math.round(stepPx * 0.6)) + 'px';
+    rootTop = root.getBoundingClientRect().top + window.pageYOffset;
+    onScroll();
+  };
+
+  var onScroll = function () {
+    ticking = false;
+    if (!scrollMode) return;
+    var y = window.pageYOffset - rootTop;
+    var idx = Math.max(0, Math.min(tabs.length - 1, Math.floor(y / stepPx)));
+    if (idx !== current) show(idx, false, true);
+  };
+  window.addEventListener('scroll', function () { if (scrollMode && !ticking) { ticking = true; window.requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', function () { layout(); });
+  window.addEventListener('load', layout);
+  if (reduce.addEventListener) reduce.addEventListener('change', layout);
 
   // Open the step named in the URL (#step-3), otherwise start at step 1.
   var hash = /^#step-(\d)$/.exec(location.hash);
   show(hash ? parseInt(hash[1], 10) - 1 : 0, false, false);
   root.classList.add('is-enhanced');
+  layout();
+  if (hash && scrollMode) goTo(parseInt(hash[1], 10) - 1, false);
 })();

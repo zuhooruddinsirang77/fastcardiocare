@@ -2,6 +2,9 @@
 .stepper { padding-block: 4px clamp(48px, 6vw, 80px); }
 .stepper .container { width: min(92%, 1240px); }
 
+/* ---- scroll mode: the section pins and the page scroll steps through the journey ---- */
+.stepper.is-scroll > .container { position: sticky; }
+
 /* ---- step row ---- */
 .stepper__nav { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0; margin: 0 0 30px; padding: 0; list-style: none; }
 .stepper__nav::before { content: ""; position: absolute; z-index: 0; top: 29px; left: calc(100% / 14); right: calc(100% / 14); height: 2px; background: #d3dbe7; }
