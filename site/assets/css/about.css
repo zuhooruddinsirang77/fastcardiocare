@@ -57,12 +57,6 @@
 .why-limits .card + .card h3 .i { color: var(--navy); }
 .why-limits .checklist { font-size: 14px; gap: 10px; }
 .why-limits .checklist--x li::before { background-color: #e7edf6; }
-.why-conversation { padding-block: 5px 38px; background: #fcfdff; }
-.why-conversation .cta-band { display: grid; grid-template-columns: 90px 1fr auto; padding: 27px 35px; gap: 28px; background: linear-gradient(110deg, #b90020, #eb002d 55%, #bc0025); }
-.why-conversation__icon { width: 80px; height: 75px; color: #fff; stroke-width: 1; border-right: 1px solid #ffffff90; padding-right: 23px; }
-.why-conversation .cta-band p { max-width: 480px; font-size: 15px; color: #fff; }
-.why-conversation .cta-band h2 { margin-bottom: 10px; }
-.why-conversation .btn { font-size: 14px; padding-inline: 18px; }
 @media (max-width: 1100px) {
   .why-hero__copy { padding-bottom: 48px; }
   .why-hero__art > img { height: 360px; }
@@ -74,10 +68,6 @@
   .why-pillars .card p { font-size: 14px; }
   .why-limits h3 { font-size: 20px; }
   .why-limits .checklist { font-size: 14px; }
-  .why-conversation .cta-band { grid-template-columns: 75px 1fr auto; padding: 25px; gap: 22px; }
-  .why-conversation .cta-band h2 { font-size: 26px !important; }
-  .why-conversation .cta-band p { font-size: 13px; }
-  .why-conversation .btn { font-size: 13px; padding-inline: 14px; }
 }
 @media (max-width: 959px) {
   .why-hero > .container { gap: 10px; }
@@ -91,9 +81,6 @@
   .why-pillars .card p { font-size: 14px; }
   .why-limits .card { padding-inline: 20px; }
   .why-limits h3 { font-size: 18px; gap: 10px; }
-  .why-conversation .cta-band { grid-template-columns: 65px 1fr; }
-  .why-conversation .cta-band__actions { grid-column: 2; }
-  .why-conversation__icon { width: 65px; padding-right: 15px; }
 }
 @media (max-width: 639px) {
   .why-hero > .container { grid-template-columns: 1fr; }
@@ -121,12 +108,6 @@
   .why-limits .section-head p { font-size: 14px; }
   .why-limits h3 { font-size: 19px; }
   .why-limits .checklist { font-size: 13px; }
-  .why-conversation { padding-bottom: 30px; }
-  .why-conversation .cta-band { display: block; padding: 24px; }
-  .why-conversation__icon { width: 49px; height: 49px; border: 0; padding: 0; margin-bottom: 12px; }
-  .why-conversation .cta-band h2 { font-size: 26px !important; }
-  .why-conversation .cta-band__actions { margin-top: 20px; }
-  .why-conversation .btn { font-size: 13px; padding-inline: 12px; }
 }
 .about-hero { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(100deg, #f4f8fc, #edf4fa); }
 .about-hero__copy { position: relative; z-index: 3; width: 55%; padding-block: 55px 65px; }
@@ -191,16 +172,6 @@
 .about-company dt .i { width: 23px; height: 23px; color: var(--red); stroke-width: 1.7; }
 .about-company dd { font-size: 14px; line-height: 1.4; }
 .about-company .tbc { border: 0; padding: 4px 10px; background: #fff0bf; font-size: 13px; color: #3d331b; white-space: nowrap; }
-.about-conversation { padding-block: 10px 45px; }
-.about-conversation .container { width: min(93%, 1330px); }
-.about-conversation .cta-band { position: relative; display: block; background: radial-gradient(ellipse at 85% 50%, #551c43, transparent 35%), linear-gradient(110deg, #152241, #00294d); padding: 28px 6%; min-height: 225px; }
-.about-conversation .cta-band::after { display: none; }
-.about-conversation .cta-band > div:first-child { position: relative; z-index: 2; max-width: 55%; }
-.about-conversation .cta-band h2 { font-size: clamp(25px, 2.5vw, 35px) !important; line-height: 1.1; margin-bottom: 12px; }
-.about-conversation .cta-band p { font-size: 15px; color: #fff; margin-bottom: 16px; }
-.about-conversation__art { position: absolute; inset: 0 0 0 50%; overflow: hidden; }
-.about-conversation__art img { position: absolute; z-index: 1; height: 95%; width: 55%; right: 9%; top: 2%; object-fit: contain; filter: drop-shadow(0 0 12px #f24566); }
-.about-conversation__art svg { position: absolute; width: 100%; height: 65%; left: 0; top: 25%; fill: none; stroke: #fff; stroke-width: 2.5; filter: drop-shadow(0 0 3px #ff234a) drop-shadow(0 0 8px #ff123c); }
 @media (max-width: 1100px) {
   .about-hero__copy { padding-block: 45px 55px; }
   .about-hero h1 { font-size: 38px; }
@@ -239,7 +210,6 @@
   .network-card { grid-template-columns: .8fr 1.2fr; gap: 22px; }
   .network-card__features { grid-template-columns: 1fr; }
   .about-company .split { grid-template-columns: 1fr; }
-  .about-conversation .cta-band p { font-size: 13px; }
 }
 @media (max-width: 639px) {
   .about-hero__copy { width: 100%; padding-block: 30px 340px; }
@@ -280,12 +250,6 @@
   .about-company dt .i { width: 19px; height: 19px; flex: none; }
   .about-company dd { font-size: 13px; }
   .about-company .tbc { font-size: 13px; padding-inline: 6px; }
-  .about-conversation { padding-block: 5px 30px; }
-  .about-conversation .cta-band { padding: 25px; min-height: 400px; }
-  .about-conversation .cta-band > div:first-child { max-width: 100%; }
-  .about-conversation .cta-band h2 { font-size: 26px !important; }
-  .about-conversation__art { inset: auto 0 0 0; height: 180px; }
-  .about-conversation__art img { right: 20%; width: 60%; }
 }
 .about-hero .lead + .lead { margin-top: 12px; }
 /* Clinician profile: navy identity panel with a curved edge beside four credential cards (site navy and red theme). */

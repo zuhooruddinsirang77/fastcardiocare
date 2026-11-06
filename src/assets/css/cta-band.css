@@ -1,0 +1,18 @@
+/* One call-to-action band, identical on every page (loaded last so page-specific variants cannot override it). */
+html body main .cta-band {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 28px;
+  min-height: 0; padding: 32px 40px; border-radius: 19px;
+  background: linear-gradient(110deg, #d20732, #ba0028 65%, #8e102f);
+  box-shadow: 0 15px 35px -22px #a70d35aa;
+}
+html body main .cta-band h2 { margin: 0 0 8px; font-size: 29px !important; line-height: 1.1; letter-spacing: -.025em !important; }
+html body main .cta-band p { max-width: 58ch; margin: 0; font-size: 14px; line-height: 1.5; color: #ffe3e7; }
+html body main .cta-band .btn { min-height: 45px; padding: 12px 18px; font-size: 14px; white-space: nowrap; }
+html body main .cta-band .btn--light { color: var(--red-700, #a70b2b); }
+html body main :is(.section, .conversation-section):has(> .container > .cta-band) { padding-block: 0 48px; }
+@media (max-width: 899px) {
+  html body main .cta-band { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 25px; }
+  html body main .cta-band h2 { font-size: 26px !important; }
+  html body main .cta-band p { font-size: 13px; }
+  html body main .cta-band .btn { width: 100%; padding-inline: 13px; font-size: 13px; white-space: normal; }
+}
