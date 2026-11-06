@@ -165,6 +165,9 @@ html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(
   width: auto; max-width: none; color: #3b5271;
 }
 .home-page .scene--cardiac .cardiac-footnote { color: #3b5271; }
+@media (max-width: 959px) {
+  .home-page .story.is-slider .scene--cardiac .scene__cardiac-image { top: 25%; height: 52%; }
+}
 @media (min-width: 960px) {
   .home-page .stage { background: linear-gradient(180deg, #fff, #f8fafd); }
   .home-page .stage[data-beat="1"]::before { opacity: 0; }
