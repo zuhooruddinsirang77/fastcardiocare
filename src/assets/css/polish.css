@@ -51,8 +51,9 @@ button, input, select, textarea { font-family: inherit; }
 @keyframes fcc-drop { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
 /* Background scroll lock while the mobile menu is open */
-html.nav-open, html.nav-open body { overflow: hidden; }
-@media (min-width: 1280px) { html.nav-open, html.nav-open body { overflow: visible; } }
+/* Lock scrolling on the viewport only: overflow on body as well would stop the sticky header sticking and the drawer would open off-screen. */
+html.nav-open { overflow: hidden; }
+@media (min-width: 1280px) { html.nav-open { overflow: visible; } }
 
 /* ---------- Buttons and cards ---------- */
 .btn { transition: transform .18s var(--ease-out), box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }

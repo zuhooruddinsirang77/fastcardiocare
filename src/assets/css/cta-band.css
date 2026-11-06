@@ -16,3 +16,10 @@ html body main :is(.section, .conversation-section):has(> .container > .cta-band
   html body main .cta-band p { font-size: 13px; }
   html body main .cta-band .btn { width: 100%; padding-inline: 13px; font-size: 13px; white-space: normal; }
 }
+
+/* Mobile: the pinned consultation bar needs room at the end of the page, but that room belongs to the footer, not to a white strip under it. */
+@media (max-width: 1279px) {
+  html body { padding-bottom: 0; }
+  html body .site-footer { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+  html[data-page="contact"] body .site-footer { padding-bottom: 22px; }
+}

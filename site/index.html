@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="assets/css/home-interactive.css">
   <link rel="stylesheet" href="assets/css/home-flair.css">
   <link rel="stylesheet" href="assets/css/cta-band.css">
+  <link rel="stylesheet" href="assets/css/hero-redesign.css">
   <script>
     (function (d) {
       d.classList.replace('no-js', 'js');
@@ -145,15 +146,19 @@
   <div class="container">
     <div class="hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow">Cardiac care is our specialty</p>
+        <p class="eyebrow"><svg class="i" aria-hidden="true"><use href="#i-activity"/></svg>Cardiac care is our specialty</p>
         <h1 id="hero-title">Heart care, <span>with a<br class="desktop-break"> clearer path forward.</span></h1>
         <p class="lead">FastCardioCare helps patients and families explore planned cardiac treatment with experienced providers. We coordinate case review, provider options, cost estimates and practical support around the care journey, so you can make an informed next step.</p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="contact.html" data-track="cta_consultation_hero">Request a confidential consultation <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--outline" href="procedures.html" data-track="cta_procedures_hero">Explore cardiac procedures <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--primary" href="contact.html" data-track="cta_consultation_hero"><svg class="i btn__lead" aria-hidden="true"><use href="#i-heart-pulse"/></svg>Request a confidential consultation <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--outline" href="procedures.html" data-track="cta_procedures_hero"><svg class="i btn__lead" aria-hidden="true"><use href="#i-stethoscope"/></svg>Explore cardiac procedures <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
-        <a class="story-cue" href="#story">Follow the journey <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></a>
-        <p class="hero__note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Confidential enquiry. No medical records needed to start.</p>
+        <ul class="hero__features" aria-label="How we work">
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span><strong>Independent</strong>Provider network</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span><strong>Personalised</strong>Case review</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg><span><strong>Clear</strong>Cost estimates</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-headset"/></svg><span><strong>Practical</strong>Support</span></li>
+        </ul>
       </div>
       <div class="hero__art" aria-hidden="true">
         <img src="assets/img/heart-hero-cutout.webp" alt="" width="520" height="520" fetchpriority="high">
@@ -164,17 +169,14 @@
       </div>
     </div>
   </div>
+  <div class="hero__strip">
+    <div class="container hero__strip-inner">
+      <a class="story-cue" href="#story">Follow the journey <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></a>
+      <p class="hero__note"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Confidential enquiry. No medical records needed to start.</p>
+      <svg class="hero__strip-ecg" viewBox="0 0 260 60" aria-hidden="true"><path d="M0 34h120l9-8 9 8h14l10-26 12 50 11-32 8 8h24"/><path class="h" d="M214 46c-9-7-15-12-15-19a7.5 7.5 0 0 1 15-3 7.5 7.5 0 0 1 15 3c0 7-6 12-15 19z" transform="translate(4 -2)"/></svg>
+    </div>
+  </div>
 </section>
-
-<div class="container reassurance-wrap">
-  <ul class="reassurance" aria-label="How we work">
-    <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span><strong>Independent providers</strong>Licensed teams deliver all care</span></li>
-    <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span><strong>Coordinated support</strong>Estimates, travel and records</span></li>
-    <li><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg><span><strong>Options explained</strong>Before you decide anything</span></li>
-    <li><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span><strong>Private by default</strong>Records shared only with consent</span></li>
-  </ul>
-  <p class="trust-line">Independent care providers. Coordinated patient support. Options explained before you decide.</p>
-</div>
 
 <section class="story-intro" id="story" aria-labelledby="story-title">
   <div class="container story-intro__layout">
