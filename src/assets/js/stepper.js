@@ -65,14 +65,17 @@
 
   var measure = function () {
     // Tallest step decides the pinned height, so the card never jumps while scrolling.
-    var keep = current, tallest = 0;
+    var keep = current, tallest = 0, tallPanel = 0;
     box.style.minHeight = '';
+    root.style.removeProperty('--panel-h');
     panels.forEach(function (panel, i) {
       panel.hidden = false;
       for (var k = 0; k < panels.length; k++) if (k !== i) panels[k].hidden = true;
       tallest = Math.max(tallest, box.offsetHeight);
+      tallPanel = Math.max(tallPanel, panel.offsetHeight);
     });
     panels.forEach(function (panel, i) { panel.hidden = i !== keep; });
+    root.style.setProperty('--panel-h', tallPanel + 'px');
     return tallest;
   };
 

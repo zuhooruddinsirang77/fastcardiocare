@@ -4,6 +4,7 @@
 
 /* ---- scroll mode: the section pins and the page scroll steps through the journey ---- */
 .stepper.is-scroll > .container { position: sticky; }
+.stepper.is-scroll .stepper__panel { min-height: var(--panel-h, 0); }
 
 /* ---- step row ---- */
 .stepper__nav { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0; margin: 0 0 30px; padding: 0; list-style: none; }
