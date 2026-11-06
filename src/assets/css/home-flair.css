@@ -116,8 +116,8 @@ html.motion-ok body.home-page:not(.motion-paused) .chapter.is-active .chapter__n
 
 /* ---------- 10. Cardiac scene polish: scales with its card, softer trace, orbiting marker, layered pointer depth ---------- */
 .home-page .scene.scene--cardiac { container-type: inline-size; }
-.home-page .scene--cardiac .cardiac-caption { font-size: clamp(10px, 1.9cqw, 12px); letter-spacing: .09em; }
-.home-page .scene--cardiac .cardiac-footnote { font-size: clamp(11px, 2cqw, 13px); }
+.home-page .scene--cardiac .cardiac-caption strong { font-size: clamp(16px, 3.8cqw, 22px); }
+.home-page .scene--cardiac .cardiac-caption small { font-size: clamp(11px, 2.2cqw, 13px); }
 .home-page .scene--cardiac .cardiac-trace { -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent); mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent); }
 /* The satellite dot sits exactly on the ring, so it can travel round it. */
 .home-page .scene--cardiac .cardiac-orbit--outer::after { top: 0; left: 50%; translate: -50% -50%; }
@@ -146,6 +146,31 @@ html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(
 @keyframes flair-orbit { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
 @keyframes flair-orbit-pulse { 0%, 40%, 100% { transform: translate(-50%, -50%) scale(1); } 12%, 29% { transform: translate(-50%, -50%) scale(1.025); } }
 @keyframes flair-badge-ring { from { opacity: 1; transform: scale(.9); } to { opacity: 0; transform: scale(1.9); } }
+
+/* ---------- 11. Cardiac scene: a framed, clinical-monitor finish ---------- */
+.home-page .scene.scene--cardiac {
+  border-color: #d6e1ed;
+  background:
+    radial-gradient(ellipse 44% 40% at 50% 49%, #fff 0, #ffffff00 100%),
+    radial-gradient(circle at 1px 1px, #a9bdd320 1px, transparent 1.5px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #f8fafc, #edf3f9);
+}
+.home-page .scene--cardiac .cardiac-orbit { top: 51%; width: 72%; border-color: #a7bfd957; }
+.home-page .scene--cardiac .cardiac-orbit--inner { width: 56%; border-color: #ffffffe6; background: #ffffff2e; box-shadow: 0 0 0 1px #c3d4e62e; }
+.home-page .scene--cardiac .scene__cardiac-image { top: 21%; left: 20%; width: 60%; height: 57%; filter: drop-shadow(0 18px 22px #6a1a3022); }
+.home-page .scene--cardiac .cardiac-shadow { top: 77%; background: #1d3a6426; filter: blur(12px); }
+.home-page .scene--cardiac .cardiac-trace__base { stroke: #c9506f; opacity: .18; }
+.home-page .scene--cardiac .cardiac-trace__signal { opacity: .5; }
+.home-page .scene--cardiac .cardiac-caption {
+  width: auto; max-width: none; color: #3b5271;
+}
+.home-page .scene--cardiac .cardiac-footnote { color: #3b5271; }
+@media (min-width: 960px) {
+  .home-page .stage { background: linear-gradient(180deg, #fff, #f8fafd); }
+  .home-page .stage[data-beat="1"]::before { opacity: 0; }
+  .home-page .stage__ecg path:not(.is-done):not(.is-current) { stroke: #cdd8e6; }
+  .home-page .stage .scene.scene--cardiac { inset: 112px 18px 18px; min-height: 0; border: 1px solid #d6e1ed; border-radius: 16px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .page-progress { transition: none; }

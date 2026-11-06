@@ -76,44 +76,49 @@
 }
 /* Layered cardiac illustration: the heart and trace move independently. */
 .home-page .scene.scene--cardiac {
-  isolation: isolate; padding: 0; min-height: 380px; border-color: #dce5ef;
-  background: radial-gradient(ellipse at 50% 44%, #deedf9 0, #edf5fc 47%, #f8fafc 82%);
+  isolation: isolate; padding: 0; min-height: 420px; border-color: #e1e8ef;
+  background: radial-gradient(ellipse at 50% 46%, #e8f0f7 0, #f5f8fb 56%, #fcfdff 100%);
 }
 .home-page .scene__cardiac-image {
-  position: absolute; z-index: 2; top: 15%; left: 15%; width: 70%; height: 68%;
+  position: absolute; z-index: 2; top: 20%; left: 20%; width: 60%; height: 59%;
   min-height: 0; object-fit: contain; transform-origin: 50% 58%;
-  filter: drop-shadow(0 12px 18px #7b19351a);
+  filter: drop-shadow(0 18px 18px #5b263b20);
 }
 .cardiac-orbit {
-  position: absolute; z-index: 0; top: 48%; left: 50%; width: 80%; aspect-ratio: 1;
-  border: 1px solid #adc5dd45; border-radius: 50%; transform: translate(-50%, -50%);
+  position: absolute; z-index: 0; top: 49%; left: 50%; width: 68%; aspect-ratio: 1;
+  border: 1px solid #b8cbdc55; border-radius: 50%; transform: translate(-50%, -50%);
 }
-.cardiac-orbit--inner { width: 61%; background: #ffffff25; border-color: #ffffffb0; }
+.cardiac-orbit--inner { width: 53%; background: #ffffff35; border-color: #ffffffd0; }
 .cardiac-orbit--outer::after {
-  content: ''; position: absolute; top: 15%; left: 14%; width: 7px; height: 7px;
-  border: 3px solid #edf5fc; box-sizing: content-box; border-radius: 50%; background: #b9ccdf;
+  content: ''; position: absolute; top: 15%; left: 14%; width: 5px; height: 5px;
+  border: 3px solid #f5f8fb; box-sizing: content-box; border-radius: 50%; background: #9fb5ca;
 }
 .cardiac-caption {
-  position: absolute; z-index: 3; top: 22px; left: 24px; right: 24px;
-  display: flex; align-items: center; gap: 8px; color: #536b85;
-  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  position: absolute; z-index: 3; top: 25px; left: 28px; right: 28px;
+  display: flex; align-items: center; gap: 12px; color: #193551;
 }
-.cardiac-caption .i { width: 16px; height: 16px; color: #bd2345; }
-.cardiac-trace { position: absolute; z-index: 1; top: 29%; left: 0; width: 100%; height: 37%; overflow: visible; }
+.cardiac-caption__icon { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border: 1px solid #eedde2; border-radius: 12px; background: #fff9fa; }
+.cardiac-caption .i { width: 21px; height: 21px; color: #bd2345; }
+.cardiac-caption strong { display: block; color: #193551; font-size: 18px; font-weight: 750; line-height: 1.35; letter-spacing: -.025em; }
+.cardiac-caption small { display: block; margin-top: 3px; color: #60738a; font-size: 12px; font-weight: 500; line-height: 1.5; letter-spacing: .01em; }
+.cardiac-trace { position: absolute; z-index: 1; top: 33%; left: 0; width: 100%; height: 30%; overflow: visible; }
 .cardiac-trace path { stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
-.cardiac-trace__base { stroke: #cf6684; opacity: .24; }
-.cardiac-trace__signal { stroke: #c8103d; stroke-dasharray: .16 .84; stroke-dashoffset: .16; opacity: .65; }
+.cardiac-trace__base { stroke: #cf6684; opacity: .18; }
+.cardiac-trace__signal { stroke: #c8103d; stroke-dasharray: .16 .84; stroke-dashoffset: .16; opacity: .5; }
 .cardiac-shadow {
-  position: absolute; z-index: 1; top: 82%; left: 33%; width: 34%; height: 4%;
-  background: #25456e24; border-radius: 50%; filter: blur(9px);
+  position: absolute; z-index: 1; top: 78%; left: 36%; width: 28%; height: 3%;
+  background: #25456e20; border-radius: 50%; filter: blur(9px);
 }
 .cardiac-footnote {
-  position: absolute; z-index: 3; bottom: 20px; left: 24px; right: 24px;
-  display: flex; justify-content: center; align-items: center; gap: 8px;
-  padding-top: 14px; border-top: 1px solid #c5d5e64f;
-  color: #536b85; font-size: 11px; font-weight: 600; letter-spacing: .02em;
+  position: absolute; z-index: 3; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 11px; padding: 17px 28px;
+  border-top: 1px solid #dfe7ef; background: #ffffffc9;
+  color: #536b85;
 }
-.cardiac-footnote > span { width: 5px; height: 5px; border-radius: 50%; background: #c8103d; }
+.cardiac-footnote > .i { width: 20px; height: 20px; flex: none; color: #738aa2; }
+.cardiac-footnote strong { display: block; color: #304962; font-size: 12px; font-weight: 700; line-height: 1.5; }
+.cardiac-footnote small { display: block; margin-top: 2px; color: #6d7e90; font-size: 10px; line-height: 1.5; }
+.cardiac-footnote > .cardiac-footnote__heart { margin-left: auto; color: #bd2345; opacity: .65; }
 @keyframes cardiac-gentle-beat {
   0%, 40%, 100% { transform: scale(1); }
   12% { transform: scale(1.035); }
@@ -130,13 +135,18 @@
   html.motion-ok .home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(.stage .is-active, .chapter.is-active .scene) .cardiac-shadow { animation: cardiac-shadow-beat 2.4s ease-in-out infinite; }
 }
 @media (max-width: 959px) {
-  .home-page .story.is-slider .chapter .scene.scene--cardiac { height: 300px; min-height: 0; padding: 0; }
-  .cardiac-caption { top: 17px; left: 18px; right: 18px; font-size: 8px; }
-  .cardiac-footnote { bottom: 15px; left: 18px; right: 18px; padding-top: 11px; font-size: 10px; }
+  .home-page .story.is-slider .chapter .scene.scene--cardiac { height: 320px; min-height: 0; padding: 0; }
+  .cardiac-caption { top: 18px; left: 20px; right: 20px; gap: 10px; }
+  .cardiac-caption__icon { width: 34px; height: 34px; border-radius: 10px; }
+  .cardiac-caption strong { font-size: 16px; }
+  .cardiac-caption small { margin-top: 1px; font-size: 11px; }
+  .cardiac-footnote { padding: 12px 20px; }
+  .cardiac-footnote strong { font-size: 11px; }
+  .cardiac-footnote small { font-size: 9px; }
 }
 .home-page .stage__beat {
   display: grid; place-items: center; flex: 1; min-width: 0; height: 44px;
-  padding: 0; border: 0; border-radius: 8px; background: transparent; cursor: pointer;
+  padding: 0 8px; border: 1px solid transparent; border-radius: 9px; background: transparent; cursor: pointer;
   transition: background .2s, transform .2s;
 }
 .home-page .stage__beat:hover { background: #d9082c0a; }
@@ -184,7 +194,8 @@
 .home-page .stage { border-radius: 22px; box-shadow: 0 20px 55px -35px #18365755; }
 .home-page .stage:hover { box-shadow: 0 20px 55px -35px #18365755; }
 .home-page .stage__beat { min-height: 44px; }
-.home-page .stage__beat[aria-current="step"] { background: #fff0f3; }
+.home-page .stage__beat[aria-current="step"] { background: #fff3f5; border-color: #f1d7df; }
+.home-page .stage__ecg path.is-current { filter: none; }
 /* Keep the title readable throughout a scene change. */
 html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
 @media (min-width: 960px) {
@@ -197,8 +208,11 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
   .home-page .chapter p { font-size: 16px; }
   .home-page .stage__top {
     display: grid; grid-template-columns: auto 1fr; gap: 6px 16px;
-    top: 17px; left: 22px; right: 22px;
+    top: 0; left: 0; right: 0; padding: 17px 22px 12px;
+    background: #ffffffed; border-bottom: 1px solid #e5ebf2;
   }
+  .home-page .stage__count { font-size: 10px; letter-spacing: .1em; }
+  .home-page .stage__title { font-size: 11px; }
   .home-page .stage__title { text-align: right; }
   .home-page .stage__bars { grid-column: 1 / -1; width: 100%; height: 44px; gap: 6px; }
   .home-page .stage .scene { inset-block-start: 100px; }
