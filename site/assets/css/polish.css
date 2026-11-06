@@ -482,8 +482,6 @@ html.motion-ok:not([data-page="home"]) .hero__art > img { animation: fcc-pulse 1
 
   /* ---- Closing band: same left alignment, single clear button ---- */
   .home-page .conversation-section { padding-bottom: 40px; }
-  .home-page .conversation-section .cta-band { padding: 28px 22px; border-radius: 20px; }
-  .home-page .conversation-section .cta-band h2 { font-size: 26px !important; }
 }
 
 /* ==========================================================================
