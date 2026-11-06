@@ -287,3 +287,41 @@
   .about-conversation__art { inset: auto 0 0 0; height: 180px; }
   .about-conversation__art img { right: 20%; width: 60%; }
 }
+.about-hero .lead + .lead { margin-top: 12px; }
+/* Clinician profile: portrait rail and a clear, readable clinical biography. */
+.network-profile.card { margin-top: 28px; padding: clamp(22px, 3.2vw, 44px); border: 1px solid #dfe6ef; border-radius: 22px; background: #fff; box-shadow: 0 12px 40px #18335408; }
+.network-profile .profile { grid-template-columns: 220px minmax(0, 1fr); gap: clamp(28px, 3.5vw, 48px); }
+.profile__portrait { min-width: 0; }
+.network-profile .profile__photo--img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; border-radius: 14px; object-fit: cover; object-position: center 20%; background: #eef1f8; }
+.profile__languages { display: flex; align-items: center; gap: 12px; margin: 18px 0 0; padding: 16px 4px 0; border-top: 1px solid #e6ebf2; color: #5b6980; font-size: 12px; line-height: 1.6; }
+.profile__languages .i { width: 22px; height: 22px; color: var(--red); flex: none; }
+.profile__languages strong { display: block; color: var(--navy); font-size: 14px; font-weight: 600; }
+.profile__body { min-width: 0; }
+.profile__header { padding-bottom: 24px; border-bottom: 1px solid #e6ebf2; }
+.profile__eyebrow { margin: 0 0 16px; color: #b90029; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; }
+.profile__rank { margin: 0 0 5px; color: #52627a; font-size: 14px; font-weight: 600; }
+.network-profile h3 { margin: 0 0 10px; color: var(--navy); font-size: clamp(25px, 2.5vw, 34px); line-height: 1.2; letter-spacing: -.9px; text-wrap: balance; }
+.network-profile h3 span { display: inline-block; vertical-align: middle; margin-left: 4px; color: #64738a; font-size: 13px; font-weight: 500; letter-spacing: 0; white-space: nowrap; }
+.network-profile .profile__role { margin: 0; color: #586780; font-size: 15px; font-weight: 500; line-height: 1.6; }
+.network-profile .profile__facts { display: grid; gap: 22px; margin: 24px 0 0; }
+.profile__facts > div { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 20px; }
+.profile__facts dt { padding-top: 2px; color: #52627a; font-size: 13px; font-weight: 600; line-height: 1.6; }
+.profile__facts dd { margin: 0; color: var(--navy); font-size: 14px; line-height: 1.8; }
+.profile__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.profile__tags li { padding: 5px 11px; border: 1px solid #e4eaf2; border-radius: 6px; background: #f6f8fc; color: #354a68; font-size: 12px; line-height: 1.6; }
+@media (max-width: 959px) {
+  .network-profile .profile { grid-template-columns: 180px minmax(0, 1fr); gap: 26px; }
+  .profile__facts > div { grid-template-columns: 1fr; gap: 6px; }
+}
+@media (max-width: 639px) {
+  .network-profile.card { margin-top: 20px; padding: 24px 20px; border-radius: 17px; }
+  .network-profile .profile { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .profile__portrait { display: flex; align-items: center; gap: 20px; }
+  .network-profile .profile__photo--img { width: 120px; flex: none; border-radius: 10px; }
+  .profile__languages { margin: 0; padding: 0; border: 0; gap: 8px; }
+  .profile__languages .i { width: 18px; height: 18px; }
+  .profile__eyebrow { margin-bottom: 12px; }
+  .network-profile h3 { font-size: 27px; }
+  .profile__header { padding-bottom: 20px; }
+  .network-profile .profile__facts { margin-top: 20px; gap: 20px; }
+}

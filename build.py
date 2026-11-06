@@ -95,7 +95,9 @@ def main():
             shutil.rmtree(child)
         else:
             child.unlink()
-    shutil.copytree(SRC / "assets", OUT / "assets")
+    # Draft (unapproved) portraits are staging-only: never copied into a production build.
+    ignore = shutil.ignore_patterns("*-draft.*") if env == "production" else None
+    shutil.copytree(SRC / "assets", OUT / "assets", ignore=ignore)
 
     sitemap_urls = []
     tbc_total = 0

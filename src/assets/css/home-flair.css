@@ -63,13 +63,13 @@ html.motion-ok body.home-page:not(.motion-paused) .hero__chip--3 { translate: 0 
   html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero h1 > span { animation-play-state: running; }
 }
 
-/* Primary button hover: keep the gradient, tighter shadow, one sheen sweep (replaces the flat dark + wide glow). */
-.home-page :is(.hero__actions, .cta-band__actions, .procedures-section__all) .btn--primary {
+/* Primary button, every page: keep the gradient, tighter shadow, one sheen sweep (replaces the flat dark + wide glow). */
+body .btn--primary {
   background-image: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .26) 50%, transparent 62%), linear-gradient(135deg, #e01535, #c00b28);
   background-size: 260% 100%, 100% 100%; background-position: 140% 0, 0 0; background-repeat: no-repeat; background-origin: border-box; background-clip: border-box;
   box-shadow: 0 6px 12px -6px rgba(160, 10, 36, .45), 0 1px 3px rgba(160, 10, 36, .15);
 }
-.home-page :is(.hero__actions, .cta-band__actions) .btn--primary:is(:hover, :focus-visible) {
+body .btn--primary:is(:hover, :focus-visible) {
   background-image: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .26) 50%, transparent 62%), linear-gradient(135deg, #d51230, #b80a26);
   background-position: -40% 0, 0 0;
   box-shadow: 0 8px 14px -8px rgba(160, 10, 36, .5), 0 1px 3px rgba(160, 10, 36, .18);
@@ -163,16 +163,96 @@ html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(
 .home-page .scene--cardiac .cardiac-trace__signal { opacity: .5; }
 .home-page .scene--cardiac .cardiac-caption {
   width: auto; max-width: none; color: #3b5271;
+  top: 24px; left: 24px; right: 24px;
 }
+.home-page .scene--cardiac .cardiac-caption strong { font-size: clamp(13px, 1.2vw, 17px); font-weight: 650; letter-spacing: -.02em; }
+.home-page .scene--cardiac .scene__cardiac-image { top: 22%; height: 66%; }
+.home-page .scene--cardiac .cardiac-shadow { top: 86%; }
+.home-page .scene--cardiac .cardiac-orbit { top: 55%; }
 .home-page .scene--cardiac .cardiac-footnote { color: #3b5271; }
 @media (max-width: 959px) {
-  .home-page .story.is-slider .scene--cardiac .scene__cardiac-image { top: 25%; height: 52%; }
+  .home-page .story.is-slider .scene--cardiac .scene__cardiac-image { top: 25%; height: 66%; }
+  .home-page .scene--cardiac .cardiac-caption { top: 16px; left: 18px; right: 18px; }
+  .home-page .story.is-slider .chapter > .chapter__link { margin-top: 0; font-size: 13px; }
 }
 @media (min-width: 960px) {
   .home-page .stage { background: linear-gradient(180deg, #fff, #f8fafd); }
   .home-page .stage[data-beat="1"]::before { opacity: 0; }
   .home-page .stage__ecg path:not(.is-done):not(.is-current) { stroke: #cdd8e6; }
   .home-page .stage .scene.scene--cardiac { inset: 112px 18px 18px; min-height: 0; border: 1px solid #d6e1ed; border-radius: 16px; }
+  .home-page .stage__num { display: none; }
+  .home-page .stage__beat .stage__ecg { max-width: 32px; height: 22px; }
+  .home-page .story.is-staged .story__grid::before,
+  .home-page .story.is-staged .story__grid::after { width: 1px; }
+  .home-page .story.is-staged .story-pulse { width: 7px; height: 7px; box-shadow: 0 0 0 5px #fff; }
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .story-pulse::after,
+  html.motion-ok body.home-page:not(.motion-paused) .chapter.is-active .chapter__num::after { animation: none; }
+}
+
+/* Care journey: editorial copy beside a calm, unified illustration panel. */
+.home-page .chapter__accent { color: #c20e37; }
+.home-page #chapter-1 > .chapter__link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 20px;
+  min-height: 48px; max-width: 100%; box-sizing: border-box; padding: 13px 20px;
+  border: 1px solid #142e50; border-radius: 9px; background: #142e50; color: #fff;
+  font-size: 13px; font-weight: 650; line-height: 1.5; text-decoration: none;
+  box-shadow: 0 5px 12px -8px #142e5060;
+  transition: background .2s, border-color .2s;
+}
+.home-page #chapter-1 > .chapter__link:hover { background: #244568; border-color: #244568; }
+.home-page #chapter-1 > .chapter__link:focus-visible { outline: 3px solid #c20e37; outline-offset: 4px; }
+.home-page #chapter-1 > .chapter__reassurance {
+  display: flex; align-items: center; gap: 8px; margin-top: 15px; margin-bottom: 0;
+  color: #65758b; font-size: 12px; line-height: 1.6;
+}
+.chapter__reassurance .i { flex: none; width: 15px; height: 15px; color: #7a8da3; }
+.home-page .scene.scene--cardiac {
+  background: radial-gradient(ellipse at 50% 52%, #fff 10%, #f0f5fa 65%, #f7f9fc 100%);
+}
+.home-page .scene--cardiac .cardiac-caption { top: 26px; left: 28px; right: 28px; gap: 12px; }
+.home-page .scene--cardiac .cardiac-caption__icon { width: 42px; height: 42px; background: #fff; border-color: #eadde2; }
+.home-page .scene--cardiac .cardiac-caption strong { font-size: clamp(15px, 3.2cqw, 19px); font-weight: 700; }
+.home-page .scene--cardiac .cardiac-caption small { margin-top: 5px; font-size: clamp(10px, 2.1cqw, 12px); color: #687b91; }
+.home-page .scene--cardiac .scene__cardiac-image { top: 23%; left: 20%; width: 60%; height: 61%; }
+.home-page .scene--cardiac .cardiac-orbit { top: 53%; width: 66%; border-color: #b9cadb55; }
+.home-page .scene--cardiac .cardiac-orbit--inner { width: 51%; border-color: #ffffffd9; background: #ffffff35; }
+.home-page .scene--cardiac .cardiac-trace { top: 36%; opacity: .65; }
+.home-page .scene--cardiac .cardiac-shadow { top: 82%; }
+.cardiac-pathway {
+  position: absolute; z-index: 3; bottom: 24px; left: 24px; right: 24px;
+  display: flex; align-items: center; justify-content: center; gap: 15px;
+  color: #4b627d; font-size: 11px; font-weight: 650; letter-spacing: .02em;
+}
+.cardiac-pathway .i { width: 15px; height: 15px; color: #b4c2d2; }
+@media (min-width: 960px) {
+  .home-page .story { padding-top: 52px; }
+  .home-page .story.is-staged .story__grid { column-gap: clamp(44px, 6vw, 96px); }
+  .home-page .story.is-staged .chapter { min-height: clamp(560px, 76vh, 740px); padding-block: 52px; }
+  .home-page .chapter h3 { max-width: 22ch; font-size: clamp(30px, 2.65vw, 42px); line-height: 1.2; letter-spacing: -.04em; margin-bottom: 22px; }
+  .home-page .chapter h3 .chapter__accent { display: block; margin-top: 4px; }
+  .home-page .chapter p { max-width: 48ch; font-size: 15px; line-height: 1.85; }
+  .home-page .chapter p.chapter__label { gap: 12px; margin-bottom: 26px; font-size: 10px; letter-spacing: .14em; }
+  .home-page .chapter__num { width: 34px; height: 34px; border: 1px solid #efcbd4; border-radius: 50%; background: #fff6f8; font-size: 13px; }
+  .home-page .story.is-staged .story__stage { height: min(610px, calc(100vh - 140px)); }
+  .home-page .stage { border-color: #dfe6ef; border-radius: 22px; background: #fff; box-shadow: 0 16px 48px -24px #17365a25; }
+  .home-page .stage__top { padding: 20px 24px 14px; gap: 11px 16px; background: #fff; }
+  .home-page .stage__count { font-size: 10px; letter-spacing: .12em; }
+  .home-page .stage__title { font-size: 11px; font-weight: 600; color: #5c7089; }
+  .home-page .stage__bars { gap: 8px; height: 38px; }
+  .home-page .stage__beat { height: 38px; min-height: 38px; border-radius: 7px; }
+  .home-page .stage__beat[aria-current="step"] { border-color: #f0ced8; background: #fff4f6; }
+  .home-page .stage__beat .stage__ecg { max-width: 29px; height: 20px; }
+  .home-page .stage .scene.scene--cardiac { inset: 100px 0 0; min-height: 0; border: 0; border-radius: 0; }
+}
+@media (max-width: 959px) {
+  .home-page .story.is-slider .chapter .scene.scene--cardiac { height: 310px; }
+  .home-page .scene--cardiac .cardiac-caption { top: 19px; left: 20px; right: 20px; gap: 10px; }
+  .home-page .scene--cardiac .cardiac-caption__icon { width: 34px; height: 34px; border-radius: 10px; }
+  .home-page .story.is-slider .scene--cardiac .scene__cardiac-image { top: 25%; height: 58%; }
+  .home-page .scene--cardiac .cardiac-shadow { top: 81%; }
+  .home-page .story.is-slider #chapter-1 > .chapter__link { align-self: flex-start; min-height: 46px; padding: 12px 16px; font-size: 12px; gap: 12px; }
+  .home-page .story.is-slider #chapter-1 > .chapter__reassurance { margin-top: 14px; margin-bottom: 0; font-size: 11px; }
+  .cardiac-pathway { bottom: 19px; gap: 12px; font-size: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

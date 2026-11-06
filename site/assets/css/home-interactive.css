@@ -189,7 +189,8 @@
 .home-page .story-intro__note { border-radius: 10px; box-shadow: none; }
 .home-page .story { padding-top: 32px; }
 .home-page .chapter h3 { line-height: 1.22; text-wrap: balance; }
-.home-page .chapter p { line-height: 1.85; }
+.home-page .chapter p { line-height: 1.75; }
+.home-page .chapter__link { align-self: flex-start; margin-top: 8px; font-size: 14px; }
 .home-page .chapter__aside { border-radius: 0 10px 10px 0; }
 .home-page .stage { border-radius: 22px; box-shadow: 0 20px 55px -35px #18365755; }
 .home-page .stage:hover { box-shadow: 0 20px 55px -35px #18365755; }
@@ -204,8 +205,10 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
     opacity: .6; transition: opacity .35s ease;
   }
   .home-page .story.is-staged .chapter.is-active { opacity: 1; }
-  .home-page .chapter h3 { font-size: clamp(27px, 2.5vw, 37px); }
-  .home-page .chapter p { font-size: 16px; }
+  .home-page .chapter h3 { max-width: 23ch; margin-bottom: 20px; font-size: clamp(27px, 2.5vw, 37px); }
+  .home-page .chapter p { max-width: 46ch; font-size: 16px; }
+  .home-page .chapter p.chapter__label { margin-bottom: 22px; gap: 12px; font-size: 11px; letter-spacing: .12em; }
+  .home-page .chapter__num { width: 32px; height: 32px; border-radius: 10px; background: #fff0f3; color: var(--red-700); box-shadow: none; }
   .home-page .stage__top {
     display: grid; grid-template-columns: auto 1fr; gap: 6px 16px;
     top: 0; left: 0; right: 0; padding: 17px 22px 12px;
@@ -234,3 +237,36 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
   .home-page .story.is-slider .story-dot::after { top: 12px; }
 }
 
+
+/* ---------- Spec copy restored on the home page: trust line, feature cards, process preview ---------- */
+.trust-line { margin: 0 0 14px; text-align: center; color: var(--navy); font-size: clamp(.9rem, .85rem + .25vw, 1.05rem); font-weight: 600; letter-spacing: -.005em; }
+/* Homepage process preview: spec heading and text, centred. */
+.home-page .process-preview {
+  padding-block: clamp(48px, 6vw, 88px);
+  margin-bottom: clamp(40px, 5vw, 64px);
+  border-block: 1px solid #e8edf4;
+  background: linear-gradient(115deg, #f6f8fc, #fcfdff 65%, #f8f9fc);
+}
+.process-preview__layout { max-width: 760px; margin-inline: auto; text-align: center; }
+.home-page .process-preview .section-head { max-width: none; margin: 0; text-align: center; }
+.home-page .process-preview .eyebrow {
+  display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 20px;
+  font-size: .75rem; font-weight: 700; letter-spacing: .16em;
+}
+.process-preview .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--red); }
+.home-page .process-preview h2 {
+  max-width: none; margin-bottom: 22px; font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12; letter-spacing: -.035em; text-wrap: balance;
+}
+.home-page .process-preview__intro > p:not(.eyebrow) { font-size: 1rem; line-height: 1.8; }
+.home-page .process-preview .process-section__more { margin: 28px 0 14px; }
+.home-page .process-preview .btn {
+  gap: 20px; background: var(--navy); border-color: var(--navy); color: #fff;
+  border-radius: 9px; box-shadow: 0 6px 14px -10px #10234380;
+}
+.home-page .process-preview .btn:is(:hover, :focus-visible) { background: #243d62; border-color: #243d62; color: #fff; }
+.home-page .process-preview__intro .process-preview__reassurance {
+  display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; font-size: .79rem;
+  color: #586780; line-height: 1.5;
+}
+.process-preview__reassurance .i { width: 14px; height: 14px; flex: none; }
