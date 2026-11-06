@@ -23,6 +23,8 @@ html body.home-page .hero__actions .btn { gap: 10px; }
 html body.home-page .hero__actions .btn .btn__lead { width: 22px; height: 22px; flex: none; }
 html body.home-page .hero__actions .btn--outline { border-color: #0f2547; color: #0f2547; }
 html body.home-page .hero__actions .btn--outline .btn__lead { color: #c4002a; }
+html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) { background: #0f2547; border-color: #0f2547; color: #fff; }
+html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) .btn__lead { color: #ff8aa0; }
 
 /* ---- connected cards ---- */
 
