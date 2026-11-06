@@ -73,6 +73,8 @@
   <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
   <symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
   <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
@@ -236,24 +238,27 @@
 
     <article class="card network-profile" aria-labelledby="doctor-name">
       <div class="profile__panel">
+        <div class="profile__portrait">
+          <img class="profile__img" src="assets/img/team/naseer-samore.jpg" alt="Portrait of Maj Gen (R) Prof. Dr. Naseer Ahmad Samore" width="480" height="600" loading="lazy">
+        </div>
         <div class="profile__header">
-          <p class="profile__eyebrow"><svg class="i" aria-hidden="true"><use href="#i-heart-pulse"/></svg>Clinical profile</p>
           <p class="profile__rank">Maj Gen (R) Prof.</p>
           <h3 id="doctor-name">Dr. Naseer Ahmad Samore <span>HI (M)</span></h3>
           <p class="profile__role">Consultant interventional cardiologist and physician</p>
         </div>
-        <div class="profile__portrait">
-          <img class="profile__img" src="assets/img/team/naseer-samore.jpg" alt="Portrait of Maj Gen (R) Prof. Dr. Naseer Ahmad Samore" width="480" height="600" loading="lazy">
-        </div>
-        <svg class="profile__pulse" viewBox="0 0 300 50" aria-hidden="true"><path d="M0 28h96l9-7 9 7h16l10-22 12 42 11-28 8 8h124"/></svg>
+        <img class="profile__heart" src="assets/img/heart-hero-cutout.webp" alt="" width="1000" height="1000" loading="lazy" aria-hidden="true">
+        <svg class="profile__pulse" viewBox="0 0 300 60" aria-hidden="true"><path d="M0 32h96l9-8 9 8h16l10-26 12 48 11-32 8 10h129"/></svg>
       </div>
       <div class="profile__body">
-        <img class="profile__steth" src="assets/img/heart-stethoscope.webp" alt="" width="1100" height="563" loading="lazy" aria-hidden="true">
+        <div class="profile__top">
+          <span class="profile__badge"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg>Clinical profile</span>
+          <span class="profile__topline" aria-hidden="true"><svg viewBox="0 0 150 46"><path class="blip" d="M0 23h40l6-5 6 5h8l8-17 9 34 7-22 5 5h6"/><path class="heartline" transform="translate(104 3) scale(1.62)" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+        </div>
         <dl class="profile__facts">
-          <div><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-clipboard"/></svg></span><span>Qualifications</span></dt><dd><ul class="profile__credentials" aria-label="Medical qualifications"><li>MBBS</li><li>FCPS (Medicine)</li><li>FCPS (Cardiology)</li><li>FRCP (Glasgow)</li><li>CHPE (NUMS)</li><li>IPPCR (USA)</li></ul></dd></div>
-          <div><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-hospital"/></svg></span><span>Previous appointments</span></dt><dd><ul class="profile__appointments"><li>Former Advisor in Cardiology, Pakistan Army</li><li>Former Commandant and Executive Director, Armed Forces Institute of Cardiology and National Institute of Heart Diseases (AFIC/NIHD)</li></ul></dd></div>
-          <div><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-heart-pulse"/></svg></span><span>Areas of practice</span></dt><dd><ul class="profile__practice"><li>Angiography &amp; angioplasty</li><li>ECG interpretation</li><li>Echocardiography assessment</li><li>Hypertension control</li><li>Chest pain evaluation</li><li>Heart disease management</li><li>Preventive cardiology</li><li>Cholesterol-related risk reduction</li><li>Follow-up care</li></ul></dd></div>
-          <div class="profile__languages"><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-chat"/></svg></span><span>Languages</span></dt><dd><ul class="profile__langs"><li>English</li><li>Urdu</li></ul></dd></div>
+          <div><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-cap"/></svg></span><span>Qualifications</span></dt><dd><ul class="profile__credentials dots" aria-label="Medical qualifications"><li>MBBS</li><li>FCPS (Medicine)</li><li>FCPS (Cardiology)</li><li>FRCP (Glasgow)</li><li>CHPE (NUMS)</li><li>IPPCR (USA)</li></ul></dd></div>
+          <div><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-briefcase"/></svg></span><span>Previous appointments</span></dt><dd><ul class="profile__appointments dots"><li>Former Advisor in Cardiology, Pakistan Army</li><li>Former Commandant and Executive Director, Armed Forces Institute of Cardiology and National Institute of Heart Diseases (AFIC/NIHD)</li></ul></dd></div>
+          <div><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-heart-pulse"/></svg></span><span>Areas of practice</span></dt><dd><ul class="profile__practice checks" aria-label="Areas of practice"><li>Angiography &amp; angioplasty</li><li>Echocardiography assessment</li><li>Chest pain evaluation</li><li>Preventive cardiology</li><li>Follow-up care</li><li>ECG interpretation</li><li>Hypertension control</li><li>Heart disease management</li><li>Cholesterol-related risk reduction</li></ul></dd></div>
+          <div class="profile__languages"><dt><span class="fact-icon" aria-hidden="true"><svg class="i"><use href="#i-globe"/></svg></span><span>Languages</span></dt><dd><ul class="profile__langs"><li>English</li><li>Urdu</li></ul></dd></div>
         </dl>
       </div>
     </article>
