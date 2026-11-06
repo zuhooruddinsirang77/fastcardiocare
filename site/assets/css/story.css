@@ -1,0 +1,705 @@
+/* ==========================================================================
+   Homepage story: seven chapters with a pinned visual stage (desktop)
+   and inline scenes (phones, tablets, no JavaScript).
+   ========================================================================== */
+
+/* Hero cue into the story */
+.story-cue {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 22px;
+  color: var(--navy); font-size: .95rem; font-weight: 700; text-decoration: none;
+}
+.story-cue .i { width: 30px; height: 30px; padding: 7px; box-sizing: border-box; border-radius: 50%; background: var(--red-50); color: var(--red-700); stroke-width: 2.4; transition: transform .2s var(--ease-out); }
+.story-cue:hover { color: var(--red-700); }
+.story-cue:hover .i { transform: translateY(3px); }
+
+/* Intro: heading on the left, a short explanation and a reassurance note on the right */
+.story-intro {
+  position: relative; isolation: isolate;
+  padding-block: clamp(56px, 6vw, 84px) clamp(48px, 5.4vw, 76px);
+  background:
+    radial-gradient(55% 140% at 0% 0%, rgba(211, 10, 53, .045), transparent 62%),
+    linear-gradient(130deg, #fff 25%, #f5f8fd);
+  border-bottom: 1px solid #e8edf5; scroll-margin-top: 95px;
+}
+.story-intro__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(40px, 6vw, 96px); }
+.story-intro__heading, .story-intro__copy { min-width: 0; }
+.story-intro__heading .eyebrow { display: flex; align-items: center; gap: 12px; color: #c50b32; font-size: 11.5px; font-weight: 750; letter-spacing: .16em; margin: 0 0 20px; }
+.story-intro__heading .eyebrow::before { content: ''; width: 28px; height: 2px; flex: none; border-radius: 2px; background: #d30a35; }
+.story-intro h2 { font-size: clamp(30px, 3vw, 44px); line-height: 1.12; letter-spacing: -.032em; margin: 0; color: #11284a; text-wrap: balance; }
+.story-intro h2 > .story-intro__accent { display: block; margin-top: 6px; color: #c00d35; }
+/* A quiet divider separates the two halves, with a short red accent at its top */
+.story-intro__copy { position: relative; padding-left: clamp(28px, 3vw, 44px); border-left: 1px solid #e1e8f1; }
+.story-intro__copy::before { content: ''; position: absolute; left: -1px; top: 0; width: 2px; height: 44px; border-radius: 2px; background: #d30a35; }
+.story-intro__copy > p { color: #4a5b74; font-size: 16.5px; line-height: 1.72; margin: 0; max-width: 54ch; }
+.story-intro__copy .story-intro__note {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; padding: 10px 18px 10px 10px;
+  border: 1px solid #e3e9f2; border-radius: 14px; background: #fff;
+  box-shadow: 0 1px 2px rgba(17, 40, 74, .04), 0 10px 26px -18px rgba(17, 40, 74, .35);
+  color: #23395b; font-size: 14px; line-height: 1.5;
+}
+.story-intro__note .i { width: 34px; height: 34px; flex: none; padding: 8px; box-sizing: border-box; border-radius: 10px; background: #fdecef; color: #c50b32; stroke-width: 1.9; }
+.story-intro__note strong { font-weight: 650; color: inherit; }
+@media (max-width: 1100px) {
+  .story-intro__layout { gap: 44px; }
+  .story-intro__copy > p { font-size: 15.5px; }
+}
+@media (max-width: 767px) {
+  .story-intro { padding-block: 44px 40px; }
+  .story-intro__layout { grid-template-columns: 1fr; gap: 22px; max-width: 650px; }
+  .story-intro__heading .eyebrow { margin-bottom: 16px; font-size: 10.5px; }
+  .story-intro h2 { font-size: 28px; letter-spacing: -.035em; max-width: 560px; text-wrap: initial; }
+  .story-intro__copy { padding-left: 0; border-left: 0; }
+  .story-intro__copy::before { display: none; }
+  .story-intro__copy > p { font-size: 15.5px; line-height: 1.7; max-width: none; }
+  .story-intro__copy .story-intro__note { display: flex; margin-top: 20px; font-size: 13.5px; }
+}
+@media (max-width: 379px) {
+  .story-intro h2 { font-size: 27px; }
+}
+
+/* Story layout */
+.story { padding-block: clamp(24px, 4vw, 48px) var(--section); }
+.story__grid { display: grid; }
+
+.chapter { padding-block: 40px; }
+.chapter + .chapter { border-top: 1px solid var(--line); }
+.chapter p.chapter__label, .chapter__label {
+  display: inline-flex; align-items: center; gap: 12px; margin: 0 0 14px;
+  color: var(--red-700); font-size: 13px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase;
+}
+.chapter__num {
+  display: grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 50%;
+  background: var(--red); color: #fff; font-size: 14px; letter-spacing: 0;
+  box-shadow: 0 0 0 5px var(--red-50);
+}
+.chapter h3 { margin-bottom: 14px; font-size: clamp(1.6rem, 1.15rem + 1.5vw, 2.35rem); line-height: 1.12; letter-spacing: -.028em; }
+.chapter p { max-width: 54ch; color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
+.chapter p.chapter__aside {
+  display: flex; gap: 12px; align-items: flex-start; max-width: 56ch; margin-top: 20px; padding: 14px 16px;
+  border-left: 3px solid var(--navy); border-radius: 0 12px 12px 0; background: var(--bg-soft);
+  color: var(--ink); font-size: .98rem; line-height: 1.6;
+}
+.chapter__aside .i { width: 20px; height: 20px; margin-top: 2px; flex: none; color: var(--navy); }
+.chapter__scene { margin-top: 26px; }
+
+/* ---------- Scenes (shared by inline and staged versions) ---------- */
+.scene {
+  position: relative; display: grid; place-items: center; min-height: 300px; padding: 28px 22px; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 22px;
+  background:
+    radial-gradient(420px 320px at 62% 45%, rgba(217, 8, 44, .09), transparent 70%),
+    linear-gradient(160deg, #ffffff, #f2f6fb);
+}
+
+/* Heart */
+.scene__heart { width: min(64%, 360px); filter: drop-shadow(0 26px 34px rgba(140, 10, 30, .22)); }
+.scene__ecg {
+  position: absolute; left: 0; top: 40%; width: 72%; height: 34%;
+  fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px rgba(255, 40, 60, .9));
+}
+.scene-chip {
+  position: absolute; display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px;
+  border-radius: 12px; background: rgba(255, 255, 255, .96); box-shadow: 0 16px 34px -16px rgba(11, 30, 59, .35);
+  color: var(--navy); font-size: 14px; font-weight: 700; white-space: nowrap;
+}
+.scene-chip .i { width: 18px; height: 18px; color: var(--red); }
+.scene-chip--a { top: 12%; right: 6%; }
+.scene-chip--b { top: 48%; right: 2%; }
+.scene-chip--c { bottom: 10%; left: 6%; }
+
+/* Document sheet */
+.scene-sheet {
+  width: min(100%, 420px); padding: 22px 22px 18px; border: 1px solid var(--line); border-radius: 18px;
+  background: #fff; box-shadow: 0 30px 60px -34px rgba(11, 30, 59, .4);
+}
+.scene-sheet__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 14px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.scene-sheet__head strong { color: var(--navy); font-size: 17px; letter-spacing: -.01em; }
+.scene-badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px;
+  background: var(--red-50); color: var(--red-700); font-size: 12.5px; font-weight: 700; white-space: nowrap;
+}
+.scene-badge .i { width: 14px; height: 14px; }
+.scene-badge--navy { background: #eef2f9; color: var(--navy); }
+.scene-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 11px 0; border-bottom: 1px dashed #e6ebf3; color: var(--ink); font-size: 15px; font-weight: 600; }
+.scene-row:last-child { border-bottom: 0; }
+.scene-bar { display: block; width: 42%; height: 10px; border-radius: 6px; background: linear-gradient(90deg, #e7ecf4, #f2f5fa); }
+.scene-bar--short { width: 30%; }
+.scene-bar--long { width: 36%; }
+.scene-tick { width: 22px; height: 22px; padding: 4px; box-sizing: border-box; flex: none; border-radius: 50%; background: var(--red); color: #fff; stroke-width: 3; }
+.scene-sheet__foot { justify-content: flex-start; gap: 10px; margin: 6px 0 0; color: var(--navy); font-size: 14px; }
+.scene-sheet__foot .i { width: 18px; height: 18px; color: var(--red-700); }
+
+/* Photo with tags */
+.scene--photo { padding: 0; }
+.scene-photo { width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: center 25%; }
+.scene-tag {
+  position: absolute; display: inline-flex; align-items: center; gap: 9px; max-width: calc(100% - 32px); padding: 10px 14px;
+  border-radius: 12px; background: rgba(255, 255, 255, .96); box-shadow: 0 16px 34px -16px rgba(11, 30, 59, .4);
+  color: var(--navy); font-size: 14px; font-weight: 700;
+}
+.scene-tag .i { width: 18px; height: 18px; flex: none; color: var(--red); }
+.scene-tag--a { left: 16px; bottom: 76px; }
+.scene-tag--b { left: 16px; bottom: 20px; }
+.scene-tag--c { right: 16px; top: 16px; }
+
+/* Decision */
+.scene-decide { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: min(100%, 440px); }
+.scene-decide__core {
+  grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 18px;
+  border-radius: 18px; background: var(--navy); color: #fff; box-shadow: 0 24px 44px -26px rgba(11, 30, 59, .7);
+}
+.scene-decide__core .i { width: 34px; height: 34px; color: #ff8d9b; }
+.scene-decide__core strong { color: #fff; font-size: 18px; }
+.scene-option {
+  justify-content: flex-start; gap: 10px; padding: 14px; border: 1px solid var(--line); border-radius: 14px;
+  background: #fff; color: var(--navy); font-size: 14.5px; font-weight: 700;
+}
+.scene-option .i { width: 20px; height: 20px; flex: none; color: var(--red); }
+
+/* Rows and tags arrive one by one when their scene is shown */
+html.motion-ok .scene :is(.scene-row, .scene-tag, .scene-chip) {
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .45s var(--ease-out), transform .45s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms + 160ms);
+}
+html.motion-ok :is(.chapter.is-seen .scene, .stage .scene.is-active) :is(.scene-row, .scene-tag, .scene-chip) { opacity: 1; transform: none; }
+
+/* ---------- Pinned stage (desktop, JavaScript on) ---------- */
+.story__stage { display: none; }
+
+@media (min-width: 960px) {
+  .story.is-staged .story__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); column-gap: clamp(40px, 5vw, 88px); }
+  .story.is-staged .chapter {
+    grid-column: 1; display: flex; flex-direction: column; justify-content: center;
+    min-height: 82vh; padding-block: 48px; border-top: 0;
+    opacity: .3; transition: opacity .45s ease;
+  }
+  .story.is-staged .chapter.is-active { opacity: 1; }
+  .story.is-staged .chapter__scene { display: none; }
+
+  .story.is-staged .story__stage {
+    display: block; grid-column: 2; grid-row: 1 / span 7; align-self: start;
+    position: sticky; top: 104px; height: min(640px, calc(100vh - 136px));
+  }
+  .stage {
+    position: relative; height: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 28px;
+    background:
+      radial-gradient(560px 440px at 60% 50%, rgba(217, 8, 44, .10), transparent 70%),
+      linear-gradient(160deg, #ffffff, #f2f6fb);
+    box-shadow: 0 50px 90px -60px rgba(11, 30, 59, .55);
+  }
+  .stage__top {
+    position: absolute; z-index: 3; top: 20px; left: 24px; right: 24px;
+    display: flex; align-items: center; gap: 14px; color: var(--navy); font-size: 13px; font-weight: 700;
+  }
+  .stage__count { color: var(--red-700); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+  .stage__title { flex: 1; color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stage__bars { display: flex; gap: 6px; width: 180px; }
+  .stage__bars > span { position: relative; flex: 1; height: 4px; overflow: hidden; border-radius: 4px; background: #e3e9f2; }
+  .stage__bars > span::after {
+    content: ""; position: absolute; inset: 0; background: var(--red);
+    transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease-out);
+  }
+  .stage__bars > span.is-done::after, .stage__bars > span.is-current::after { transform: scaleX(1); }
+  .stage__bars > span.is-current { background: var(--red-100); }
+
+  .stage .scene {
+    position: absolute; inset: 60px 0 0; min-height: 0; border: 0; border-radius: 0; background: none;
+    opacity: 0; transform: translateY(18px) scale(.985); pointer-events: none;
+    transition: opacity .55s var(--ease-out), transform .55s var(--ease-out);
+  }
+  .stage .scene.is-active { opacity: 1; transform: none; }
+  .stage .scene--photo { inset: 60px 20px 20px; border-radius: 20px; overflow: hidden; }
+  .stage .scene-photo { min-height: 0; }
+  .stage .scene__heart { width: min(62%, 400px); }
+  .stage .scene-sheet { width: min(84%, 440px); }
+  .stage .scene-decide { width: min(84%, 460px); }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 639px) {
+  .chapter { padding-block: 32px; }
+  .scene { min-height: 260px; padding: 22px 16px; border-radius: 18px; }
+  .scene__heart { width: min(60%, 220px); }
+  .scene-chip { padding: 8px 11px; font-size: 13px; }
+  .scene-chip--a { top: 8%; right: 4%; }
+  .scene-chip--b { top: 46%; right: 2%; }
+  .scene-chip--c { bottom: 8%; left: 4%; }
+  .scene-photo { min-height: 260px; max-height: 300px; }
+  .scene-tag { font-size: 13px; padding: 8px 11px; }
+  .scene-tag--a { bottom: 64px; }
+  .scene-tag--c { display: none; }
+  .scene-row { font-size: 14px; padding: 10px 0; }
+  .scene-decide { gap: 10px; }
+  .scene-option { padding: 12px; font-size: 13.5px; }
+  html body main .chapter p.chapter__aside { font-size: 14.5px; }
+}
+@media (max-width: 639px) {
+  .scene.scene--photo { padding: 0; }
+  .chapter p.chapter__label { gap: 10px; font-size: 12px; letter-spacing: .07em; line-height: 1.4; }
+  .chapter__num { width: 28px; height: 28px; font-size: 13px; box-shadow: 0 0 0 4px var(--red-50); }
+}
+
+/* ==========================================================================
+   Heartbeat details: ECG progress trace and a gentle pulse per beat.
+   Paused by the homepage motion toggle and by reduced-motion settings.
+   ========================================================================== */
+@media (min-width: 960px) {
+  .stage__bars { width: 224px; height: 24px; }
+  .stage__ecg { display: block; width: 100%; height: 100%; overflow: visible; }
+  .stage__ecg path {
+    fill: none; stroke: #dfe5ef; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    vector-effect: non-scaling-stroke; transition: stroke .3s ease;
+  }
+  .stage__ecg path.is-done { stroke: var(--red); }
+  .stage__ecg path.is-current { stroke: var(--red); stroke-width: 2.4; filter: drop-shadow(0 0 3px rgba(217, 8, 44, .45)); }
+  html.motion-ok body:not(.motion-paused) .stage__ecg path.is-current {
+    stroke-dasharray: 1; stroke-dashoffset: 1; animation: fcc-trace .9s var(--ease-in-out) forwards;
+  }
+}
+@keyframes fcc-trace { to { stroke-dashoffset: 0; } }
+
+/* The beat number gives one soft "lub-dub" when its chapter becomes active */
+@keyframes fcc-beat {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 5px var(--red-50); }
+  14% { transform: scale(1.16); box-shadow: 0 0 0 9px rgba(217, 8, 44, .16); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.08); box-shadow: 0 0 0 7px rgba(217, 8, 44, .12); }
+  60% { transform: scale(1); box-shadow: 0 0 0 5px var(--red-50); }
+}
+html.motion-ok body:not(.motion-paused) .chapter.is-active .chapter__num { animation: fcc-beat 1.1s ease-out 1; }
+
+/* ==========================================================================
+   Story motion (more life, still calm). Everything below runs only when
+   motion is allowed and the homepage "Pause motion" control is not active.
+   ========================================================================== */
+@keyframes fcc-story-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes fcc-story-beat {
+  0%, 46%, 100% { transform: scale(1); }
+  10% { transform: scale(1.035); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.018); }
+}
+@keyframes fcc-story-draw { to { stroke-dashoffset: 0; } }
+@keyframes fcc-story-zoom { from { transform: scale(1.09); } to { transform: scale(1); } }
+@keyframes fcc-story-ring {
+  0% { box-shadow: 0 24px 44px -26px rgba(11, 30, 59, .7), 0 0 0 0 rgba(217, 8, 44, .45); }
+  70% { box-shadow: 0 24px 44px -26px rgba(11, 30, 59, .7), 0 0 0 18px rgba(217, 8, 44, 0); }
+  100% { box-shadow: 0 24px 44px -26px rgba(11, 30, 59, .7), 0 0 0 0 rgba(217, 8, 44, 0); }
+}
+
+/* --- Chapter text rises in, line by line, each time its beat becomes active (desktop) --- */
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.is-active > :not(.chapter__scene) {
+  animation: fcc-story-rise .6s var(--ease-out) both;
+}
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.is-active > :nth-child(2) { animation-delay: .07s; }
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.is-active > :nth-child(3) { animation-delay: .14s; }
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.is-active > :nth-child(4) { animation-delay: .21s; }
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.is-active > :nth-child(5) { animation-delay: .28s; }
+
+/* --- Phones/tablets: each chapter rises in once as it scrolls into view --- */
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter:not(.is-seen) > * { opacity: 0; transform: translateY(18px); }
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter.is-seen > * {
+  animation: fcc-story-rise .6s var(--ease-out) both;
+}
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter.is-seen > :nth-child(2) { animation-delay: .07s; }
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter.is-seen > :nth-child(3) { animation-delay: .14s; }
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter.is-seen > :nth-child(4) { animation-delay: .21s; }
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter.is-seen > :nth-child(n+5) { animation-delay: .28s; }
+
+@media (min-width: 960px) {
+  /* --- Reading rail: a thin line beside the chapters that fills as you scroll --- */
+  .story.is-staged .story__grid { position: relative; }
+  .story.is-staged .story__grid::before,
+  .story.is-staged .story__grid::after {
+    content: ""; position: absolute; left: -28px; top: 48px; bottom: 48px; width: 2px; border-radius: 2px; pointer-events: none;
+  }
+  .story.is-staged .story__grid::before { background: var(--line); }
+  .story.is-staged .story__grid::after {
+    background: linear-gradient(var(--red), var(--red-700));
+    transform-origin: top; transform: scaleY(var(--story-progress, 0));
+  }
+
+  /* --- Scenes travel with the scroll direction --- */
+  .stage[data-dir="down"] .scene:not(.is-active) { transform: translateY(28px) scale(.985); }
+  .stage[data-dir="up"] .scene:not(.is-active) { transform: translateY(-28px) scale(.985); }
+
+  /* --- The soft glow drifts to a new place for each beat --- */
+  .stage::before {
+    content: ""; position: absolute; z-index: 0; width: 70%; aspect-ratio: 1; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(217, 8, 44, .14), transparent 65%);
+    left: 15%; top: 18%;
+    transition: left 1.1s var(--ease-out), top 1.1s var(--ease-out), opacity .6s ease;
+  }
+  .stage[data-beat="2"]::before { left: 30%; top: 8%; }
+  .stage[data-beat="3"]::before { left: -6%; top: 30%; }
+  .stage[data-beat="4"]::before { left: 24%; top: 26%; }
+  .stage[data-beat="5"]::before { left: 10%; top: 4%; }
+  .stage[data-beat="6"]::before { left: 36%; top: 34%; }
+  .stage[data-beat="7"]::before { left: 4%; top: 22%; }
+  .stage .scene { z-index: 1; }
+
+  /* --- Gentle parallax inside the active scene as you read through the beat --- */
+  html.motion-ok body:not(.motion-paused) .stage .scene.is-active :is(.scene__heart, .scene-sheet, .scene-decide) {
+    transform: translateY(calc((var(--scene-p, .5) - .5) * -34px));
+    transition: transform .25s linear;
+  }
+}
+
+/* --- Heart: a slow, soft heartbeat while its scene is showing, and the ECG draws in --- */
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active).scene--heart .scene__heart {
+  animation: fcc-story-beat 2.6s ease-in-out .6s infinite;
+}
+html.motion-ok body:not(.motion-paused) .scene--heart .scene__ecg path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active).scene--heart .scene__ecg path {
+  animation: fcc-story-draw 1.6s var(--ease-in-out) .25s forwards;
+}
+
+/* --- Enquiry: placeholder fields fill in as if being typed --- */
+html.motion-ok body:not(.motion-paused) .scene .scene-bar {
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform .7s var(--ease-out); transition-delay: calc(var(--i, 0) * 120ms + 380ms);
+}
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row .scene-bar { transform: none; }
+
+/* --- Estimate and records: ticks pop in after each line --- */
+html.motion-ok body:not(.motion-paused) .scene .scene-tick {
+  transform: scale(0); transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+}
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row:nth-child(2) .scene-tick { transition-delay: .45s; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row:nth-child(3) .scene-tick { transition-delay: .55s; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row:nth-child(4) .scene-tick { transition-delay: .65s; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row:nth-child(5) .scene-tick { transition-delay: .75s; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row:nth-child(6) .scene-tick { transition-delay: .85s; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-row:nth-child(7) .scene-tick { transition-delay: .95s; }
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-tick { transform: none; }
+
+/* --- Photos: a slow settle-in zoom --- */
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active).scene--photo .scene-photo {
+  animation: fcc-story-zoom 6s var(--ease-out) both;
+}
+
+/* --- Decision: the core card sends out one soft ring --- */
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) .scene-decide__core {
+  animation: fcc-story-ring 1.6s ease-out .3s 1;
+}
+
+/* Paused or reduced motion: everything is shown in its final state */
+body.motion-paused .story .scene :is(.scene-row, .scene-tag, .scene-chip, .scene-bar, .scene-tick) { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .story .scene :is(.scene-row, .scene-tag, .scene-chip, .scene-bar, .scene-tick) { opacity: 1 !important; transform: none !important; }
+  .story .chapter > * { opacity: 1 !important; transform: none !important; }
+}
+
+/* ==========================================================================
+   Story motion, round two: word reveals, travelling pulse, beat numbers,
+   photo wipes and floating labels. Paused by "Pause motion" / reduced motion.
+   ========================================================================== */
+@keyframes fcc-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+@keyframes fcc-ripple { 0% { transform: translate(-50%, -50%) scale(1); opacity: .55; } 100% { transform: translate(-50%, -50%) scale(3.2); opacity: 0; } }
+@keyframes fcc-num-in { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@keyframes fcc-flip { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+
+/* --- Headlines reveal word by word from behind a mask --- */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.w > span { display: inline-block; }
+html.motion-ok body:not(.motion-paused) .story.is-enhanced .chapter h3 .w > span,
+html.motion-ok body:not(.motion-paused) .story-intro h2 .w > span {
+  transform: translateY(108%);
+  transition: transform .7s cubic-bezier(.2, .8, .2, 1);
+  transition-delay: calc(var(--wi, 0) * 55ms + 80ms);
+}
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.is-active h3 .w > span,
+html.motion-ok body:not(.motion-paused) .story.is-enhanced:not(.is-staged) .chapter.is-seen h3 .w > span,
+html.motion-ok body:not(.motion-paused) .story-intro.is-seen h2 .w > span { transform: none; }
+/* Chapters already read keep their headline shown (dimmed); upcoming ones wait for their reveal */
+html.motion-ok body:not(.motion-paused) .story.is-staged .chapter.was-active h3 .w > span { transform: none; }
+
+/* --- A glowing pulse travels down the reading line --- */
+.story-pulse { display: none; }
+@media (min-width: 960px) {
+  .story.is-staged .story-pulse {
+    display: block; position: absolute; z-index: 2; left: -27px;
+    top: calc(48px + (100% - 96px) * var(--story-progress, 0));
+    width: 12px; height: 12px; border-radius: 50%; transform: translate(-50%, -50%);
+    background: var(--red); box-shadow: 0 0 0 4px #fff, 0 0 14px 2px rgba(217, 8, 44, .55);
+    transition: top .15s linear;
+  }
+  .story.is-staged .story-pulse::after {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; border-radius: 50%;
+    background: rgba(217, 8, 44, .5); transform: translate(-50%, -50%); opacity: 0;
+  }
+  html.motion-ok body:not(.motion-paused) .story.is-staged .story-pulse::after { animation: fcc-ripple 1.6s ease-out infinite; }
+
+  /* --- Large faint beat number behind each scene --- */
+  .stage__num {
+    position: absolute; z-index: 0; right: 26px; bottom: 10px; pointer-events: none;
+    color: rgba(16, 36, 72, .055); font-size: clamp(110px, 11vw, 170px); font-weight: 800; line-height: 1; letter-spacing: -.05em;
+  }
+  html.motion-ok body:not(.motion-paused) .stage__num.is-changing { animation: fcc-num-in .7s var(--ease-out) both; }
+  html.motion-ok body:not(.motion-paused) .stage__count.is-changing { animation: fcc-flip .45s var(--ease-out) both; }
+
+  /* --- Photos open with a soft wipe --- */
+  html.motion-ok body:not(.motion-paused) .stage .scene--photo {
+    clip-path: inset(10% 12% 10% 12% round 20px);
+    transition: opacity .55s var(--ease-out), transform .55s var(--ease-out), clip-path .9s cubic-bezier(.2, .8, .2, 1);
+  }
+  html.motion-ok body:not(.motion-paused) .stage .scene--photo.is-active { clip-path: inset(0 0 0 0 round 20px); }
+}
+
+/* --- Labels and chips drift gently while their scene is showing --- */
+html.motion-ok body:not(.motion-paused) :is(.chapter.is-seen .scene, .stage .scene.is-active) :is(.scene-chip, .scene-tag) {
+  animation: fcc-float 5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -1.4s);
+}
+
+/* Paused or reduced motion: headlines fully shown */
+body.motion-paused .w > span { transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .w > span { transform: none !important; transition: none !important; }
+}
+
+/* ==========================================================================
+   Closing sections: procedures preview and final call to action.
+   Same rules as the story: off under "Pause motion" and reduced motion.
+   ========================================================================== */
+@keyframes fcc-band-in { from { opacity: 0; transform: translateY(32px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes fcc-spark { from { stroke-dashoffset: 1.1; } to { stroke-dashoffset: -.1; } }
+@keyframes fcc-shine { 0%, 70% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(260%) skewX(-20deg); } }
+
+/* Headlines reveal word by word */
+html.motion-ok body:not(.motion-paused) .is-finale h2 .w > span {
+  transform: translateY(108%);
+  transition: transform .7s cubic-bezier(.2, .8, .2, 1);
+  transition-delay: calc(var(--wi, 0) * 55ms + 80ms);
+}
+html.motion-ok body:not(.motion-paused) .is-finale.is-seen h2 .w > span { transform: none; }
+
+/* Procedures: heading text and button (cards have their own rules below) */
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale:not(.is-seen) :is(.section-head > p, .procedures-section__all) { opacity: 0; }
+
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale.is-seen .section-head > p { animation: fcc-story-rise .6s var(--ease-out) .15s backwards; }
+
+
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale.is-seen .procedures-section__all { animation: fcc-story-rise .6s var(--ease-out) .8s backwards; }
+
+/* Final call to action: band rises, ECG draws, a pulse keeps travelling */
+html.motion-ok body:not(.motion-paused) .conversation-section.is-finale:not(.is-seen) .cta-band { opacity: 0; }
+html.motion-ok body:not(.motion-paused) .conversation-section.is-finale.is-seen .cta-band { animation: fcc-band-in .8s var(--ease-out) backwards; }
+.conversation-section .cta-band > :not(.band-ecg) { position: relative; z-index: 1; }
+.band-ecg { position: absolute; z-index: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 30%; pointer-events: none; }
+.band-ecg path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.band-ecg__line { stroke: rgba(255, 255, 255, .22); stroke-width: 1.6; }
+.band-ecg__spark { stroke: rgba(255, 255, 255, .9); stroke-width: 2.4; stroke-dasharray: .08 .92; stroke-dashoffset: 1.1; opacity: 0; filter: drop-shadow(0 0 6px rgba(255, 255, 255, .9)); }
+html.motion-ok body:not(.motion-paused) .conversation-section.is-finale:not(.is-seen) .band-ecg__line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+html.motion-ok body:not(.motion-paused) .conversation-section.is-finale.is-seen .band-ecg__line {
+  stroke-dasharray: 1; animation: fcc-story-draw 2s var(--ease-in-out) .4s both;
+}
+html.motion-ok body:not(.motion-paused) .conversation-section.is-finale.is-seen .band-ecg__spark {
+  opacity: 1; animation: fcc-spark 3.6s linear 2.4s infinite;
+}
+
+/* Button shine every few seconds */
+.conversation-section .cta-band .btn { position: relative; overflow: hidden; }
+.conversation-section .cta-band .btn::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 40%; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(217, 8, 44, .14), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+}
+html.motion-ok body:not(.motion-paused) .conversation-section.is-finale.is-seen .cta-band .btn::after { animation: fcc-shine 4.5s ease-in-out 2.2s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .is-finale :is(.section-head > p, .proc-mini, .procedures-section__all, .cta-band) { opacity: 1 !important; animation: none !important; }
+  .band-ecg__spark { display: none; }
+}
+
+/* ==========================================================================
+   Procedures preview: stronger entrance, image wipe, pointer tilt.
+   ========================================================================== */
+@keyframes fcc-card-in {
+  from { opacity: 0; transform: perspective(900px) translateY(56px) rotateX(14deg) scale(.96); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fcc-curtain { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes fcc-fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Hidden until each card reaches the screen */
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini:not(.is-seen) { opacity: 0; }
+
+/* Card swings up into place; on wide screens the four cards cascade */
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen {
+  transform-origin: 50% 100%;
+  animation: fcc-card-in .85s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .procedure-photo {
+  animation: fcc-curtain .9s cubic-bezier(.65, 0, .35, 1) backwards, fcc-story-zoom 1.8s var(--ease-out) backwards;
+}
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > * {
+  animation: fcc-fade-up .55s var(--ease-out) backwards;
+}
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > :nth-child(1) { animation-delay: .45s; }
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > :nth-child(2) { animation-delay: .55s; }
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > :nth-child(3) { animation-delay: .65s; }
+@media (min-width: 960px) {
+  html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen,
+  html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .procedure-photo { animation-delay: calc(var(--ci, 0) * 130ms); }
+  html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > :nth-child(1) { animation-delay: calc(var(--ci, 0) * 130ms + .45s); }
+  html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > :nth-child(2) { animation-delay: calc(var(--ci, 0) * 130ms + .55s); }
+  html.motion-ok body:not(.motion-paused) .procedures-section.is-finale .proc-mini.is-seen .proc-mini__body > :nth-child(3) { animation-delay: calc(var(--ci, 0) * 130ms + .65s); }
+}
+
+/* Pointer tilt (desktop mouse only; set by story.js) */
+.procedures-section .proc-mini { transition: transform .25s var(--ease-out), box-shadow .25s ease, border-color .25s ease; }
+.procedures-section .proc-mini.is-tilting {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px);
+  box-shadow: 0 30px 50px -28px rgba(11, 30, 59, .45);
+}
+.procedures-section .proc-mini.is-tilting .procedure-photo { transform: scale(1.06); }
+
+/* Faint ECG drawn behind the heading */
+.procedures-section .section-head { position: relative; }
+.procedures-section .section-head > :not(.proc-ecg) { position: relative; z-index: 1; }
+.proc-ecg { position: absolute; z-index: 0; left: 0; top: -18%; width: 100%; height: 46%; pointer-events: none; }
+.proc-ecg path { fill: none; stroke: rgba(217, 8, 44, .14); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale:not(.is-seen) .proc-ecg path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+html.motion-ok body:not(.motion-paused) .procedures-section.is-finale.is-seen .proc-ecg path { stroke-dasharray: 1; animation: fcc-story-draw 1.8s var(--ease-in-out) .2s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .procedures-section .proc-mini, .procedures-section .proc-mini * { opacity: 1 !important; animation: none !important; clip-path: none !important; }
+}
+
+/* ==========================================================================
+   Phones and tablets: the story as a clean, swipeable card deck.
+   Desktop (960px and up) is unchanged.
+   ========================================================================== */
+.story-controls, .chapter__band { display: none; }
+
+@media (max-width: 959px) {
+  .story.is-slider { padding-block: 8px var(--section); overflow: hidden; }
+
+  /* ---- Controls above the cards: segmented progress, label, arrows ---- */
+  .story.is-slider .story-controls {
+    display: flex; flex-direction: column; gap: 12px;
+    width: min(100% - 32px, 600px); margin: 0 auto 14px;
+  }
+  .story-dots { display: flex; gap: 5px; }
+  .story-dot {
+    position: relative; flex: 1; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer;
+  }
+  .story-dot::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 4px; border-radius: 4px; background: #dfe5ef;
+  }
+  .story-dot::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 10px; height: 4px; border-radius: 4px; background: var(--red);
+    transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease-out);
+  }
+  .story-dot.is-done::after, .story-dot.is-active::after { transform: scaleX(1); }
+  .story-dot:focus-visible { outline: 3px solid var(--focus); outline-offset: 0; border-radius: 6px; }
+  .story-controls__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .story-status {
+    flex: 1; min-width: 0; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    color: var(--navy); font-size: 14px; font-weight: 750;
+  }
+  .story-controls__btns { display: flex; gap: 8px; flex: none; }
+  .story-nav {
+    display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--navy); cursor: pointer;
+    transition: background-color .2s ease, color .2s ease, opacity .2s ease, transform .2s var(--ease-out);
+  }
+  .story-nav[data-dir="1"] { border-color: var(--red); background: var(--red); color: #fff; }
+  .story-nav .i { width: 19px; height: 19px; stroke-width: 2.3; }
+  .story-nav[data-dir="-1"] .i { transform: rotate(180deg); }
+  .story-nav:active:not(:disabled) { transform: scale(.93); }
+  .story-nav:disabled { opacity: .35; cursor: default; }
+  .story-nav[data-dir="1"]:disabled { border-color: var(--line); background: #fff; color: var(--navy); }
+
+  /* ---- Track ---- */
+  .story.is-slider .story__grid {
+    display: flex; align-items: flex-start; gap: 12px; width: 100%; max-width: none; margin: 0;
+    padding: 4px max(16px, calc((100% - 600px) / 2)) 12px;
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory;
+    scroll-padding-inline: max(16px, calc((100% - 600px) / 2));
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .story.is-slider .story__grid::-webkit-scrollbar { display: none; }
+  .story.is-slider .story__grid:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; border-radius: 22px; }
+
+  /* ---- Cards ---- */
+  .story.is-slider .chapter {
+    flex: 0 0 min(calc(100% - 28px), 600px); scroll-snap-align: start; scroll-snap-stop: always;
+    display: flex; flex-direction: column; margin: 0; padding: 0; overflow: hidden;
+    border: 1px solid var(--line); border-radius: 22px; background: #fff;
+    box-shadow: 0 18px 40px -30px rgba(11, 30, 59, .45);
+    transition: opacity .35s ease, transform .35s var(--ease-out);
+  }
+  .story.is-slider .chapter + .chapter { border-top: 1px solid var(--line); }
+  .story.is-slider .chapter:not(.is-active) { opacity: .6; transform: scale(.97); }
+  .story.is-slider .chapter > :not(.chapter__scene) { margin-inline: 20px; }
+  .story.is-slider .chapter > :last-child { margin-bottom: 22px; }
+
+  /* Picture strip at the top of each card */
+  .story.is-slider .chapter__scene { order: -1; margin: 0 0 18px; }
+  .story.is-slider .chapter .scene {
+    min-height: 0; height: 170px; padding: 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0;
+  }
+  .story.is-slider .chapter .scene :is(.scene-chip, .scene-tag) { display: none; }
+  .story.is-slider .chapter .scene__heart { width: auto; height: 150px; }
+  .story.is-slider .chapter .scene__ecg { top: 36%; width: 64%; }
+  .story.is-slider .chapter .scene--photo .scene-photo { width: 100%; height: 170px; min-height: 0; max-height: none; object-position: center 22%; }
+
+  /* Documents and the decision card are replaced by a calm icon band on small screens */
+  .story.is-slider .chapter__scene:has(.chapter__band) .scene { display: none; }
+  .story.is-slider .chapter__band {
+    position: relative; display: flex; align-items: center; gap: 14px; height: 116px; padding: 0 20px; overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80' preserveAspectRatio='none'%3E%3Cpath d='M0 46h170l12-16 14 32 16-52 16 60 12-28 10 8h150' fill='none' stroke='%23d9082c' stroke-opacity='.16' stroke-width='2' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 70px no-repeat,
+      radial-gradient(280px 160px at 80% 30%, #ffe1e6, transparent 70%),
+      linear-gradient(160deg, #fff6f7, #f4f7fb);
+  }
+  .chapter__band-icon {
+    display: grid; place-items: center; width: 56px; height: 56px; flex: none; border-radius: 16px;
+    background: #fff; color: var(--red); box-shadow: 0 12px 24px -14px rgba(217, 8, 44, .55);
+  }
+  .chapter__band-icon .i { width: 28px; height: 28px; stroke-width: 1.7; }
+  .chapter__band-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .chapter__band-text strong { color: var(--navy); font-size: 15.5px; line-height: 1.3; }
+  .chapter__band-text small { color: var(--muted); font-size: 13px; line-height: 1.4; }
+
+  /* Words */
+  .story.is-slider .chapter p.chapter__label { gap: 10px; margin-bottom: 10px; font-size: 12px; letter-spacing: .08em; line-height: 1.35; }
+  .story.is-slider .chapter__num { width: 26px; height: 26px; font-size: 12.5px; box-shadow: 0 0 0 4px var(--red-50); }
+  .story.is-slider .chapter h3 { margin-bottom: 10px; font-size: clamp(20px, 5.4vw, 24px); line-height: 1.2; }
+  html body main .story.is-slider .chapter p { font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
+  html body main .story.is-slider .chapter p.chapter__aside { margin-top: 8px; padding: 11px 13px; font-size: 14px; line-height: 1.5; }
+  .story.is-slider .chapter__aside .i { width: 18px; height: 18px; }
+
+  /* Motion inside the deck: headline words reveal on the active card only */
+  html.motion-ok body:not(.motion-paused) .story.is-slider .chapter:not(.is-seen) > * { opacity: 1; transform: none; }
+  html.motion-ok body:not(.motion-paused) .story.is-slider .chapter.is-seen > * { animation: none; }
+  html.motion-ok body:not(.motion-paused) .story.is-slider .chapter h3 .w > span { transform: translateY(108%); }
+  html.motion-ok body:not(.motion-paused) .story.is-slider .chapter:is(.is-active, .was-active) h3 .w > span { transform: none; }
+  html.motion-ok body:not(.motion-paused) .story.is-slider .chapter.is-active .chapter__band-icon { animation: fcc-beat 1.1s ease-out 1; }
+}
+
+@media (max-width: 359px) {
+  .story.is-slider .chapter > :not(.chapter__scene) { margin-inline: 16px; }
+  .story-status { font-size: 13px; }
+}
+
+@media (max-width: 959px) {
+  /* Keep the deck controls in view (just under the header) while reading a card */
+  .story.is-slider { overflow: visible; overflow-x: clip; }
+  .story.is-slider .story-controls {
+    position: sticky; top: 66px; z-index: 6;
+    width: 100%; max-width: none; margin: 0 0 12px; padding: 10px max(16px, calc((100% - 600px) / 2)) 10px;
+    background: rgba(255, 255, 255, .96); border-bottom: 1px solid transparent;
+  }
+  @supports (backdrop-filter: blur(8px)) {
+    .story.is-slider .story-controls { background: rgba(255, 255, 255, .86); backdrop-filter: saturate(1.4) blur(10px); }
+  }
+}
+
+/* The procedures heading ECG competed with the label; keep the heading clean. */
+.procedures-section .proc-ecg { display: none; }

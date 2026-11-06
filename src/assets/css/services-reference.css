@@ -1,0 +1,188 @@
+/* Refinements from the additional page references. */
+.reference-ecg { position: absolute; width: 110%; height: 42%; top: 34%; left: -5%; fill: none; stroke: #fff; stroke-width: 3; filter: drop-shadow(0 0 5px #ff4670); }
+.service-reference-wave { position: absolute; z-index: 1; right: 0; bottom: -1px; width: 62%; height: 150px; pointer-events: none; }
+.service-hero--journey .service-heart, .service-hero--estimates .service-heart { min-height: 320px; }
+.service-hero--journey .service-heart img, .service-hero--estimates .service-heart img { height: 335px; }
+.service-hero--journey > .container { min-height: 400px; padding-block: 30px 40px; }
+.service-hero--journey .service-hero__actions, .service-hero--journey .service-hero__reassurance { display: none; }
+.journey-section { padding-block: 40px 55px; }
+.journey-layout { display: block; max-width: 1160px; margin-inline: auto; }
+.journey-section .steps { max-width: none; }
+.journey-section .step { grid-template-columns: 48px 1fr; align-items: center; gap: 28px; padding-bottom: 19px; }
+.journey-section .step::before { left: 23px; top: 50%; bottom: -50%; width: 1px; background: #f5a8b9; }
+.journey-section .step:last-child::before { display: none; }
+.journey-section .step__marker { position: relative; z-index: 1; margin: 0; background: linear-gradient(140deg, #ff1b45, #df0029); border: 0; color: #fff; font-size: 20px; font-weight: 700; width: 43px; height: 43px; box-shadow: 0 0 0 5px #fff, 0 0 0 7px #fbdce4; }
+.journey-section .step__card { display: grid; grid-template-columns: 78px minmax(0, 1fr) 180px; gap: 22px; align-items: center; padding: 23px; border-radius: 18px; box-shadow: 0 3px 7px #15304f10; border: 1px solid #e9edf4; }
+.journey-step-icon { display: grid; place-items: center; width: 77px; height: 77px; border-radius: 18px; background: linear-gradient(135deg, #fff1f5, #ffe9ee); color: #e00935; }
+.journey-step-icon .i { width: 43px; height: 43px; stroke-width: 1.4; }
+.journey-step-copy { border-left: 1px solid #dbe3ef; padding-left: 21px; }
+.journey-section .step__card .num { display: none; }
+.journey-section .step__card h3 { font-size: 19px; margin-bottom: 8px; }
+.journey-section .step__card p { font-size: 14px; line-height: 1.5; }
+.journey-section .tags { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 0; }
+.journey-section .tag { border: 0; background: #f0f3fa; border-radius: 25px; padding: 8px 12px; font-size: 13px; line-height: 1.3; }
+.journey-section .tag .i { width: 17px; height: 17px; color: #bc1234; }
+.journey-section .step:nth-child(5) .step__card { border: 1px solid #e9edf4; background: #fff; }
+.journey-section .tag--decision { background: #ffdee6; color: #c8002f; }
+.handover-section { overflow: hidden; padding-block: 60px; background: radial-gradient(ellipse at 75% 50%, #ffe3ec80, transparent 60%), linear-gradient(110deg, #fffafb, #fff1f5); border-top: 1px solid #ffe0e8; }
+.handover-card { position: relative; margin-right: 75px; padding-right: 40px !important; border-top: 0 !important; box-shadow: 0 8px 18px #3e193b14; }
+.handover-card .checklist { position: relative; z-index: 1; }
+.handover-card .checklist li::before { background-color: #ffe2e9; }
+.handover-art { position: absolute; right: -105px; top: 5%; width: 135px; height: 180px; transform: rotate(-9deg); z-index: 2; }
+.handover-art > .i:first-child { width: 125px; height: 160px; stroke-width: .9; color: #ee1948; fill: #fff; filter: drop-shadow(3px 5px 2px #6b123326); }
+.handover-art__heart { position: absolute; right: -10px; bottom: -10px; width: 90px; height: 90px; color: #d70939; fill: #ff6c8a; stroke-width: 1; filter: drop-shadow(3px 5px 2px #6b123326); }
+.service-hero--estimates > .container { min-height: 390px; padding-block: 25px 35px; }
+.service-hero--estimates .service-hero__reassurance { display: none; }
+.service-hero--estimates .service-hero__actions { gap: 15px; }
+.service-hero--estimates .btn { font-size: 14px; padding-inline: 18px; }
+.service-hero--estimates .lead { font-size: 14px; line-height: 1.55; }
+.estimate-inclusions { padding-top: 28px; }
+.estimate-inclusions .section-head { text-align: center; margin-inline: auto; max-width: 1000px; margin-bottom: 28px; }
+.estimate-inclusions .section-head h2 { font-size: 28px; }
+.estimate-inclusions .section-head h2::after { content: ''; display: block; width: 45px; height: 3px; background: #ed0a39; margin: 14px auto; }
+.estimate-inclusions .section-head > .eyebrow { display: none; }
+.estimate-inclusions .section-head p { font-size: 13px; }
+.estimate-inclusions .tile { display: flex; align-items: center; gap: 15px; padding: 15px; border-radius: 12px; }
+.estimate-inclusions .tile > .i { margin: 0; flex: none; width: 49px; height: 49px; padding: 10px; }
+.estimate-inclusions .tile strong { font-size: 13px; line-height: 1.3; margin-bottom: 3px; }
+.estimate-inclusions .tile span { font-size: 13px; line-height: 1.4; }
+.service-hero--faqs { background: linear-gradient(100deg, #fafcff, #e9f3fb); }
+.service-hero--faqs > .container { min-height: 340px; padding-block: 25px 35px; }
+.service-hero--faqs h1 { font-size: 43px; }
+.service-hero--faqs .lead { font-size: 14px; max-width: 440px; }
+.service-hero--faqs .faq-search { margin-top: 20px; max-width: 500px; }
+.faq-clinician { position: absolute; top: 0; bottom: 0; right: 0; width: 49%; overflow: hidden; z-index: -1; mask-image: linear-gradient(to right, transparent, #000 35%); }
+.faq-clinician img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.faq-clinician > .i { position: absolute; top: 17%; right: 10%; width: 135px; height: 135px; stroke-width: .8; color: #d70d3d; fill: #ffffff70; }
+.service-hero--faqs > .service-reference-wave { width: 50%; height: 120px; }
+.faq-sidebar { padding: 27px 23px; border: 1px solid #17395d; border-radius: 14px; background: linear-gradient(120deg, #12375e, #0c2142); box-shadow: 0 5px 15px #102c5212; }
+.faq-sidebar > .eyebrow { display: none; }
+.faq-sidebar h2 { font-size: 21px; color: #fff; }
+.filter-bar--vertical { margin-top: 23px; gap: 5px; }
+.filter-bar--vertical .filter-chip { color: #edf3fa; font-size: 13px; border-radius: 8px; padding: 12px; }
+.filter-bar--vertical .filter-chip[aria-pressed="true"] { color: #fff; background: linear-gradient(100deg, #df0034, #ed1841); border-color: transparent; }
+.filter-bar--vertical .filter-chip:hover { background: #ffffff15; }
+.filter-bar--vertical .filter-chip[aria-pressed="true"]:hover { background: #ce0630; }
+.faq-sidebar .faq-help { background: #ffffff09; border-color: #ffffff20; padding: 18px; }
+.faq-sidebar .faq-help h3, .faq-sidebar .service-text-link { color: #fff; }
+.faq-sidebar .faq-help p { color: #d4dfed; }
+.faq-sidebar .faq-help > .i { color: #ff819c; }
+.faq-main .faq[open] { background: linear-gradient(115deg, #fff7fa, #ffe7ee); border-color: #f6becd; }
+.faq-main .faq__icon { background: #e40032; color: #fff; width: 23px; height: 23px; }
+.faq-main .faq[open] .faq__icon { background: #e40032; }
+.contact-page .enquiry-section { padding-top: 30px; background: radial-gradient(ellipse at 0 45%, #edf5fc, transparent 55%), #fff; }
+.contact-page .enquiry-section > .container > .alert-emergency { padding: 13px 17px; }
+.contact-page .enquiry-section > .container > .alert-emergency h2 { font-size: 13px; }
+.contact-page .enquiry-section > .container > .alert-emergency p { font-size: 13px; }
+.contact-page .contact-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 35px; }
+.contact-introduction { padding: 12px 0; min-width: 0; }
+.contact-introduction .breadcrumb ol { font-size: 14px; margin-bottom: 25px; }
+.contact-introduction > .eyebrow { font-size: 13px; margin-bottom: 12px; }
+.contact-introduction h1 { font-size: 43px; line-height: 1.1; letter-spacing: -1.4px; }
+.contact-introduction h1 span { color: #c20832; }
+.contact-introduction .lead { font-size: 14px; line-height: 1.6; color: #3e506a; }
+.contact-promises { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; margin-top: 28px; }
+.contact-promises > div + div { border-left: 1px solid #dde5f0; padding-left: 17px; }
+.contact-promises .i { width: 43px; height: 43px; padding: 8px; box-shadow: 0 0 0 5px #fff0f4; border-radius: 50%; color: #dd0637; margin: 4px 0 15px; stroke-width: 1.5; }
+.contact-promises h3 { font-size: 14px; letter-spacing: -.3px; }
+.contact-promises p { font-size: 14px; line-height: 1.4; color: #53617a; }
+.contact-still-life { width: 100%; max-height: 365px; object-fit: contain; margin-top: 22px; filter: drop-shadow(0 12px 18px #183c5712); }
+.contact-page .form-card { padding: 28px; }
+.contact-page #form-area > .eyebrow { display: none; }
+.contact-page #form-area > h2 { font-size: 25px; line-height: 1.2; }
+.contact-page .form-intro { font-size: 13px; }
+.contact-page .form-section-title { margin-top: 23px; margin-bottom: 17px; font-size: 15px; }
+.contact-page .form-section-title > span { width: 25px; height: 25px; font-size: 13px; }
+.form-additional { margin: 16px 0 20px; padding: 13px 15px; border: 1px solid #e5eaf2; border-radius: 9px; background: #fcfdff; }
+.form-additional > summary { display: flex; align-items: center; gap: 8px; list-style: none; cursor: pointer; color: #263e5c; font-size: 14px; font-weight: 650; }
+.form-additional > summary::-webkit-details-marker { display: none; }
+.form-additional > summary > span { font-weight: 400; color: #67768c; }
+.form-additional > summary > .i { width: 15px; height: 15px; margin-left: auto; }
+.form-additional[open] > summary { margin-bottom: 20px; }
+.form-additional[open] > summary > .i { transform: rotate(180deg); }
+.form-additional > .field:last-child { margin-bottom: 0; }
+.contact-page .contact-grid > .enquiry-options { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.contact-page .enquiry-options .aside-card { margin: 0; grid-row: auto; }
+@media (min-width: 1100px) {
+  .estimate-inclusions .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 15px; }
+  .estimate-inclusions .tile { grid-column: span 3; }
+  .estimate-inclusions .tile:nth-child(n+9) { grid-column: span 4; }
+}
+@media (max-width: 1100px) {
+  .journey-section .step__card { grid-template-columns: 65px minmax(0, 1fr) 155px; gap: 16px; padding: 20px; }
+  .journey-step-icon { width: 64px; height: 74px; }
+  .journey-step-icon .i { width: 37px; height: 37px; }
+  .journey-step-copy { padding-left: 16px; }
+  .journey-section .step__card h3 { font-size: 17px; }
+  .journey-section .step__card p { font-size: 13px; }
+  .contact-introduction h1 { font-size: 36px; }
+  .contact-promises { gap: 12px; }
+  .contact-promises > div + div { padding-left: 12px; }
+  .contact-promises h3 { font-size: 14px; }
+  .contact-promises p { font-size: 13px; }
+  .contact-page .enquiry-options { gap: 15px; }
+}
+@media (max-width: 959px) {
+  .journey-section .step { gap: 20px; }
+  .journey-section .step__card { grid-template-columns: 55px minmax(0, 1fr); gap: 17px; }
+  .journey-step-icon { width: 55px; height: 64px; }
+  .journey-step-icon .i { width: 33px; height: 33px; }
+  .journey-section .tags { grid-column: 2; flex-direction: row; flex-wrap: wrap; margin-left: 17px; }
+  .journey-section .tag { font-size: 13px; padding: 6px 10px; }
+  .handover-card { margin-right: 60px; }
+  .handover-art { right: -80px; transform: scale(.8) rotate(-9deg); }
+  .faq-sidebar { padding: 22px; }
+  .filter-bar--vertical .filter-chip { font-size: 14px; }
+  .service-hero--faqs h1 { font-size: 35px; }
+  .faq-clinician > .i { width: 95px; height: 95px; right: 5%; }
+  .contact-page .contact-grid { grid-template-columns: 1fr; }
+  .contact-introduction { display: block; }
+  .contact-still-life { max-width: 450px; max-height: 240px; margin-inline: auto; }
+  .contact-promises { max-width: 600px; }
+  .contact-page .contact-grid > .enquiry-options { grid-template-columns: 1fr 1fr; }
+  .contact-page .enquiry-options .aside-card:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 639px) {
+  .service-hero--journey > .container, .service-hero--estimates > .container { padding-block: 25px 40px; gap: 10px; }
+  .service-reference-wave { height: 80px; width: 100%; }
+  .service-hero--journey .service-heart, .service-hero--estimates .service-heart { min-height: 270px; }
+  .service-hero--journey .service-heart img, .service-hero--estimates .service-heart img { height: 265px; }
+  .journey-section { padding-block: 30px; }
+  .journey-section .step { grid-template-columns: 29px minmax(0, 1fr); gap: 14px; padding-bottom: 16px; }
+  .journey-section .step__marker { width: 28px; height: 28px; font-size: 14px; box-shadow: 0 0 0 3px #fff, 0 0 0 4px #fbdce4; }
+  .journey-section .step::before { left: 13px; }
+  .journey-section .step__card { grid-template-columns: 35px minmax(0, 1fr); gap: 11px; padding: 17px 13px; border-radius: 14px; }
+  .journey-step-icon { width: 35px; height: 43px; border-radius: 10px; align-self: start; }
+  .journey-step-icon .i { width: 25px; height: 25px; }
+  .journey-step-copy { padding-left: 0; border-left: 0; }
+  .journey-section .step__card h3 { font-size: 15px; }
+  .journey-section .step__card p { font-size: 14px; }
+  .journey-section .tags { margin: 0; gap: 6px; }
+  .journey-section .tag { font-size: 13px; }
+  .handover-card { margin-right: 22px; padding-right: 25px !important; }
+  .handover-art { opacity: .2; right: -65px; top: 20%; }
+  .handover-section h2 { font-size: 28px; }
+  .estimate-inclusions .section-head h2 { font-size: 26px; }
+  .estimate-inclusions .tile { padding: 16px; }
+  .estimate-inclusions .tile strong { font-size: 14px; }
+  .estimate-inclusions .tile span { font-size: 14px; }
+  .service-hero--faqs > .container { padding-bottom: 45px; }
+  .service-hero--faqs h1 { font-size: 33px; }
+  .faq-clinician { display: none; }
+  .service-hero--faqs > .service-reference-wave { width: 100%; height: 40px; opacity: .7; }
+  .faq-sidebar h2 { font-size: 22px; }
+  .filter-bar--vertical { margin-top: 15px; }
+  .filter-bar--vertical .filter-chip { border: 1px solid #ffffff25; font-size: 13px; padding: 9px; }
+  .contact-page .enquiry-section { padding-top: 20px; }
+  .contact-introduction h1 { font-size: 33px; }
+  .contact-introduction .lead { font-size: 14px; }
+  .contact-promises { margin-top: 22px; }
+  .contact-promises .i { width: 36px; height: 36px; padding: 6px; }
+  .contact-promises h3 { font-size: 14px; }
+  .contact-promises p { font-size: 13px; }
+  .contact-still-life { max-height: 230px; margin-top: 14px; }
+  .contact-page .form-card { padding: 23px 19px; }
+  .contact-page #form-area > h2 { font-size: 24px; }
+  .contact-page .contact-grid > .enquiry-options { display: block; }
+  .contact-page .enquiry-options .aside-card + .aside-card { margin-top: 20px; }
+}

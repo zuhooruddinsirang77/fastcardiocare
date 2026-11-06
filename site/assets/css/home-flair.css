@@ -1,0 +1,152 @@
+/* Home flair: an additive, decorative-only motion layer.
+   - Never changes layout, copy or sizes: only pseudo-elements, `translate`/`scale`/`opacity`.
+   - Every animation is gated on html.motion-ok (no reduced-motion) and body:not(.motion-paused),
+     so the existing "Pause motion" control and the OS setting both switch it all off.
+   - Hero loops only run while the hero is on screen (body.hero-motion-active). */
+.home-page { --flair-rgb: 213, 16, 54; }
+
+/* ---------- 1. Reading progress hairline ---------- */
+.page-progress {
+  position: fixed; z-index: 70; inset: 0 0 auto 0; height: 3px; pointer-events: none;
+  transform-origin: 0 50%; transform: scaleX(var(--page-p, 0)); opacity: 0;
+  background: linear-gradient(90deg, #ff6a85, #d30a35 55%, #8c0a1e);
+  box-shadow: 0 0 10px rgba(var(--flair-rgb, 213, 16, 54), .35);
+}
+.page-progress.is-on { opacity: 1; transition: opacity .3s; }
+
+/* ---------- 2. Hero: ambient drifting light + sonar ring on each heartbeat ---------- */
+html.motion-ok body.home-page:not(.motion-paused) .hero > .container { z-index: 1; }
+html.motion-ok body.home-page:not(.motion-paused) .hero::before,
+html.motion-ok body.home-page:not(.motion-paused) .hero::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none; border-radius: 50%;
+  width: clamp(320px, 42vw, 620px); aspect-ratio: 1; animation-play-state: paused;
+}
+html.motion-ok body.home-page:not(.motion-paused) .hero::before {
+  top: -24%; left: -10%;
+  background: radial-gradient(circle, rgba(110, 150, 215, .17), transparent 68%);
+  animation: flair-drift-a 24s ease-in-out infinite alternate;
+}
+html.motion-ok body.home-page:not(.motion-paused) .hero::after {
+  right: -8%; bottom: -32%;
+  background: radial-gradient(circle, rgba(var(--flair-rgb), .10), transparent 68%);
+  animation: flair-drift-b 28s ease-in-out infinite alternate;
+}
+html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero::before,
+html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero::after { animation-play-state: running; }
+
+html.motion-ok body.home-page.motion-ready:not(.motion-paused) .hero__art::after {
+  content: ""; position: absolute; z-index: 0; pointer-events: none; border-radius: 50%;
+  left: var(--ring-x, 39%); top: var(--ring-y, 50%); width: 64%; aspect-ratio: 1;
+  border: 1.5px solid rgba(var(--flair-rgb), .5);
+  box-shadow: 0 0 0 10px rgba(var(--flair-rgb), .05), inset 0 0 22px rgba(var(--flair-rgb), .08);
+  translate: -50% calc(-50% + var(--hp, 0) * -.045px); scale: .55; opacity: 0;
+  /* Starts at the "lub" of the existing heartbeat (same .92s cycle, .2s delay), once every three beats. */
+  animation: flair-sonar calc(var(--heartbeat-cycle) * 3) calc(.2s + var(--heartbeat-cycle) * .14) cubic-bezier(.2, .6, .3, 1) infinite;
+  animation-play-state: paused;
+}
+html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero__art::after { animation-play-state: running; }
+
+/* ---------- 3. Hero depth: image, trace and chips drift at different speeds on scroll ---------- */
+html.motion-ok body.home-page:not(.motion-paused) .hero__art > img,
+html.motion-ok body.home-page:not(.motion-paused) .hero-ecg { translate: 0 calc(var(--hp, 0) * -.045px); will-change: translate; }
+html.motion-ok body.home-page:not(.motion-paused) .hero__chip--1 { translate: 0 calc(var(--hp, 0) * -.09px); }
+html.motion-ok body.home-page:not(.motion-paused) .hero__chip--2 { translate: 0 calc(var(--hp, 0) * -.06px); }
+html.motion-ok body.home-page:not(.motion-paused) .hero__chip--3 { translate: 0 calc(var(--hp, 0) * -.125px); }
+
+/* ---------- 4. Headline accent: a slow light sweep (same colour at rest) ---------- */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  html.motion-ok body.home-page:not(.motion-paused) .hero h1 > span {
+    background: linear-gradient(100deg, var(--red-700, #a70b2b) 0 42%, #ff6a85 50%, var(--red-700, #a70b2b) 58% 100%) 100% 0 / 260% 100% no-repeat;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: flair-shimmer 8s 2.4s ease-in-out infinite; animation-play-state: paused;
+  }
+  html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero h1 > span { animation-play-state: running; }
+}
+
+/* Primary button hover: keep the gradient, tighter shadow, one sheen sweep (replaces the flat dark + wide glow). */
+.home-page :is(.hero__actions, .cta-band__actions, .procedures-section__all) .btn--primary {
+  background-image: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .26) 50%, transparent 62%), linear-gradient(135deg, #e01535, #c00b28);
+  background-size: 260% 100%, 100% 100%; background-position: 140% 0, 0 0; background-repeat: no-repeat; background-origin: border-box; background-clip: border-box;
+  box-shadow: 0 6px 12px -6px rgba(160, 10, 36, .45), 0 1px 3px rgba(160, 10, 36, .15);
+}
+.home-page :is(.hero__actions, .cta-band__actions) .btn--primary:is(:hover, :focus-visible) {
+  background-image: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, .26) 50%, transparent 62%), linear-gradient(135deg, #d51230, #b80a26);
+  background-position: -40% 0, 0 0;
+  box-shadow: 0 8px 14px -8px rgba(160, 10, 36, .5), 0 1px 3px rgba(160, 10, 36, .18);
+  transition: background-position .8s cubic-bezier(.22, 1, .36, 1), translate .3s var(--motion-ease, ease), transform .2s ease, box-shadow .25s;
+}
+.home-page.motion-paused .hero__actions .btn--primary { transition: none; }
+
+/* ---------- 6. Pointer light on the trust bar and procedure cards ---------- */
+.home-page .reassurance, .home-page .proc-mini { position: relative; }
+html.motion-ok body.home-page:not(.motion-paused) :is(.reassurance, .proc-mini)::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; pointer-events: none; opacity: 0;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(var(--flair-rgb), .075), transparent 70%);
+  transition: opacity .35s ease;
+}
+html.motion-ok body.home-page:not(.motion-paused) :is(.reassurance, .proc-mini).is-lit::after { opacity: 1; }
+
+/* ---------- 7. Trust-bar icons: a small, springy response ---------- */
+html.motion-ok body.home-page .reassurance li > .i {
+  transition: scale .35s var(--motion-ease, cubic-bezier(.22, 1, .36, 1)), rotate .35s var(--motion-ease, cubic-bezier(.22, 1, .36, 1)), background-color .25s, color .25s;
+}
+@media (hover: hover) and (pointer: fine) {
+  html.motion-ok body.home-page:not(.motion-paused) .reassurance li:hover > .i { scale: 1.12; rotate: -8deg; background-color: var(--red); color: #fff; }
+}
+
+/* ---------- 8. Magnetic buttons and the pinned journey scene follow the pointer a little ---------- */
+html.motion-ok body.home-page:not(.motion-paused) :is(.hero__actions, .cta-band__actions, .procedures-section__all) .btn {
+  translate: var(--mag-x, 0px) var(--mag-y, 0px);
+  transition: translate .3s var(--motion-ease, cubic-bezier(.22, 1, .36, 1)), transform .2s ease, box-shadow .25s, background-color .2s;
+}
+@media (min-width: 960px) {
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene.is-active .scene__heart,
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene.is-active .scene-photo {
+    translate: calc(var(--sx, 0) * 10px) calc(var(--sy, 0) * 8px);
+    transition: translate .5s var(--motion-ease, cubic-bezier(.22, 1, .36, 1));
+  }
+}
+
+/* ---------- 9. Story chapters: the number badge and label get a one-off ring when a beat opens ---------- */
+html.motion-ok body.home-page:not(.motion-paused) .chapter.is-active .chapter__num { position: relative; }
+html.motion-ok body.home-page:not(.motion-paused) .chapter.is-active .chapter__num::after {
+  content: ""; position: absolute; inset: -3px; border-radius: 50%; pointer-events: none;
+  border: 2px solid rgba(var(--flair-rgb), .55); animation: flair-badge-ring 1.4s .15s ease-out 1 both;
+}
+
+/* ---------- 10. Cardiac scene polish: scales with its card, softer trace, orbiting marker, layered pointer depth ---------- */
+.home-page .scene.scene--cardiac { container-type: inline-size; }
+.home-page .scene--cardiac .cardiac-caption { font-size: clamp(10px, 1.9cqw, 12px); letter-spacing: .09em; }
+.home-page .scene--cardiac .cardiac-footnote { font-size: clamp(11px, 2cqw, 13px); }
+.home-page .scene--cardiac .cardiac-trace { -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent); mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent); }
+/* The satellite dot sits exactly on the ring, so it can travel round it. */
+.home-page .scene--cardiac .cardiac-orbit--outer::after { top: 0; left: 50%; translate: -50% -50%; }
+html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(.stage .is-active, .chapter.is-active .scene) .cardiac-orbit--outer { animation: flair-orbit 40s linear infinite; }
+html.motion-ok body.home-page:not(.motion-paused) .scene--cardiac.is-in-view:is(.stage .is-active, .chapter.is-active .scene) .cardiac-orbit--inner { animation: flair-orbit-pulse 2.4s ease-in-out infinite; }
+@media (min-width: 960px) {
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene--cardiac.is-active :is(.scene__cardiac-image, .cardiac-trace, .cardiac-shadow, .cardiac-orbit--outer, .cardiac-orbit--inner) {
+    transition: translate .6s var(--motion-ease, cubic-bezier(.22, 1, .36, 1));
+  }
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene--cardiac.is-active .scene__cardiac-image { translate: calc(var(--sx, 0) * 12px) calc(var(--sy, 0) * 9px); }
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene--cardiac.is-active .cardiac-shadow { translate: calc(var(--sx, 0) * 11px) 0; }
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene--cardiac.is-active .cardiac-trace { translate: calc(var(--sx, 0) * -7px) calc(var(--sy, 0) * -4px); }
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene--cardiac.is-active .cardiac-orbit--inner { translate: calc(var(--sx, 0) * -10px) calc(var(--sy, 0) * -7px); }
+  html.motion-ok body.home-page:not(.motion-paused) .story.is-staged .stage .scene--cardiac.is-active .cardiac-orbit--outer { translate: calc(var(--sx, 0) * -16px) calc(var(--sy, 0) * -11px); }
+}
+
+@keyframes flair-drift-a { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(7%, 9%, 0) scale(1.12); } }
+@keyframes flair-drift-b { from { transform: translate3d(0, 0, 0) scale(1.05); } to { transform: translate3d(-9%, -7%, 0) scale(.94); } }
+@keyframes flair-sonar {
+  0% { opacity: 0; scale: .55; }
+  7% { opacity: .55; }
+  100% { opacity: 0; scale: 1.2; }
+}
+@keyframes flair-shimmer { 0%, 52% { background-position: 100% 0; } 82%, 100% { background-position: 0% 0; } }
+@keyframes flair-orbit { to { rotate: 360deg; } }
+@keyframes flair-orbit-pulse { 0%, 40%, 100% { scale: 1; } 12%, 29% { scale: 1.025; } }
+@keyframes flair-badge-ring { from { opacity: 1; transform: scale(.9); } to { opacity: 0; transform: scale(1.9); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-progress { transition: none; }
+}
+@media print { .page-progress { display: none; } }
