@@ -10,6 +10,8 @@ from PIL import Image, ImageDraw
 OUT = Path(__file__).resolve().parent / 'src/assets/img/motion'
 OUT.mkdir(parents=True, exist_ok=True)
 NAVY, RED, LINE, BG = '#102448', '#d9082c', '#dce4ef', '#f5f8fc'
+
+
 S = 2
 
 def frame(kind, t):
