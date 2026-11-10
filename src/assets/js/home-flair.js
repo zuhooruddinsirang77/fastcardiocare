@@ -55,7 +55,7 @@
       lit.style.setProperty('--mx', (litX - r.left).toFixed(0) + 'px');
       lit.style.setProperty('--my', (litY - r.top).toFixed(0) + 'px');
     };
-    var lightSel = '.reassurance, .procedures-section .proc-mini';
+    var lightSel = '.reassurance, .procedures-section .proc-mini, .hero__strip .hero__features li';
     document.addEventListener('pointermove', function (e) {
       if (e.pointerType === 'touch' || paused()) return;
       var host = e.target.closest && e.target.closest(lightSel);

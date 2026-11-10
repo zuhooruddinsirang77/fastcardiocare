@@ -10,16 +10,16 @@
 }
 
 /* ---- every button: same red, same hover, white text (primary, secondary, Previous/Next, arrows, in-card links) ---- */
-html body :is(.btn, .btn--primary, .btn--outline, .stepper__btn, .stepper__btn--next, .stepper .step-body a.text-link, .step-arrow, .guide-dialog__step, .proc-help .btn--outline, .proc-hero__actions .btn--outline, .hero__actions .btn--outline):not(.btn--light):not(.btn--ghost-light):not(.skip-link):not(.sticky-cta-close) {
+html body :is(.btn, .btn--primary, .btn--outline, .stepper__btn, .stepper__btn--next, .stepper .step-body a.text-link, .step-arrow, .guide-dialog__step, .proc-help .btn--outline, .proc-hero__actions .btn--outline, .hero__actions .btn--outline):not(.btn--light):not(.btn--ghost-light):not(.skip-link):not(.sticky-cta-close):not(.hero__actions .btn--outline) {
   border-color: #b80a26 !important; background-color: #c00b28 !important; background-image: var(--btn-red-bg) !important; color: #fff !important; box-shadow: var(--btn-red-shadow) !important;
 }
-html body :is(.btn, .btn--primary, .btn--outline, .stepper__btn, .stepper__btn--next, .stepper .step-body a.text-link, .step-arrow, .guide-dialog__step, .proc-help .btn--outline, .proc-hero__actions .btn--outline, .hero__actions .btn--outline):not(.btn--light):not(.btn--ghost-light):not(.skip-link):not(:disabled):is(:hover, :focus-visible) {
+html body :is(.btn, .btn--primary, .btn--outline, .stepper__btn, .stepper__btn--next, .stepper .step-body a.text-link, .step-arrow, .guide-dialog__step, .proc-help .btn--outline, .proc-hero__actions .btn--outline, .hero__actions .btn--outline):not(.btn--light):not(.btn--ghost-light):not(.skip-link):not(.hero__actions .btn--outline):not(:disabled):is(:hover, :focus-visible) {
   border-color: #0f2547 !important; background-color: #0f2547 !important; background-image: var(--btn-navy-bg-hover) !important; color: #fff !important; box-shadow: var(--btn-navy-shadow-hover) !important;
 }
 /* icons inside buttons follow the text colour (no red-on-red) */
-html body :is(.btn, .stepper__btn, .step-arrow, .guide-dialog__step, .stepper .step-body a.text-link):not(.btn--light) .i,
-html body :is(.btn, .stepper__btn, .step-arrow, .guide-dialog__step, .stepper .step-body a.text-link):not(.btn--light):is(:hover, :focus-visible) .i { color: #fff !important; }
-html body .proc-hero__actions .btn--outline .i, html body .hero__actions .btn--outline .btn__lead { color: #fff !important; }
+html body :is(.btn, .stepper__btn, .step-arrow, .guide-dialog__step, .stepper .step-body a.text-link):not(.btn--light):not(.hero__actions .btn--outline) .i,
+html body :is(.btn, .stepper__btn, .step-arrow, .guide-dialog__step, .stepper .step-body a.text-link):not(.btn--light):not(.hero__actions .btn--outline):is(:hover, :focus-visible) .i { color: #fff !important; }
+html body .proc-hero__actions .btn--outline .i { color: #fff !important; }
 
 /* ---- on the red / navy bands: same red button, white text, plus a white ring so it stays visible; hover = navy ---- */
 html body .btn--light { background-color: #c00b28 !important; background-image: var(--btn-red-bg) !important; color: #fff !important; border-color: #fff !important; box-shadow: 0 8px 18px -8px rgba(0, 0, 0, .45) !important; }
@@ -38,3 +38,10 @@ html body :is(.btn, .stepper__btn, .stepper .step-body a.text-link) { border-wid
 html body :is(.proc-filter, .filter-bar--vertical .filter-chip)[aria-pressed="true"] { background-image: var(--btn-red-bg); background-color: #c00b28; color: #fff; box-shadow: var(--btn-red-shadow); }
 html body :is(.proc-filter, .filter-bar--vertical .filter-chip)[aria-pressed="true"]:hover { background-image: var(--btn-navy-bg-hover); background-color: #0f2547; }
 html body .step-arrow { border-width: 1.5px; border-style: solid; }
+
+/* Hero secondary button: no fill. Navy outline and text; hover fills navy with white text (same hover as every other button). */
+html body.home-page .hero__actions .btn--outline { background: transparent; background-image: none; border-color: #0f2547; color: #0f2547; box-shadow: none; }
+html body.home-page .hero__actions .btn--outline .i { color: #0f2547; }
+html body.home-page .hero__actions .btn--outline .btn__lead { color: #c4002a; }
+html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) { background: #0f2547; border-color: #0f2547; color: #fff; box-shadow: var(--btn-navy-shadow-hover); }
+html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) .i, html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) .btn__lead { color: #fff; }
