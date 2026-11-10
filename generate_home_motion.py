@@ -36,6 +36,7 @@ def frame(kind, t):
                     circle(a[0]+(b[0]-a[0])*p,a[1]+(b[1]-a[1])*p,2.5,RED if offset<13 else '#e5a1b0')
                     break
                     
+
                     
                 pos-=length
     elif kind == 'clear-plan':
