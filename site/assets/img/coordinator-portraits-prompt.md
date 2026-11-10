@@ -3,6 +3,7 @@
 Asset: `coordinator-portraits.png`. Generated using the built-in image generation tool on 10 November 2026. A 6-column by 5-row atlas; CSS displays each of its 30 cells. All subjects and directory identities are fictional examples, with no claimed hospital affiliation.
 
 
+
 ## Final prompt
 
 
