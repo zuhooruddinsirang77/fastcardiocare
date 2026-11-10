@@ -22,9 +22,9 @@ BASE_URL = "https://www.fastcardiocare.com"
 
 NAV = [
     ("home", "index.html", "Home"),
-    ("who", "who-we-are.html", "Who We Are"),
     ("procedures", "procedures.html", "Procedures"),
     ("how", "how-it-works.html", "How It Works"),
+    ("network", "accredited-network.html", "Our Network"),
     ("packages", "packages.html", "Packages"),
     ("faqs", "faqs.html", "FAQs"),
 ]
@@ -56,6 +56,12 @@ def render_nav(active):
                 '</details></li>'
             )
             continue
+        if key == "network":
+            section_active = ' class="is-current"' if active in ("network", "hospitals", "coordinators") else ""
+            network_links = [("network", "accredited-network.html", "Our Network"), ("hospitals", "hospitals.html", "Cardiac Hospitals"), ("coordinators", "medical-coordinators.html", "Medical Coordinators")]
+            links = ''.join(f'<li><a href="{url}"' + (' aria-current="page"' if active == item else '') + f'>{text}</a></li>' for item, url, text in network_links)
+            lines.append(f'<li class="nav-group"><details class="nav-dropdown"><summary{section_active}>Our Network <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul>{links}</ul></details></li>')
+            continue
         if key == "procedures":
             section_active = ' class="is-current"' if active == "procedures" else ""
             procedure_links = [
@@ -64,6 +70,12 @@ def render_nav(active):
                 ("procedures.html#pci", "Angioplasty &amp; Stenting"),
                 ("procedures.html#cabg", "Bypass Surgery"),
                 ("procedures.html#valve", "Heart Valve Treatment"),
+                ("procedures.html#tavi", "TAVR / TAVI"),
+                ("procedures.html#ablation", "Catheter Ablation"),
+                ("procedures.html#pacemaker", "Pacemaker Implantation"),
+                ("procedures.html#icd-crt", "ICD / CRT Devices"),
+                ("procedures.html#congenital", "Congenital Heart Repair"),
+                ("procedures.html#advanced", "Advanced Heart-Failure Care"),
             ]
             links = ''.join(f'<li><a href="{url}"{current if url == href else ""}>{text}</a></li>' for url, text in procedure_links)
             lines.append(f'          <li class="nav-group"><details class="nav-dropdown"><summary{section_active}>Procedures <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul>{links}</ul></details></li>')
@@ -80,6 +92,12 @@ def render_breadcrumb(crumb):
         '<li><a href="index.html">Home</a></li>'
         f'<li><span aria-current="page">{crumb}</span></li></ol></nav>'
     )
+
+
+def render_crumb_bar(crumb):
+    if not crumb:
+        return ""
+    return f'<div class="crumb-bar"><div class="container">{render_breadcrumb(crumb).strip()}</div></div>\n'
 
 
 def main():
@@ -114,7 +132,8 @@ def main():
 
         html = layout
         replacements = {
-            "{{content}}": body.replace("{{breadcrumb}}", render_breadcrumb(meta.get("crumb"))),
+            # The breadcrumb always sits in its own bar directly under the header, so it is in the same place on every page.
+            "{{content}}": render_crumb_bar(meta.get("crumb")) + body.replace("{{breadcrumb}}", ""),
             "{{nav}}": render_nav(meta.get("nav", "")),
             "{{title}}": meta["title"],
             "{{description}}": meta["description"],

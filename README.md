@@ -58,6 +58,8 @@ The homepage chapter section retains its seven-scene design and clickable ECG pr
 
 ## Pages
 
+The Our Network menu includes a six-hospital cardiac directory for Pakistan, Thailand and Malaysia (`accredited-network.html`, also available at `hospitals.html`) with linked service and accreditation sources, plus `medical-coordinators.html` with 30 explicitly fictional sample profiles. Both directories have country buttons, text search and a clear-filter control. Hospital cards open an accessible details dialog; comparison controls have been removed. The heart control saves hospital names in browser-local storage. Coordinator browsing includes role filters, eight profiles at a time with a Show more button, and sample profile dialogs describing nonclinical support. All 30 profiles remain readable without JavaScript. Dialogs support Escape and restore focus to the opening control. The premium medical presentation uses navy-and-white split heroes, large illustrative photographs, generous spacing, larger profile portraits and readable card typography. Hospital accreditation details expand on demand. Consistent directory navigation, mobile layouts and short entrance transitions respect reduced-motion settings. The generated 30-portrait atlas and final built-in image generation prompt are in `src/assets/img/coordinator-portraits.png` and `coordinator-portraits-prompt.md`. Hospital and medical coordinator joining links preselect the relevant contact role and reveal organization, destination and accreditation/experience fields. The existing contact endpoint remains unconfigured: these enquiries run in preview mode until a backend is connected. No listed hospital is claimed as an approved FastCardioCare partner.
+
 Home, Who We Are, Why FastCardioCare, Procedures, How It Works, Packages, FAQs, Contact, plus Privacy Notice, Terms, Medical Disclaimer, Accessibility and a 404 page.
 
 ## Must be resolved before launch
@@ -90,3 +92,9 @@ The form runs in demo mode: it validates in the browser and shows the success me
 ## CMS handover
 
 This static build is the approved design and content reference. To give the owner self-service editing (procedures, FAQs, bios, contact details) with approval for medical copy, port `layout.html` and the page sections to the chosen CMS as templates. Each procedure card and FAQ item is a self-contained, repeatable block.
+
+The hospital directory now follows the supplied reference with a compact curved hero, red-and-navy navigation tabs, official hospital imagery, horizontal service cards, details dialogs, comparison controls, a four-part guidance section and a consultation banner. `network-reference.css` is scoped to `.reference-network` and loads after the shared directory brand styles, so the coordinator page retains its presentation. Hospital image provenance is recorded in `src/assets/img/hospitals/sources.json`.
+
+The latest supplied references are implemented in `directory-reference.css`: hospital photo overlays, location chips, expandable source details and a single details action; a navy coordinator hero, synchronized role tabs and filters, four-column desktop profile cards, eight-profile pagination and a coordinated support banner. No ratings, clinical credentials or hospital endorsements are invented. All coordinator profiles remain fictional samples.
+
+The hospital directory destination tabs and search controls are removed from the rendered page (`data-filters="off"`), while coordinator filters remain available. The latest hospital cards use a red photo-edge wave, city/country metadata beneath the image and compact pink service chips. Comparison remains removed.

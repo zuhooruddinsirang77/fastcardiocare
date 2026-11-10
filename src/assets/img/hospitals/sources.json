@@ -1,0 +1,32 @@
+{
+  "aga-khan": {
+    "source_page": "https://hospitals.aku.edu/pakistan/others/the-aga-khan-university-hospital-main-campus-karachi-",
+    "image_url": "https://a.storyblok.com/f/286308248262721/1200x800/507344efe1/akuh-main-hospital.png",
+    "accessed": "2026-11-10"
+  },
+  "shifa": {
+    "source_page": "https://www.shifa.com.pk/company-overview",
+    "image_url": "https://s3storage.nayatel.com/customer-shifa/uploads/Company_Overview_68fc103424.webp",
+    "accessed": "2026-11-10"
+  },
+  "bumrungrad": {
+    "source_page": "https://www.bumrungrad.com/en/about-us/bumrungrad-factsheet",
+    "image_url": "https://www.bumrungrad.com/getattachment/1d843609-12b5-4f96-b91f-0737e1aa4b5b/image.jpg",
+    "accessed": "2026-11-10"
+  },
+  "samitivej": {
+    "source_page": "https://www.samitivejhospitals.com/contact?id=1",
+    "image_url": "https://samitivej-prod-new-website.s3.ap-southeast-1.amazonaws.com/public/uploads/hospitals/e3d147e7e42a09b746e8380af49f40c8.png",
+    "accessed": "2026-11-10"
+  },
+  "ijn": {
+    "source_page": "https://www.ijn.com.my/",
+    "image_url": "https://www.ijn.com.my/wp-content/uploads/2026/06/ijn-building.webp",
+    "accessed": "2026-11-10"
+  },
+  "gleneagles": {
+    "source_page": "https://gleneagles.com.my/kuala-lumpur/aboutus",
+    "image_url": "https://gleneagles.com.my/images/gleneagleshospitalkualalumpurlibraries/about-us/gkl-facade-banner.webp?sfvrsn=4c310314_7",
+    "accessed": "2026-11-10"
+  }
+}

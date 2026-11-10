@@ -38,6 +38,16 @@
   <link rel="stylesheet" href="assets/css/hero-redesign.css">
   <link rel="stylesheet" href="assets/css/stepper.css">
   <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/network.css">
+  <link rel="stylesheet" href="assets/css/network-brand.css">
+  <link rel="stylesheet" href="assets/css/network-reference.css">
+  <link rel="stylesheet" href="assets/css/network-final.css">
+  <link rel="stylesheet" href="assets/css/hospital-theme.css">
+  <link rel="stylesheet" href="assets/css/coordinator-cards.css">
+  <link rel="stylesheet" href="assets/css/directory-reference.css">
+  <link rel="stylesheet" href="assets/css/breadcrumb.css">
+  <link rel="stylesheet" href="assets/css/coordinator-mockup.css">
+  <link rel="stylesheet" href="assets/css/home-network.css">
   <script>
     (function (d) {
       d.classList.replace('no-js', 'js');
@@ -124,9 +134,9 @@
       <nav aria-label="Main">
         <ul class="nav-list">
           <li><a href="index.html" aria-current="page">Home</a></li>
-          <li class="nav-group"><details class="nav-dropdown"><summary>Who We Are <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="who-we-are.html">Who We Are</a></li><li><a href="why-fastcardiocare.html">Why FastCardioCare</a></li></ul></details></li>
-          <li class="nav-group"><details class="nav-dropdown"><summary>Procedures <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="procedures.html">All Procedures</a></li><li><a href="procedures.html#angiography">Coronary Angiography</a></li><li><a href="procedures.html#pci">Angioplasty &amp; Stenting</a></li><li><a href="procedures.html#cabg">Bypass Surgery</a></li><li><a href="procedures.html#valve">Heart Valve Treatment</a></li></ul></details></li>
+          <li class="nav-group"><details class="nav-dropdown"><summary>Procedures <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="procedures.html">All Procedures</a></li><li><a href="procedures.html#angiography">Coronary Angiography</a></li><li><a href="procedures.html#pci">Angioplasty &amp; Stenting</a></li><li><a href="procedures.html#cabg">Bypass Surgery</a></li><li><a href="procedures.html#valve">Heart Valve Treatment</a></li><li><a href="procedures.html#tavi">TAVR / TAVI</a></li><li><a href="procedures.html#ablation">Catheter Ablation</a></li><li><a href="procedures.html#pacemaker">Pacemaker Implantation</a></li><li><a href="procedures.html#icd-crt">ICD / CRT Devices</a></li><li><a href="procedures.html#congenital">Congenital Heart Repair</a></li><li><a href="procedures.html#advanced">Advanced Heart-Failure Care</a></li></ul></details></li>
           <li><a href="how-it-works.html">How It Works</a></li>
+<li class="nav-group"><details class="nav-dropdown"><summary>Our Network <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="accredited-network.html">Our Network</a></li><li><a href="hospitals.html">Cardiac Hospitals</a></li><li><a href="medical-coordinators.html">Medical Coordinators</a></li></ul></details></li>
           <li><a href="packages.html">Packages</a></li>
           <li><a href="faqs.html">FAQs</a></li>
         </ul>
@@ -373,14 +383,38 @@
   </div>
 </section>
 
-<section class="process-section process-preview" aria-labelledby="process-title">
-  <div class="container process-preview__layout">
-    <div class="section-head process-preview__intro">
-      <p class="eyebrow">How it works</p>
-      <h2 id="process-title">Know what happens next</h2>
-      <p>Share a few details. With your permission, we help arrange a provider review. If a provider can offer care, we explain the proposed plan and estimate before you decide whether to travel.</p>
-      <p class="process-section__more"><a class="btn btn--outline" href="how-it-works.html" data-track="cta_how_it_works_home">See how it works <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-      <p class="process-preview__reassurance"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>No commitment to treatment or travel.</p>
+<section class="home-network" aria-labelledby="network-title">
+  <div class="container">
+    <div class="home-network__head">
+      <div class="home-network__copy">
+        <p class="eyebrow">Hospitals &amp; coordination</p>
+        <h2 id="network-title">Explore care in <span>Pakistan</span>,<br>Thailand and <span>Malaysia</span>.</h2>
+        <p>Browse cardiac hospitals and their published accreditation information, meet our medical coordinators, or introduce your organization.</p>
+      </div>
+      <div class="home-network__places" aria-hidden="true">
+        <figure class="home-place home-place--pk"><img src="assets/img/hospitals/aga-khan.webp" alt="" width="900" height="600" loading="lazy"><figcaption><span class="flag flag--pk"></span>Pakistan</figcaption></figure>
+        <figure class="home-place home-place--th"><img src="assets/img/hospitals/bumrungrad.webp" alt="" width="900" height="231" loading="lazy"><figcaption><span class="flag flag--th"></span>Thailand</figcaption></figure>
+        <figure class="home-place home-place--my"><img src="assets/img/hospitals/ijn.webp" alt="" width="900" height="604" loading="lazy"><figcaption><span class="flag flag--my"></span>Malaysia</figcaption></figure>
+        <svg class="home-network__wave" viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 120C160 108 330 84 600 0v120Z"/></svg>
+        <svg class="home-network__heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/><path d="M5 12h3l2-3 3 6 2-3h4"/></svg>
+      </div>
+    </div>
+    <div class="home-network__cards">
+      <a class="home-net-card" href="hospitals.html">
+        <span class="home-net-card__icon"><svg class="i" aria-hidden="true"><use href="#i-hospital"/></svg></span>
+        <div class="home-net-card__body"><h3>Cardiac hospitals</h3><p>Six hospitals. Three destinations. Official sources to explore.</p></div>
+        <span class="btn btn--primary home-net-card__cta">Browse hospitals <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="home-net-card" href="medical-coordinators.html">
+        <span class="home-net-card__icon"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span>
+        <div class="home-net-card__body"><h3>Medical coordinators</h3><p>Meet the coordinators who help with appointments, travel and records.</p></div>
+        <span class="btn btn--primary home-net-card__cta">View directory <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="home-net-card" href="contact.html?enquirer=hospital">
+        <span class="home-net-card__icon"><svg class="i" aria-hidden="true"><use href="#i-heart-pulse"/></svg></span>
+        <div class="home-net-card__body"><h3>Join our network</h3><p>For hospitals, healthcare organizations and medical coordinators.</p></div>
+        <span class="btn btn--primary home-net-card__cta">Introduce yourself <svg class="i i-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -425,7 +459,7 @@
       <nav aria-label="Footer">
         <h2>Explore</h2>
         <ul class="footer__links">
-          <li><a href="who-we-are.html">About</a></li>
+          <li><a href="who-we-are.html">Who We Are</a></li>
           <li><a href="why-fastcardiocare.html">Why FastCardioCare</a></li>
           <li><a href="procedures.html">Procedures</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
@@ -436,6 +470,8 @@
         <ul class="footer__links">
           <li><a href="packages.html">Packages</a></li>
           <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="hospitals.html">Cardiac Hospitals</a></li>
+          <li><a href="medical-coordinators.html">Medical Coordinators</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -474,5 +510,6 @@
 <script src="assets/js/home-interactive.js" defer></script>
 <script src="assets/js/home-flair.js" defer></script>
 <script src="assets/js/stepper.js" defer></script>
+<script src="assets/js/network.js" defer></script>
 </body>
 </html>

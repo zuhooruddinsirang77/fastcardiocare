@@ -1,0 +1,185 @@
+/* Hospital directory, based on the supplied visual reference. */
+.reference-network{background:#fff;color:#172d51}
+.reference-hospital-hero{position:relative;background:linear-gradient(115deg,#fff 30%,#f5f8fc 72%);border-bottom:1px solid #d9e2ed;overflow:hidden}
+.reference-hospital-hero>.container{position:relative;padding-top:20px}
+.reference-hospital-hero .breadcrumb{font-size:13px;margin-bottom:24px}
+.reference-hospital-hero__layout{display:grid;grid-template-columns:1.25fr 1fr;min-height:270px;align-items:center}
+.reference-hospital-hero__copy{position:relative;z-index:2;padding:0 0 32px}
+.reference-hospital-hero .eyebrow{font-size:11px;letter-spacing:.06em;color:#e0002c;font-weight:700;margin-bottom:17px}
+.reference-hospital-hero h1{font-size:clamp(33px,3.2vw,46px);font-weight:800;letter-spacing:-.04em;line-height:1.15;color:#0f2247;margin-bottom:18px;white-space:nowrap}
+.reference-hospital-hero h1>span{color:#df002c}
+.reference-hospital-hero__copy>p:not(.eyebrow){font-size:14px;line-height:1.8;color:#2c4162;max-width:660px;margin-bottom:23px}
+.reference-benefits{list-style:none;display:flex;flex-wrap:wrap;gap:14px 22px;padding:0;margin:0}
+.reference-benefits li{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:600;color:#263e5e}
+.reference-benefits li::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;border:1.5px solid #ea153d;color:#e40b33;width:17px;height:17px;border-radius:50%;font-size:11px}
+.reference-hospital-hero__art{position:absolute;right:-7%;top:0;bottom:47px;width:48%;isolation:isolate}
+.reference-hospital-hero__art::before{content:'';position:absolute;inset:0 0 0 -13px;background:linear-gradient(110deg,#f10032,#ff8498);border-top-left-radius:65% 100%;border-bottom-left-radius:12% 25%;z-index:-1}
+.reference-hospital-hero__art img{width:100%;height:100%;object-fit:cover;border-top-left-radius:65% 100%;border-bottom-left-radius:12% 25%;object-position:57% center}
+.reference-hospital-hero__art small{position:absolute;right:18%;bottom:9px;background:#152c4dcc;color:#fff;font-size:8px;border-radius:3px;padding:4px 7px}
+.reference-network .directory-switch{position:relative;z-index:3;display:flex;gap:28px;align-items:center;border:0;margin-top:0;min-height:52px}
+.reference-network .directory-switch>a{display:flex;gap:9px;padding:16px 7px;border-bottom:3px solid transparent;font-size:12px;font-weight:650;color:#415676}
+.reference-network .directory-switch>a[aria-current]{border-color:#dd002c;color:#c8102e}
+.reference-network .directory-switch .i{width:17px;height:17px}
+.reference-network .directory-switch .reference-join{margin-left:auto;font-size:11px}
+.reference-network .pro-directory{padding:40px 0 46px}
+.reference-network .pro-section-head{gap:40px;align-items:center;margin-bottom:23px}
+.reference-network .pro-section-head .eyebrow{display:none}
+.reference-network .pro-section-head h2{font-size:29px;font-weight:800;color:#11264c;letter-spacing:-.035em}
+.reference-network .pro-section-head>p{font-size:12px;line-height:1.8;max-width:560px;color:#4d6280}
+.reference-network .network-note{background:#edf1ff;border:1px solid #d8e0ff;color:#334b71;padding:12px 16px;font-size:11px;line-height:1.7;border-radius:7px;margin-bottom:20px}
+.reference-network .network-note>.i{color:#5d82e5}
+.reference-network .directory-countries{margin:0 0 20px;gap:12px}
+.reference-network .directory-countries button{border:1px solid #cfdbea;border-radius:7px;background:#fff;color:#2d4264;padding:10px 18px;font-size:12px;min-height:40px;box-shadow:0 2px 5px #132a4b04}
+.reference-network .directory-countries button[aria-pressed=true]{background:linear-gradient(135deg,#1a3560,#0d2148);color:#fff;border-color:#1e3863;box-shadow:0 3px 7px #1734511c}
+.reference-network .network-filters{padding:6px;background:white;border:1px solid #bbcbe0;border-radius:8px;margin-bottom:27px;gap:12px;align-items:center;box-shadow:inset 0 0 0 2px #f5f8fc}
+.reference-network .network-filters label{position:relative;display:block;flex:1;margin:0;font-size:0}
+.reference-network .network-filters .directory-country-select{display:none}
+.reference-network .network-filters label:not(.directory-country-select)::before{content:'⌕';position:absolute;left:13px;top:5px;font-size:28px;line-height:1;color:#546e91;pointer-events:none}
+.reference-network .network-filters input{background:transparent;border:0;box-shadow:none;font-size:13px;min-height:42px;padding:10px 12px 10px 45px;width:100%}
+.reference-network .network-filters p{font-size:10px;padding:0 8px;margin:0;color:#71839b}
+.reference-search-button,.reference-details-button{font:inherit;font-size:12px;font-weight:650;color:#fff;background:linear-gradient(145deg,#fa1539,#bf0023);border:1px solid #c50025;border-radius:6px;box-shadow:0 3px 6px #ce0c2918;cursor:pointer;transition:background .18s,transform .18s}
+.reference-search-button{min-width:110px;min-height:40px;padding:8px 20px}
+.reference-search-button:hover,.reference-details-button:hover{background:#11294e;transform:translateY(-1px)}
+.reference-network .hospital-grid{gap:20px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.reference-network .hospital-card{display:grid;grid-template-columns:30% minmax(0,1fr);gap:19px;padding:13px;border:1px solid #d3deec;border-radius:15px;box-shadow:0 2px 5px #182d4b0c;background:linear-gradient(145deg,#fff,#fbfcff);align-items:stretch}
+.reference-hospital-photo{border-radius:10px;overflow:hidden;position:relative;min-height:255px;background:#eaf0f5}
+.reference-hospital-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}
+.reference-hospital-photo img[src*="shifa"]{object-position:72% center}
+.reference-hospital-photo img[src*="bumrungrad"]{object-position:62% center}
+.reference-hospital-body{min-width:0;position:relative;padding:4px 2px;display:flex;flex-direction:column}
+.reference-network .hospital-card__top{position:absolute;right:2px;top:3px;margin:0}
+.reference-network .pro-country-tag{font-size:9px;padding:3px 6px;background:#edf7f0;color:#1b5e3e;border:0;border-radius:4px;font-weight:600}
+.reference-network .hospital-card .network-location{font-size:10px;font-weight:500;color:#536a89;padding-right:70px;min-height:18px;margin:0 0 9px}
+.reference-network .hospital-card .network-location::before{content:'⌖';color:#e70030;font-size:15px;margin-right:4px}
+.reference-network .hospital-card h3{font-size:18px;line-height:1.25;font-weight:750;color:#0d254c;letter-spacing:-.035em;margin:0 0 8px}
+.reference-network .hospital-card h3+p{font-size:12px;line-height:1.5;color:#354d6c;margin:0 0 12px;min-height:36px}
+.reference-service-tags{display:flex;gap:6px;padding:0;margin:0 0 10px;list-style:none}
+.reference-service-tags li{display:flex;gap:5px;align-items:center;flex:1;min-width:0;border:1px solid #e0e7f2;border-radius:5px;background:white;padding:6px 5px}
+.reference-service-tags .i{color:#ce183d;width:19px;height:19px;flex-shrink:0}
+.reference-service-tags span{font-size:8px;line-height:1.3;font-weight:600;color:#3d5475}
+.reference-network .premium-source{border:0;margin:0 0 10px}
+.reference-network .premium-source summary{font-size:10px;color:#4c6486;padding:5px 0;gap:8px;justify-content:start}
+.reference-network .premium-source summary::before{content:'♙';font-size:17px;line-height:1;color:#de1237}
+.reference-network .premium-source summary>span{font-size:13px;margin-left:auto}
+.reference-network .accreditation-note{font-size:10px;background:#f0f4fa;padding:10px;margin:7px 0 0}
+.js .reference-network .hospital-card .hospital-card__links{display:none}
+.reference-card-actions{display:flex;gap:12px;align-items:stretch;margin-top:auto}
+.reference-details-button{font-size:11px;min-height:36px;padding:8px 17px;white-space:nowrap}
+.reference-network .directory-compare-choice{border:1px solid #93a6c2;border-radius:5px;min-height:36px;padding:7px 12px;font-size:11px;font-weight:600;color:#2e496d;background:#fff;justify-content:center;gap:7px;flex:1}
+.reference-network .directory-compare-choice input{width:13px;height:13px;accent-color:#cb0b30}
+.reference-network .hospital-card.is-selected{border-color:#567297;box-shadow:0 0 0 1px #567297}
+.reference-network .pro-support{background:#fff;border:0;padding:12px 0 45px}
+.reference-network .pro-support-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin-top:28px}
+.reference-network .pro-support-icon{margin-bottom:13px;gap:0}
+.reference-network .pro-support-icon>.i{background:#fff0f3;border:0;border-radius:8px;color:#db1238;width:41px;height:41px;padding:10px}
+.reference-network .pro-support-icon>span{display:none}
+.reference-network .pro-support-grid h3{font-size:16px;line-height:1.3;font-weight:700;color:#173154;margin-bottom:9px}
+.reference-network .pro-support-grid p{font-size:12px;line-height:1.7;color:#536b89}
+.reference-consultation{padding:0 0 30px}
+.reference-consultation__panel{display:grid;grid-template-columns:1.15fr 1fr;gap:42px;position:relative;isolation:isolate;border-radius:18px;overflow:hidden;background:radial-gradient(ellipse at 110% 60%,#e30037 0,#86102f 20%,transparent 48%),linear-gradient(120deg,#112d55,#0a1b38);padding:39px 190px 39px 42px;color:#fff;box-shadow:0 7px 20px #0f294911}
+.reference-consultation .eyebrow{font-size:9px;letter-spacing:.12em;color:#f89bad;margin-bottom:17px}
+.reference-consultation h2{font-size:32px;line-height:1.17;color:#fff;font-weight:750;letter-spacing:-.035em;margin-bottom:16px}
+.reference-consultation h2 span{color:#ff3158}
+.reference-consultation__panel>div>p:not(.eyebrow){font-size:13px;line-height:1.65;color:#d8e2ef;max-width:400px}
+.reference-consultation__actions{display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-top:21px}
+.reference-consultation .btn{font-size:12px;min-height:40px;padding:10px 16px;white-space:nowrap}
+.reference-secondary{display:inline-flex;align-items:center;min-height:40px;font-size:11px;font-weight:600;color:#fff;text-decoration:none;padding:9px 13px;border:1px solid #96a7c3;border-radius:5px}
+.reference-secondary:hover{color:white;background:#ffffff12}
+.reference-consultation ol{list-style:none;padding:8px 0 0 31px;margin:0;display:flex;flex-direction:column;justify-content:center;gap:24px;border-left:1px solid #627896}
+.reference-consultation ol li{position:relative;padding-left:32px}
+.reference-consultation ol li::before{content:'✓';position:absolute;left:0;top:1px;width:21px;height:21px;display:flex;justify-content:center;align-items:center;border:1.5px solid #ff3158;border-radius:50%;font-size:13px;color:white}
+.reference-consultation ol strong{display:block;font-size:13px;color:#fff;margin-bottom:5px}
+.reference-consultation ol span{display:block;font-size:11px;line-height:1.7;color:#becfe1}
+.reference-consultation__panel>img{position:absolute;z-index:-1;right:-43px;top:50%;transform:translateY(-50%) rotate(8deg);width:250px;filter:drop-shadow(0 0 18px #fb144b66);opacity:.65}
+.reference-membership{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;font-size:12px;color:#6b7f98;margin:20px 0 0}
+.reference-membership a{font-weight:650;color:#c8102e}
+.reference-detail-photo{width:100%;height:230px;object-fit:cover;border-radius:9px;margin-bottom:22px}
+.directory-dialog--hospital{max-width:720px}
+.directory-dialog--hospital .hospital-card__links{display:flex;gap:24px;font-size:13px;margin:20px 0;flex-wrap:wrap}
+@media(min-width:900px){html:is([data-page=network],[data-page=hospitals]) .utility-bar{display:none}}
+@media(max-width:1100px){.reference-hospital-hero h1{font-size:37px}.reference-hospital-hero__copy>p:not(.eyebrow){max-width:530px;font-size:13px}.reference-hospital-hero__art{width:45%;right:-8%}.reference-benefits{gap:10px 15px}.reference-benefits li{font-size:9px}.reference-network .hospital-card{grid-template-columns:26% minmax(0,1fr);gap:12px}.reference-network .hospital-card h3{font-size:17px}.reference-service-tags li{padding:5px 3px;gap:3px}.reference-service-tags .i{width:16px;height:16px}.reference-service-tags span{font-size:7px}.reference-card-actions{gap:8px}.reference-details-button{padding:8px 12px}.reference-consultation__panel{padding:33px 120px 33px 33px;gap:25px}.reference-consultation h2{font-size:28px}.reference-consultation__panel>img{width:200px;right:-65px}.reference-consultation ol{padding-left:22px}}
+@media(max-width:850px){.reference-hospital-hero__layout{grid-template-columns:1fr;min-height:240px}.reference-hospital-hero__art{width:40%;opacity:.32}.reference-hospital-hero__copy>p:not(.eyebrow){max-width:80%}.reference-hospital-hero__copy{padding-bottom:25px}.reference-network .hospital-grid{grid-template-columns:1fr;gap:19px}.reference-network .hospital-card{grid-template-columns:30% minmax(0,1fr);gap:23px;padding:14px}.reference-hospital-photo{min-height:250px}.reference-network .hospital-card h3{font-size:22px}.reference-network .hospital-card h3+p{font-size:14px;min-height:0}.reference-network .hospital-card .network-location{font-size:11px}.reference-service-tags span{font-size:10px}.reference-service-tags .i{width:21px;height:21px}.reference-service-tags li{padding:8px;gap:7px}.reference-network .premium-source summary{font-size:12px;padding:7px 0}.reference-details-button{font-size:12px;min-height:42px;padding:10px 20px}.reference-network .directory-compare-choice{font-size:12px;min-height:42px}.reference-network .directory-switch{gap:20px}.reference-network .directory-switch .reference-join{display:none}.reference-network .pro-support-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.reference-network .pro-section-head{display:block}.reference-network .pro-section-head>p{margin-top:14px;max-width:100%}.reference-consultation__panel{grid-template-columns:1fr;padding:32px 100px 32px 30px;gap:25px}.reference-consultation ol{border-left:0;border-top:1px solid #ffffff30;padding:25px 0 0;gap:20px}.reference-consultation__panel>img{width:220px;right:-110px}}
+@media(max-width:550px){.reference-hospital-hero>.container{padding-top:16px}.reference-hospital-hero .breadcrumb{font-size:12px;margin-bottom:25px}.reference-hospital-hero__art{position:relative;opacity:1;inset:auto;width:100%;height:190px;margin-top:9px;margin-bottom:6px}.reference-hospital-hero__art img{border-radius:65px 10px 10px 10px}.reference-hospital-hero__art::before{inset:-6px 4px 1px -6px;border-radius:65px 10px 10px 10px}.reference-hospital-hero__art small{right:10px}.reference-hospital-hero__copy{padding-bottom:8px}.reference-hospital-hero h1{font-size:32px;white-space:normal;max-width:340px;line-height:1.15}.reference-hospital-hero h1>span{display:block}.reference-hospital-hero__copy>p:not(.eyebrow){max-width:100%;font-size:13px;line-height:1.8;margin-bottom:18px}.reference-hospital-hero .eyebrow{font-size:9px;margin-bottom:15px}.reference-benefits{gap:10px;display:grid;grid-template-columns:1fr 1fr}.reference-benefits li{font-size:9px;gap:6px}.reference-benefits li::before{width:15px;height:15px;font-size:9px}.reference-network .directory-switch{gap:13px;min-height:53px}.reference-network .directory-switch>a{font-size:10px;gap:5px;padding:16px 2px}.reference-network .directory-switch .i{width:14px;height:14px}.reference-network .pro-directory{padding:29px 0 33px}.reference-network .pro-section-head h2{font-size:26px}.reference-network .pro-section-head>p{font-size:12px;line-height:1.8}.reference-network .network-note{font-size:10px;padding:12px;margin-bottom:17px}.reference-network .directory-countries{gap:8px;margin-bottom:18px}.reference-network .directory-countries button{flex:1 0 calc(50% - 8px);font-size:11px;padding:10px 9px;min-height:42px}.reference-network .network-filters{flex-wrap:wrap;gap:7px;margin-bottom:22px;padding:7px}.reference-network .network-filters label{flex-basis:calc(100% - 90px)}.reference-network .network-filters input{font-size:12px;padding-left:33px;min-height:42px}.reference-network .network-filters label:not(.directory-country-select)::before{font-size:25px;left:5px;top:8px}.reference-search-button{min-width:73px;min-height:40px;padding:8px 14px;font-size:11px}.reference-network .network-filters p{font-size:10px;order:3;flex:1;padding:5px 7px}.reference-network .network-filters .network-reset{order:4;font-size:11px;padding:5px}.reference-network .hospital-card{grid-template-columns:94px minmax(0,1fr);gap:13px;padding:11px;border-radius:12px}.reference-hospital-photo{min-height:260px;border-radius:8px}.reference-network .hospital-card h3{font-size:17px;line-height:1.25;margin-bottom:8px}.reference-network .hospital-card h3+p{font-size:11px;line-height:1.6;margin-bottom:10px}.reference-network .hospital-card .network-location{font-size:9px;padding-right:0;margin-bottom:7px;min-height:0}.reference-network .hospital-card__top{position:static;align-self:start;margin-bottom:7px;order:-1}.reference-network .pro-country-tag{font-size:8px;padding:3px 5px}.reference-service-tags{gap:4px;margin-bottom:7px;flex-wrap:wrap}.reference-service-tags li{flex:1 0 calc(50% - 4px);padding:4px;gap:4px}.reference-service-tags .i{width:15px;height:15px}.reference-service-tags span{font-size:8px}.reference-network .premium-source{margin-bottom:8px}.reference-network .premium-source summary{font-size:9px;line-height:1.4;padding:5px 0;gap:5px}.reference-network .premium-source summary::before{font-size:14px}.reference-network .accreditation-note{font-size:10px;padding:8px}.reference-card-actions{gap:7px;flex-wrap:wrap}.reference-details-button{font-size:10px;padding:8px 10px;min-height:38px;flex:1}.reference-network .directory-compare-choice{font-size:10px;padding:7px 8px;min-height:38px;gap:5px}.reference-network .directory-compare-choice input{width:12px;height:12px}.reference-network .pro-support{padding:0 0 32px}.reference-network .pro-support-grid{gap:25px 20px;margin-top:22px}.reference-network .pro-support-grid h3{font-size:14px}.reference-network .pro-support-grid p{font-size:11px;line-height:1.8}.reference-consultation__panel{padding:28px 25px;gap:25px;border-radius:13px}.reference-consultation h2{font-size:28px}.reference-consultation__panel>div>p:not(.eyebrow){font-size:12px;padding-right:10px}.reference-consultation__panel>img{width:170px;right:-100px;opacity:.3}.reference-consultation .eyebrow{font-size:8px}.reference-consultation__actions{gap:11px}.reference-consultation .btn{font-size:11px;padding:10px 13px;min-height:42px}.reference-secondary{font-size:10px;min-height:42px}.reference-consultation ol{padding-top:23px;gap:19px}.reference-consultation ol strong{font-size:12px}.reference-consultation ol span{font-size:11px}.reference-membership{font-size:11px;gap:7px}.reference-detail-photo{height:180px}}
+@media(max-width:360px){.reference-network .hospital-card{grid-template-columns:1fr;padding:12px;gap:15px}.reference-hospital-photo{min-height:170px;max-height:170px}.reference-hospital-body{padding:0 3px 3px}.reference-network .hospital-card h3{font-size:20px}.reference-network .hospital-card h3+p{font-size:13px}.reference-service-tags{flex-wrap:nowrap}.reference-service-tags li{flex:1;font-size:9px}.reference-service-tags span{font-size:9px}.reference-network .hospital-card .network-location{font-size:11px}.reference-network .premium-source summary{font-size:11px}.reference-details-button,.reference-network .directory-compare-choice{font-size:12px;min-height:42px}.reference-network .directory-switch{gap:10px}.reference-network .directory-switch>a{font-size:9px}}
+
+/* Modern theme refinement: readable cards, consistent controls and restrained depth. */
+.reference-network{--directory-line:#dce5f0;--directory-muted:#536b87}
+.reference-hospital-hero{background:radial-gradient(ellipse at 12% 45%,#fff 30%,#f4f7fc 95%)}
+.reference-hospital-hero__layout{min-height:290px}
+.reference-hospital-hero__copy{padding-bottom:34px;max-width:65%}
+.reference-hospital-hero .eyebrow{font-size:12px;letter-spacing:.08em}
+.reference-hospital-hero h1{font-size:clamp(34px,3.25vw,48px);letter-spacing:-.045em}
+.reference-hospital-hero__copy>p:not(.eyebrow){font-size:15px;line-height:1.85;max-width:670px}
+.reference-benefits li{font-size:11px;font-weight:600}
+.reference-hospital-hero__art{width:44%;right:-5%}
+.reference-hospital-hero__art::before{inset:0 0 0 -9px}
+.reference-network .directory-switch{gap:30px}
+.reference-network .directory-switch>a{font-size:13px;padding:18px 6px;min-height:57px}
+.reference-network .directory-switch .reference-join{font-size:12px}
+.reference-network .pro-directory{padding:46px 0 54px}
+.reference-network .pro-section-head{margin-bottom:27px}
+.reference-network .pro-section-head h2{font-size:31px;letter-spacing:-.035em}
+.reference-network .pro-section-head>p{font-size:14px;line-height:1.8;color:var(--directory-muted)}
+.reference-network .network-note{padding:14px 17px;background:#f0f4ff;border-color:#dce5fc;font-size:12px;border-radius:9px;margin-bottom:23px}
+.reference-network .directory-countries{gap:10px;margin-bottom:22px}
+.reference-network .directory-countries button{display:flex;align-items:center;justify-content:center;gap:9px;min-height:44px;font-size:13px;padding:11px 18px;border-radius:8px;box-shadow:none}
+.destination-flag{display:inline-block;position:relative;width:21px;height:14px;border-radius:2px;box-shadow:0 0 0 1px #0f254712;flex-shrink:0;overflow:hidden}
+.destination-flag--all{width:17px;height:17px;border:1px solid currentColor;border-radius:50%;background:linear-gradient(90deg,transparent 43%,currentColor 46% 50%,transparent 53%);box-shadow:none}
+.destination-flag--all::before{content:'';position:absolute;left:1px;right:1px;top:6px;border-top:1px solid currentColor}
+.destination-flag--pakistan{background:linear-gradient(90deg,#fff 0 24%,#075b31 24%)}
+.destination-flag--pakistan::before{content:'';position:absolute;left:9px;top:3px;width:8px;height:8px;border-radius:50%;background:#fff}
+.destination-flag--pakistan::after{content:'';position:absolute;left:11px;top:2px;width:8px;height:8px;border-radius:50%;background:#075b31}
+.destination-flag--thailand{background:linear-gradient(#bd1734 0 17%,#fff 17% 33%,#24345d 33% 67%,#fff 67% 83%,#bd1734 83%)}
+.destination-flag--malaysia{background:repeating-linear-gradient(#cb1e37 0 1px,#fff 1px 2px)}
+.destination-flag--malaysia::before{content:'';position:absolute;inset:0 10px 6px 0;background:#143575}
+.destination-flag--malaysia::after{content:'☾';position:absolute;left:1px;top:-3px;color:#fbd54e;font-size:10px;line-height:12px}
+.reference-network .network-filters{min-height:60px;padding:7px;border:1px solid #cdd8e8;border-radius:10px;box-shadow:0 4px 14px #172e4f04;margin-bottom:28px}
+.reference-network .network-filters input{font-size:14px;min-height:44px;padding-left:42px}
+.reference-network .network-filters input:focus-visible{outline:2px solid #7594bf;outline-offset:-1px;border-radius:6px}
+.reference-network .network-filters p{font-size:12px;padding-right:13px}
+.reference-search-button{font-size:13px;min-height:44px;border-radius:7px;box-shadow:0 4px 9px #c5002514}
+.reference-network .hospital-grid{gap:25px}
+.reference-network .hospital-card{padding:16px;grid-template-columns:28% minmax(0,1fr);gap:21px;border:1px solid var(--directory-line);border-radius:16px;background:#fff;box-shadow:0 3px 10px #16304e05;transition:box-shadow .2s,border-color .2s,transform .2s}
+.reference-hospital-photo{min-height:310px;border-radius:11px;background:#eff3f8}
+.reference-hospital-photo img{transition:transform .35s}
+.reference-hospital-body{padding:3px 2px;min-width:0}
+.reference-network .hospital-card h3{font-size:21px;line-height:1.32;font-weight:750;letter-spacing:-.03em;margin-bottom:10px}
+.reference-network .hospital-card h3+p{font-size:13px;line-height:1.75;min-height:48px;color:var(--directory-muted);margin-bottom:16px}
+.reference-network .hospital-card .network-location{display:flex;align-items:center;gap:5px;text-transform:none;font-size:11px;letter-spacing:0;color:#6d829a;font-weight:500;padding-right:68px;margin-bottom:11px;line-height:1.5}
+.reference-network .hospital-card .network-location::before{display:none}
+.reference-network .network-location>.i{color:#db1237;width:14px;height:14px;flex-shrink:0}
+.reference-network .pro-country-tag{font-size:10px;border-radius:5px;padding:4px 7px;background:#eff5fa;color:#4a6583;border:1px solid #e5edf5}
+.reference-service-tags{gap:6px;margin-bottom:12px}
+.reference-service-tags li{padding:8px 6px;background:#f9fbfe;border-color:#e7edf5;border-radius:6px;gap:5px}
+.reference-service-tags .i{width:18px;height:18px}
+.reference-service-tags span{font-size:10px;line-height:1.4;font-weight:550}
+.reference-network .premium-source{margin-bottom:14px}
+.reference-network .premium-source summary{font-size:11px;line-height:1.5;min-height:36px;padding:8px 0;gap:7px}
+.reference-network .premium-source summary::before{display:none}
+.reference-network .premium-source summary>.i{color:#ce143b;width:16px;height:16px;flex-shrink:0}
+.reference-network .premium-source summary>span{font-size:16px}
+.reference-network .accreditation-note{font-size:12px;line-height:1.8;padding:12px;border-radius:7px}
+.reference-card-actions{gap:10px}
+.reference-details-button,.reference-network .directory-compare-choice{min-height:43px;font-size:12px;border-radius:6px;padding:10px 13px;flex:1}
+.reference-network .directory-compare-choice{border-color:#c4d2e4;color:#455e7b;transition:border-color .2s,background .2s}
+.reference-network .directory-compare-choice:hover{border-color:#7896bc;background:#f4f8fc}
+.reference-network .directory-compare-choice input{width:14px;height:14px}
+.reference-network .pro-support{padding:4px 0 52px}
+.reference-network .pro-support-grid{gap:34px;margin-top:33px}
+.reference-network .pro-support-grid h3{font-size:18px;letter-spacing:-.025em}
+.reference-network .pro-support-grid p{font-size:14px;line-height:1.85}
+.reference-network .pro-support-icon>.i{width:45px;height:45px;padding:11px;border:1px solid #ffe3e9;background:#fff2f5}
+.reference-consultation__panel{padding:43px 180px 43px 43px;border-radius:19px;gap:37px}
+.reference-consultation h2{font-size:34px}
+.reference-consultation__panel>div>p:not(.eyebrow){font-size:14px;line-height:1.8}
+.reference-consultation .btn{font-size:13px;min-height:45px}
+.reference-secondary{font-size:12px;min-height:45px}
+.reference-consultation ol strong{font-size:14px}
+.reference-consultation ol span{font-size:12px;line-height:1.8}
+.reference-membership{font-size:13px;margin-top:24px}
+@media(hover:hover){.reference-network .hospital-card:hover{transform:translateY(-3px);border-color:#becfe3;box-shadow:0 13px 30px #16304e0d}.reference-network .hospital-card:hover .reference-hospital-photo img{transform:scale(1.035)}}
+@media(prefers-reduced-motion:reduce){.reference-network .hospital-card,.reference-hospital-photo img{transition:none;transform:none!important}}
+@media(max-width:1150px){.reference-hospital-hero__copy{max-width:67%}.reference-hospital-hero h1{font-size:38px}.reference-network .hospital-card{grid-template-columns:26% minmax(0,1fr);gap:16px;padding:14px}.reference-network .hospital-card h3{font-size:19px}.reference-service-tags{flex-wrap:wrap}.reference-service-tags li{flex:1 0 calc(50% - 6px)}.reference-service-tags span{font-size:10px}.reference-consultation__panel{padding:35px 110px 35px 35px}.reference-consultation h2{font-size:29px}}
+@media(max-width:850px){.reference-hospital-hero__copy{max-width:80%}.reference-hospital-hero__copy>p:not(.eyebrow){max-width:100%}.reference-hospital-hero h1{font-size:38px}.reference-network .hospital-card{grid-template-columns:28% minmax(0,1fr);padding:18px;gap:24px}.reference-network .hospital-card h3{font-size:24px}.reference-network .hospital-card h3+p{font-size:15px;min-height:0}.reference-network .hospital-card .network-location{font-size:12px}.reference-service-tags{flex-wrap:nowrap}.reference-service-tags span{font-size:11px}.reference-service-tags li{flex:1;padding:10px 8px;gap:7px}.reference-network .premium-source summary{font-size:13px;min-height:42px}.reference-network .pro-country-tag{font-size:11px}.reference-hospital-photo{min-height:300px}.reference-details-button,.reference-network .directory-compare-choice{font-size:13px;min-height:46px}.reference-consultation__panel{grid-template-columns:1fr;padding:34px 90px 34px 32px}.reference-consultation h2{font-size:32px}.reference-network .pro-support-grid h3{font-size:17px}.reference-network .pro-support-grid p{font-size:13px}}
+@media(max-width:550px){.reference-hospital-hero__copy{max-width:100%;padding-bottom:13px}.reference-hospital-hero h1{font-size:36px}.reference-hospital-hero .eyebrow{font-size:10px}.reference-hospital-hero__copy>p:not(.eyebrow){font-size:14px;line-height:1.85}.reference-benefits li{font-size:10px}.reference-hospital-hero__art{width:100%;right:auto;height:195px;margin-top:12px}.reference-network .directory-switch{gap:14px}.reference-network .directory-switch>a{font-size:11px;gap:6px;padding:17px 2px}.reference-network .pro-directory{padding:33px 0 38px}.reference-network .pro-section-head h2{font-size:28px}.reference-network .pro-section-head>p{font-size:13px;line-height:1.85}.reference-network .network-note{font-size:11px;padding:13px;line-height:1.8}.reference-network .directory-countries button{font-size:12px;min-height:46px;gap:7px;padding:11px 9px}.destination-flag{width:19px;height:13px}.reference-network .network-filters{padding:7px;gap:7px;margin-bottom:24px}.reference-network .network-filters label{flex-basis:calc(100% - 90px)}.reference-network .network-filters input{font-size:13px;min-height:46px;padding-left:33px}.reference-network .network-filters p{font-size:11px;padding:6px}.reference-search-button{min-height:44px;font-size:12px;min-width:76px;padding:9px 13px}.reference-network .hospital-grid{gap:22px}.reference-network .hospital-card{display:flex;flex-direction:column;gap:0;padding:0;border-radius:14px;overflow:hidden}.reference-hospital-photo{min-height:190px;height:190px;max-height:none;width:100%;border-radius:0}.reference-hospital-photo img{position:relative;display:block;width:100%;height:190px;object-position:center}.reference-hospital-photo img[src*="shifa"]{object-position:center}.reference-hospital-photo img[src*="bumrungrad"]{object-position:center}.reference-hospital-body{padding:21px;flex:1}.reference-network .hospital-card__top{position:absolute;right:21px;top:20px;order:0;margin:0}.reference-network .pro-country-tag{font-size:10px;padding:4px 7px}.reference-network .hospital-card .network-location{font-size:12px;padding-right:75px;margin-bottom:13px;min-height:22px}.reference-network .hospital-card h3{font-size:23px;line-height:1.3;margin-bottom:12px}.reference-network .hospital-card h3+p{font-size:14px;line-height:1.8;margin-bottom:17px}.reference-service-tags{gap:7px;margin-bottom:13px}.reference-service-tags li{padding:9px 6px;gap:5px;flex:1 1 0}.reference-service-tags span{font-size:10px;line-height:1.4}.reference-service-tags .i{width:19px;height:19px}.reference-network .premium-source{margin-bottom:16px}.reference-network .premium-source summary{font-size:12px;min-height:42px;gap:8px}.reference-network .accreditation-note{font-size:12px;padding:12px}.reference-card-actions{gap:10px;flex-wrap:nowrap}.reference-details-button,.reference-network .directory-compare-choice{font-size:13px;min-height:46px;padding:11px 14px}.reference-network .directory-compare-choice input{width:15px;height:15px}.reference-network .pro-support{padding:0 0 37px}.reference-network .pro-support-grid{gap:27px 21px;margin-top:27px}.reference-network .pro-support-grid h3{font-size:16px}.reference-network .pro-support-grid p{font-size:12px;line-height:1.85}.reference-network .pro-support-icon>.i{width:43px;height:43px}.reference-consultation__panel{padding:29px 25px;gap:27px;border-radius:15px}.reference-consultation h2{font-size:30px}.reference-consultation__panel>div>p:not(.eyebrow){font-size:13px}.reference-consultation .btn{font-size:12px;min-height:45px}.reference-secondary{font-size:11px;min-height:45px}.reference-consultation ol strong{font-size:13px}.reference-consultation ol span{font-size:12px}.reference-membership{font-size:12px}}
+@media(max-width:360px){.reference-hospital-hero h1{font-size:32px}.reference-network .directory-switch{gap:10px}.reference-network .directory-switch>a{font-size:10px}.reference-hospital-body{padding:18px}.reference-network .hospital-card__top{right:18px;top:18px}.reference-network .hospital-card h3{font-size:22px}.reference-service-tags{gap:5px}.reference-service-tags span{font-size:9px}.reference-service-tags .i{width:16px;height:16px}.reference-details-button,.reference-network .directory-compare-choice{font-size:12px;padding:11px}.reference-network .directory-countries button{font-size:11px}}

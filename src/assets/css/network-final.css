@@ -1,0 +1,282 @@
+/* Final layer for the hospital and coordinator directories. Loaded last.
+   1) Hospital pages: no note, destination pills or search bar (markup stays so the page script keeps working).
+   2) Hospital pages: readable type in the hero, section heads and "The Details Matter".
+   3) Coordinators page: layout from the approved reference (hero with red edge, stats band, horizontal profile cards, 4-up support, join band). */
+:root { --nf-navy: #0f2547; --nf-red: #c4002a; --nf-pink: #fdecef; --nf-line: #e3e9f2; --nf-text: #33455f; --nf-muted: #586780; }
+
+/* ================= 1) hospital pages: remove note, pills, search ================= */
+html body .reference-network .network-note,
+html body .reference-network .directory-countries,
+html body .reference-network .network-filters,
+html body .reference-network .pro-directory > .container > .network-note { display: none !important; }
+
+/* ================= 2) hospital pages: type ================= */
+html body .reference-hospital-hero .breadcrumb { font-size: 14px; }
+html body .reference-hospital-hero .eyebrow { font-size: 13px; font-weight: 800; letter-spacing: .16em; }
+html body .reference-hospital-hero h1 { font-size: clamp(2.3rem, 4vw, 3.4rem); font-weight: 800; letter-spacing: -.04em; }
+html body .reference-hospital-hero__copy > p:not(.eyebrow) { max-width: 36em; color: var(--nf-text); font-size: clamp(1rem, 1.2vw, 1.15rem); line-height: 1.7; }
+html body .reference-benefits li { font-size: 14px; font-weight: 700; color: var(--nf-navy); }
+html body .reference-hospital-hero .directory-switch > a { font-size: 15px; font-weight: 700; }
+html body .reference-hospital-hero .directory-switch .reference-join { font-size: 14px; }
+html body .reference-network .pro-section-head h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; color: var(--nf-navy); letter-spacing: -.035em; }
+html body .reference-network .pro-section-head > p { max-width: 460px; color: var(--nf-text); font-size: 16px; line-height: 1.7; }
+html body .reference-network .pro-support-grid h3 { font-size: 20px; font-weight: 800; color: var(--nf-navy); }
+html body .reference-network .pro-support-grid p { color: var(--nf-text); font-size: 15px; line-height: 1.65; }
+html body .reference-network .pro-support-icon > span { color: var(--nf-red); font-size: 13px; font-weight: 800; }
+html body .reference-consultation__panel .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+html body .reference-consultation__panel li strong { font-size: 16px; }
+html body .reference-consultation__panel li span { font-size: 14px; line-height: 1.55; }
+html body .reference-consultation__panel p { font-size: 16px; line-height: 1.7; }
+html body .reference-secondary { font-size: 14px; font-weight: 700; }
+html body .reference-membership { font-size: 15px; }
+html body .reference-hospital-hero__art small { font-size: 12px; }
+html body .reference-network .pro-directory { padding-top: 40px; }
+
+/* ================= 3) coordinators page: same pieces as the Procedures and Hospitals pages ================= */
+/* hero = .proc-hero (shared); only the caption and feature icons are page-specific */
+.coordinators-page .coordinators-theme-caption { position: absolute; bottom: 23px; right: 18px; z-index: 2; padding: 4px 8px; border-radius: 4px; background: #0f2547b3; color: #fff; font-size: 11px; }
+.coordinators-page .proc-features .i { color: var(--red); }
+
+/* section head */
+.coordinators-page .pro-directory { padding: 52px 0 64px; background: #fff; }
+.coordinators-page .pro-section-head { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 30px; }
+.coordinators-page .pro-section-head .eyebrow { display: block; margin-bottom: 12px; color: var(--red); font-size: 13px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.coordinators-page .pro-section-head h2 { color: var(--navy); font-size: 36px; font-weight: 800; line-height: 1.2; letter-spacing: -.035em; }
+.coordinators-page .pro-section-head > p { max-width: 470px; margin: 0; padding: 0; border: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* destination pills, search and role filter, sample note */
+.coordinators-page .directory-countries { gap: 10px; margin-bottom: 18px; }
+.coordinators-page .directory-countries button { padding: 10px 20px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--navy); font-size: 14px; font-weight: 700; }
+.coordinators-page .directory-countries button:hover { border-color: #f2b6c2; background: var(--red-50); color: var(--red); }
+.coordinators-page .directory-countries button[aria-pressed=true] { border-color: transparent; background: linear-gradient(135deg, #e01535, #c00b28); color: #fff; box-shadow: 0 8px 16px -8px rgba(192, 11, 40, .6); }
+.coordinators-page .network-filters { margin-bottom: 18px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-soft); }
+.coordinators-page .network-note { margin-bottom: 26px; border-left: 3px solid var(--red); background: var(--bg-soft); color: var(--muted); font-size: 14px; }
+.coordinators-page .network-note strong { color: var(--navy); }
+
+/* profile cards: portrait on top, details below, four across */
+.coordinators-page .pro-directory .coordinator-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.coordinators-page .pro-directory .coordinator-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: var(--shadow-sm); transition: box-shadow .2s, border-color .2s, transform .25s; }
+.coordinators-page .pro-directory .coordinator-portrait { width: 100%; height: auto; aspect-ratio: 1; border-radius: 0; }
+.coordinators-page .pro-directory .coordinator-card__body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 18px 20px 20px; }
+.coordinators-page .pro-directory .sample-label { margin: 0 0 10px; padding: 4px 9px; border-radius: 999px; background: var(--red-50); color: var(--red); font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.coordinators-page .pro-directory .coordinator-card h3 { margin: 0 0 4px; color: var(--navy); font-size: 19px; font-weight: 800; line-height: 1.25; letter-spacing: -.02em; }
+.coordinators-page .pro-directory .coordinator-card p { margin: 0 0 6px; color: var(--ink); font-size: 14px; line-height: 1.5; }
+.coordinators-page .pro-directory .coordinator-card .network-location { color: var(--muted); font-size: 13px; }
+.coordinators-page .pro-directory .coordinator-languages { margin-top: auto; padding-top: 8px; color: var(--muted); font-size: 13px !important; }
+.coordinators-page .pro-directory .directory-profile-button { width: auto; margin-top: 12px; padding: 0; color: var(--red); font-size: 14px; font-weight: 750; }
+.coordinators-page .pro-directory .directory-profile-button:hover { color: var(--navy); }
+.coordinators-page .directory-more { margin-top: 32px; }
+@media (hover: hover) { .coordinators-page .pro-directory .coordinator-card:hover { border-color: #c8d4e5; box-shadow: var(--shadow); transform: translateY(-3px); } }
+
+/* support points (same as the Hospitals page) */
+.coordinators-page .pro-support { padding: 52px 0; background: var(--bg-soft); border-block: 1px solid var(--line); }
+.coordinators-page .pro-support-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 32px; }
+.coordinators-page .pro-support-grid article, .coordinators-page .pro-support-grid article + article { padding: 0; border: 0; }
+.coordinators-page .pro-support-icon { display: flex; align-items: center; margin-bottom: 18px; }
+.coordinators-page .pro-support-icon > .i { width: 43px; height: 43px; padding: 10px; border: 1px solid #f4dce3; border-radius: 10px; background: var(--red-50); color: var(--red); }
+.coordinators-page .pro-support-icon > span { display: none; }
+.coordinators-page .pro-support-grid h3 { margin-bottom: 11px; color: var(--navy); font-size: 18px; font-weight: 750; line-height: 1.3; }
+.coordinators-page .pro-support-grid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+
+/* shared site CTA band + join line */
+.coordinators-theme-cta { padding-top: 48px !important; }
+.coordinators-theme-join { margin: 21px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; text-align: center; }
+.coordinators-theme-join a { margin-left: 7px; font-weight: 650; }
+
+@media (max-width: 1180px) { .coordinators-page .pro-directory .coordinator-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 1000px) {
+  .coordinators-page .pro-section-head { gap: 32px; }
+  .coordinators-page .pro-section-head h2 { font-size: 32px; }
+  .coordinators-page .pro-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+  .coordinators-page .pro-directory .coordinator-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .coordinators-page .pro-section-head { display: block; margin-bottom: 25px; }
+  .coordinators-page .pro-section-head > p { max-width: 100%; margin-top: 16px; }
+  .coordinators-page .pro-directory { padding: 38px 0 42px; }
+  .coordinators-page .pro-section-head h2 { font-size: 29px; }
+  .coordinators-page .pro-section-head .eyebrow { font-size: 11px; }
+  .coordinators-page .coordinators-theme-caption { bottom: 12px; font-size: 9px; }
+  .coordinators-page .pro-directory .coordinator-grid { gap: 14px; }
+  .coordinators-page .pro-directory .coordinator-card__body { padding: 14px 14px 16px; }
+  .coordinators-page .pro-directory .coordinator-card h3 { font-size: 16px; }
+  .coordinators-page .pro-directory .coordinator-card p { font-size: 13px; }
+}
+@media (max-width: 460px) {
+  .coordinators-page .pro-support-grid { grid-template-columns: 1fr; }
+  .coordinators-page .pro-directory .coordinator-grid { grid-template-columns: 1fr; }
+}
+
+/* ================= 4) hospital pages: destination pills and search bar (as in the approved mockup) ================= */
+/* The "Independent listings" note stays removed. Pills and search come back, styled to the site theme. */
+html body .hospital-theme .directory-countries { display: flex !important; flex-wrap: wrap; gap: 12px; margin: 0 0 20px; }
+html body .hospital-theme .directory-countries button { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 10px 20px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--navy); font-size: 14px; font-weight: 700; box-shadow: 0 2px 6px rgba(15, 37, 71, .05); cursor: pointer; transition: background .2s, border-color .2s, color .2s, box-shadow .2s; }
+html body .hospital-theme .directory-countries button:hover { border-color: #f2b6c2; background: var(--red-50); color: var(--red); }
+html body .hospital-theme .directory-countries button[aria-pressed=true] { border-color: var(--navy); background: linear-gradient(135deg, #14305c, #0f2547); color: #fff; box-shadow: 0 10px 20px -10px rgba(15, 37, 71, .7); }
+html body .hospital-theme .directory-countries button[aria-pressed=true]:hover { color: #fff; }
+
+html body .hospital-theme .network-filters { display: flex !important; align-items: center; gap: 12px; margin: 0 0 28px; padding: 7px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 10px 26px -20px rgba(15, 37, 71, .45); }
+html body .hospital-theme .network-filters[hidden] { display: none !important; }
+html body .hospital-theme .network-filters .directory-country-select { display: none; }
+html body .hospital-theme .network-filters label { position: relative; display: block; flex: 1; margin: 0; font-size: 0; }
+html body .hospital-theme .network-filters label:not(.directory-country-select)::before { content: ""; position: absolute; left: 16px; top: 50%; width: 20px; height: 20px; transform: translateY(-50%); background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23586780' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E"); pointer-events: none; }
+html body .hospital-theme .network-filters input { width: 100%; min-height: 46px; padding: 10px 14px 10px 48px; border: 0; border-radius: 10px; background: transparent; color: var(--navy); font-size: 15px; box-shadow: none; }
+html body .hospital-theme .network-filters input:focus-visible { outline: 3px solid #295eac55; outline-offset: -2px; }
+html body .hospital-theme .network-filters p { margin: 0; padding: 0 10px; color: var(--muted); font-size: 13px; white-space: nowrap; }
+html body .hospital-theme .network-reset { color: var(--red); font-size: 13px; font-weight: 700; }
+html body .hospital-theme .reference-search-button { min-width: 116px; min-height: 46px; padding: 0 24px; border: 1.5px solid #b80a26; border-radius: 10px; background: linear-gradient(135deg, #e01535, #c00b28); color: #fff; font-size: 15px; font-weight: 700; box-shadow: 0 8px 18px -10px rgba(224, 21, 53, .7); cursor: pointer; transition: background .2s, border-color .2s; }
+html body .hospital-theme .reference-search-button:hover { border-color: #0f2547; background: #0f2547; }
+html body .hospital-theme .network-note { display: none !important; }
+
+@media (max-width: 700px) {
+  html body .hospital-theme .directory-countries { gap: 8px; }
+  html body .hospital-theme .directory-countries button { flex: 1 1 calc(50% - 8px); justify-content: center; min-height: 44px; padding: 10px 12px; font-size: 13px; }
+  html body .hospital-theme .network-filters { flex-wrap: wrap; }
+  html body .hospital-theme .network-filters label { flex-basis: 100%; }
+  html body .hospital-theme .reference-search-button { flex: 1; }
+  html body .hospital-theme .network-filters p { flex-basis: 100%; padding: 0 8px 4px; order: 5; }
+}
+
+/* three feature items on the coordinators hero */
+.coordinators-page .proc-features { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 700px) { .coordinators-page .proc-features { grid-template-columns: 1fr; } }
+
+/* ================= 5) coordinator profile dialog ================= */
+html body .directory-dialog--profile { width: min(620px, calc(100% - 32px)); max-width: 620px; padding: 0; overflow: hidden; border: 0; border-radius: 22px; background: #fff; box-shadow: 0 40px 90px -30px rgba(15, 37, 71, .55); }
+html body .directory-dialog--profile::backdrop { background: rgba(15, 37, 71, .6); backdrop-filter: blur(4px); }
+html body .directory-dialog--profile .directory-dialog-close { position: absolute; z-index: 3; top: 14px; right: 14px; margin: 0; padding: 8px 14px; border: 0; border-radius: 999px; background: rgba(255, 255, 255, .92); color: var(--navy); font-size: 13px; font-weight: 700; box-shadow: 0 6px 16px -8px rgba(15, 37, 71, .5); }
+html body .directory-dialog--profile .directory-dialog-close:hover { background: var(--navy); color: #fff; }
+html body .directory-dialog--profile > div { padding: 0 32px 30px; }
+
+html body .directory-dialog--profile .directory-profile-header { position: relative; display: flex; align-items: flex-end; gap: 22px; margin: 0 -32px 24px; padding: 38px 32px 24px; border: 0; background: linear-gradient(135deg, #0f2547, #14305c); }
+html body .directory-dialog--profile .directory-profile-header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, #c4002a, #ff3b5c); }
+html body .directory-dialog--profile .directory-dialog-portrait { flex: none; width: 112px; height: 112px; margin: 0; border: 3px solid #fff; border-radius: 18px; box-shadow: 0 14px 28px -12px rgba(0, 0, 0, .6); }
+html body .directory-dialog--profile .directory-profile-identity { min-width: 0; padding-bottom: 4px; }
+html body .directory-dialog--profile .directory-dialog-eyebrow { display: inline-block; margin: 0 0 8px; padding: 4px 10px; border-radius: 999px; background: #ffffff1f; color: #ffb3c1 !important; font-size: 11px !important; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+html body .directory-dialog--profile .directory-profile-identity h2 { margin: 0 0 4px; color: #fff; font-size: 26px; font-weight: 800; letter-spacing: -.03em; line-height: 1.15; }
+html body .directory-dialog--profile .directory-profile-role { margin: 0 0 4px; color: #ff9bb0; font-size: 15px; font-weight: 700; }
+html body .directory-dialog--profile .directory-profile-place { margin: 0; color: #d3dff2; font-size: 14px; }
+
+html body .directory-dialog--profile .directory-profile-section { margin: 0 0 20px; }
+html body .directory-dialog--profile .directory-profile-section h3 { margin: 0 0 8px; color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+html body .directory-dialog--profile .directory-profile-section p { margin: 0; color: var(--ink); font-size: 15.5px; line-height: 1.65; }
+html body .directory-dialog--profile .directory-profile-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+html body .directory-dialog--profile .directory-profile-list li { position: relative; padding-left: 30px; color: var(--navy); font-size: 15px; font-weight: 600; line-height: 1.5; }
+html body .directory-dialog--profile .directory-profile-list li::before { content: ""; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--red-50) no-repeat center / 12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c4002a' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E"); }
+html body .directory-dialog--profile .directory-profile-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+html body .directory-dialog--profile .directory-profile-chips span { padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-soft); color: var(--navy); font-size: 14px; font-weight: 700; }
+html body .directory-dialog--profile .directory-profile-boundary { margin: 0 0 12px; padding: 14px 16px; border-left: 3px solid var(--red); border-radius: 0 12px 12px 0; background: var(--bg-soft); color: var(--muted); font-size: 14px; line-height: 1.6; }
+html body .directory-dialog--profile .directory-dialog-notice { margin: 0 0 22px; padding: 0; background: transparent; color: var(--muted); font-size: 13px !important; line-height: 1.5; }
+html body .directory-dialog--profile .directory-profile-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+html body .directory-dialog--profile .directory-profile-link { color: var(--red); font-size: 15px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+html body .directory-dialog--profile .directory-profile-link:hover { color: var(--navy); }
+
+@media (max-width: 520px) {
+  html body .directory-dialog--profile > div { padding: 0 20px 24px; }
+  html body .directory-dialog--profile .directory-profile-header { margin: 0 -20px 20px; padding: 56px 20px 20px; gap: 16px; align-items: center; }
+  html body .directory-dialog--profile .directory-dialog-portrait { width: 84px; height: 84px; border-radius: 14px; }
+  html body .directory-dialog--profile .directory-profile-identity h2 { font-size: 21px; }
+  html body .directory-dialog--profile .directory-profile-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* ================= 7) hospital details modal ================= */
+html body .directory-dialog--hospital { width: min(860px, calc(100% - 32px)); max-width: 860px; padding: 0; overflow: auto; border: 0; border-radius: 22px; background: #fff; box-shadow: 0 40px 90px -30px rgba(15, 37, 71, .55); }
+html body .directory-dialog--hospital::backdrop { background: rgba(15, 37, 71, .6); backdrop-filter: blur(4px); }
+html body .directory-dialog--hospital .directory-dialog-close { position: absolute; z-index: 5; top: 14px; right: 14px; margin: 0; padding: 8px 14px; border: 0; border-radius: 999px; background: rgba(255, 255, 255, .94); color: var(--navy); font-size: 13px; font-weight: 700; box-shadow: 0 6px 16px -8px rgba(15, 37, 71, .5); }
+html body .directory-dialog--hospital .directory-dialog-close:hover { background: var(--navy); color: #fff; }
+html body .directory-dialog--hospital > div { padding: 0 28px 28px; }
+
+html body .hospital-modal__banner { position: relative; margin: 0 -28px 22px; height: clamp(200px, 30vw, 300px); overflow: hidden; background: #e8eef8; }
+html body .hospital-modal__photo { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; margin: 0; object-fit: cover; border-radius: 0; }
+html body .hospital-modal__banner .hospital-photo-wave { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 34%; }
+
+html body .hospital-modal__place { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+html body .hospital-modal__place span:first-child { padding: 4px 12px; border-radius: 999px; background: var(--red-50); color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+html body .directory-dialog--hospital h2 { margin: 0 0 8px; color: var(--navy); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; line-height: 1.15; letter-spacing: -.035em; }
+html body .hospital-modal__lead { margin: 0 0 16px; color: var(--ink); font-size: 16px; line-height: 1.6; }
+html body .hospital-modal__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; padding: 0; list-style: none; }
+html body .hospital-modal__tags li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg-soft); }
+html body .hospital-modal__tags .i { width: 16px; height: 16px; color: var(--red); }
+html body .hospital-modal__tags span { color: var(--navy); font-size: 14px; font-weight: 700; }
+
+html body .hospital-modal__accred { display: flex; align-items: flex-start; gap: 16px; margin: 0 0 20px; padding: 18px 20px; border: 1px solid #f4dce3; border-radius: 14px; background: linear-gradient(120deg, #fff5f7, #fff); }
+html body .hospital-modal__accred-icon { flex: none; width: 46px; height: 46px; border-radius: 12px; background: var(--red-50) no-repeat center / 26px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c4002a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='9' r='6'/%3E%3Cpath d='M8.5 14 7 22l5-3 5 3-1.5-8'/%3E%3Cpath d='m10 9 1.5 1.5L14.5 7.5'/%3E%3C/svg%3E"); }
+html body .hospital-modal__accred h3 { margin: 0 0 4px; color: var(--navy); font-size: 18px; font-weight: 800; }
+html body .hospital-modal__accred p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.6; }
+html body .hospital-modal__links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 0; }
+html body .hospital-modal__links a { color: var(--red); font-size: 15px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+html body .hospital-modal__links a:hover { color: var(--navy); }
+
+@media (max-width: 560px) {
+  html body .directory-dialog--hospital > div { padding: 0 18px 22px; }
+  html body .hospital-modal__banner { margin: 0 -18px 18px; height: 190px; }
+  html body .hospital-modal__accred { flex-direction: column; gap: 12px; }
+}
+
+/* ---- 7b) hospital modal, closer to the approved design ---- */
+html body .directory-dialog--hospital { width: min(960px, calc(100% - 32px)); max-width: 960px; border-radius: 24px; }
+html body .directory-dialog--hospital > div { padding: 0 22px 24px; }
+/* round close button with an X */
+html body .directory-dialog--hospital .directory-dialog-close { top: 24px; right: 24px; width: 44px; height: 44px; padding: 0; font-size: 0; border-radius: 50%; }
+html body .directory-dialog--hospital .directory-dialog-close::before { content: ""; display: block; width: 18px; height: 18px; margin: auto; background: currentColor; -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M5 5l14 14M19 5L5 19'/%3E%3C/svg%3E"); mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M5 5l14 14M19 5L5 19'/%3E%3C/svg%3E"); }
+
+/* banner is a rounded image card inside the dialog */
+html body .hospital-modal__banner { margin: 22px 0 20px; height: clamp(210px, 32vw, 330px); border-radius: 18px; }
+html body .hospital-modal__badge { position: absolute; z-index: 2; top: 16px; left: 16px; max-width: 60%; padding: 12px 20px 12px 54px; border-radius: 999px; background: rgba(255, 255, 255, .96) no-repeat 16px center / 26px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c4002a' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z'/%3E%3Cpath d='M5 12h3l2-3 3 6 2-3h4'/%3E%3C/svg%3E"); color: var(--navy); font-size: 15px; font-weight: 800; line-height: 1.25; box-shadow: 0 10px 24px -12px rgba(15, 37, 71, .5); }
+html body .hospital-modal__tools { position: absolute; z-index: 2; top: 16px; right: 84px; display: flex; gap: 12px; }
+html body .hospital-modal__tool { position: relative; width: 52px; height: 52px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .96); color: var(--navy); box-shadow: 0 10px 24px -12px rgba(15, 37, 71, .5); cursor: pointer; transition: background .2s, color .2s, transform .2s; }
+html body .hospital-modal__tool::before { content: ""; position: absolute; inset: 0; margin: auto; width: 24px; height: 24px; background: currentColor; -webkit-mask: no-repeat center / contain var(--tool-icon); mask: no-repeat center / contain var(--tool-icon); }
+html body .hospital-modal__tool--share { --tool-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='18' cy='5' r='2.8'/%3E%3Ccircle cx='6' cy='12' r='2.8'/%3E%3Ccircle cx='18' cy='19' r='2.8'/%3E%3Cpath d='M8.5 10.6 15.5 6.4M8.5 13.4l7 4.2'/%3E%3C/svg%3E"); }
+html body .hospital-modal__tool--save { --tool-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z'/%3E%3C/svg%3E"); color: var(--red); }
+html body .hospital-modal__tool--save[aria-pressed="true"] { background: var(--red); color: #fff; }
+html body .hospital-modal__tool:hover, html body .hospital-modal__tool:focus-visible { background: var(--navy); color: #fff; transform: translateY(-1px); }
+html body .hospital-modal__tool.is-done { background: #1b7a47; color: #fff; }
+
+/* head: name and services left, details panel right */
+html body .hospital-modal__head { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; align-items: start; margin: 0 0 22px; }
+html body .hospital-modal__place { margin: 0 0 10px; }
+html body .hospital-modal__place span:first-child { padding: 0; background: none; color: var(--navy); font-size: 16px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+html body .hospital-modal__place span:first-child::before { content: ""; display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; background: var(--red); -webkit-mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12zm0-9.3a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z'/%3E%3C/svg%3E"); mask: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12zm0-9.3a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z'/%3E%3C/svg%3E"); }
+html body .hospital-modal__place span:last-child::before { content: "\203A"; margin: 0 10px 0 2px; color: #8c98ab; font-size: 18px; }
+html body .directory-dialog--hospital h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); letter-spacing: -.04em; }
+html body .hospital-modal__tags { margin: 0; }
+html body .hospital-modal__tags li { padding: 10px 18px; border: 0; background: var(--red-50); }
+html body .hospital-modal__tags span { font-size: 15px; font-weight: 650; }
+html body .hospital-modal__facts { margin: 0; padding: 6px 20px; border-radius: 16px; background: var(--bg-soft); }
+html body .hospital-modal__facts > div { padding: 16px 0; }
+html body .hospital-modal__facts > div + div { border-top: 1px solid var(--line); }
+html body .hospital-modal__facts dt { margin: 0 0 3px; color: var(--muted); font-size: 13px; }
+html body .hospital-modal__facts dd { margin: 0; color: var(--navy); font-size: 17px; font-weight: 800; line-height: 1.3; }
+
+/* accreditation: icon, text, status chip */
+html body .hospital-modal__accred { align-items: center; padding: 22px 26px; gap: 20px; }
+html body .hospital-modal__accred-icon { width: 56px; height: 56px; background-size: 32px; }
+html body .hospital-modal__accred-text { flex: 1; min-width: 0; }
+html body .hospital-modal__accred h3 { font-size: 21px; }
+html body .hospital-modal__accred p { font-size: 16px; }
+html body .hospital-modal__reported { flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px 9px 12px; border-radius: 999px; background: #e9f6ee; color: #14683b; font-size: 14px; font-weight: 800; }
+html body .hospital-modal__reported::before { content: ""; width: 18px; height: 18px; border-radius: 50%; background: #1b9a57 no-repeat center / 11px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E"); }
+
+/* links with icons and a divider */
+html body .hospital-modal__links { gap: 0; align-items: center; }
+html body .hospital-modal__links a { display: inline-flex; align-items: center; gap: 10px; padding: 4px 28px 4px 0; font-size: 16px; }
+html body .hospital-modal__links a + a { padding: 4px 0 4px 28px; border-left: 1px solid var(--line); }
+html body .hospital-modal__links a::before { content: ""; width: 22px; height: 22px; background: var(--red); -webkit-mask: no-repeat center / contain var(--link-icon); mask: no-repeat center / contain var(--link-icon); }
+html body .hospital-modal__links a:first-child { --link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z'/%3E%3Cpath d='M5 12h3l2-3 3 6 2-3h4'/%3E%3C/svg%3E"); }
+html body .hospital-modal__links a:last-child { --link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='9' r='6'/%3E%3Cpath d='M8.5 14 7 22l5-3 5 3-1.5-8'/%3E%3Cpath d='m10 9 1.5 1.5L14.5 7.5'/%3E%3C/svg%3E"); }
+
+@media (max-width: 760px) {
+  html body .hospital-modal__head { grid-template-columns: 1fr; gap: 18px; }
+  html body .hospital-modal__tools { right: 76px; top: 12px; gap: 8px; }
+  html body .hospital-modal__tool { width: 44px; height: 44px; }
+  html body .hospital-modal__badge { top: 12px; left: 12px; max-width: calc(100% - 200px); padding: 8px 12px 8px 44px; background-position: 12px center; background-size: 22px; font-size: 13px; }
+  html body .directory-dialog--hospital .directory-dialog-close { top: 18px; right: 16px; width: 40px; height: 40px; }
+  html body .hospital-modal__accred { flex-wrap: wrap; }
+  html body .hospital-modal__links { flex-direction: column; align-items: flex-start; gap: 12px; }
+  html body .hospital-modal__links a + a { padding: 4px 0; border-left: 0; }
+}
+@media (max-width: 560px) { html body .hospital-modal__badge { display: none; } }
+
+/* hospital cards: "View details" spans the card and is centred, like the coordinator cards */
+html body .hospital-theme .reference-card-actions { display: flex; justify-content: center; width: 100%; }
+html body .hospital-theme .reference-details-button { display: flex; align-items: center; justify-content: center; width: 100%; text-align: center; }

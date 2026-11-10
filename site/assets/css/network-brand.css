@@ -1,0 +1,201 @@
+/* Hospital + coordinator directories, restyled to the FastCardioCare look:
+   navy #0f2547 and brand red #c4002a, readable type (nothing under 12px), same buttons and cards as the rest of the site.
+   Loaded after network.css, so it only overrides; the directory markup and JS are untouched. */
+:root {
+  --nb-navy: #0f2547;
+  --nb-red: #c4002a;
+  --nb-red-bg: linear-gradient(135deg, #e01535, #c00b28);
+  --nb-pink: #fdecef;
+  --nb-line: #e3e9f2;
+  --nb-text: #33455f;
+  --nb-muted: #586780;
+}
+
+/* ---- intro / hero ---- */
+.premium-intro { background: linear-gradient(180deg, #f6f8fc, #fff 70%); padding-top: 22px; }
+.premium-intro .breadcrumb { font-size: 14px; }
+.premium-hero { background: linear-gradient(135deg, #0f2547, #14305c); border-radius: 22px; border-bottom: 4px solid var(--nb-red); box-shadow: 0 30px 60px -36px rgba(15, 37, 71, .6); }
+.premium-hero__copy { padding: clamp(36px, 4vw, 60px) clamp(28px, 4vw, 56px); }
+.premium-hero .eyebrow { display: inline-flex; align-items: center; margin: 0 0 22px; padding: 8px 16px; border-radius: 999px; background: #ffffff1a; color: #ffb3c1; font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+.premium-hero h1 { margin: 0 0 22px; color: #fff; font-size: clamp(2.2rem, 3.6vw, 3.4rem); font-weight: 800; line-height: 1.08; letter-spacing: -.04em; }
+.premium-hero h1 span { color: #ff7a93; }
+.premium-hero__description { max-width: 34em; color: #e3ebf7; font-size: clamp(1rem, 1.2vw, 1.12rem); line-height: 1.7; }
+.premium-action { gap: 14px; min-height: 52px; padding: 0 22px; border: 1.5px solid #b80a26; border-radius: 10px; background: var(--nb-red-bg); color: #fff; font-size: 15px; font-weight: 700; box-shadow: 0 10px 22px -10px rgba(224, 21, 53, .7); }
+.premium-action:hover, .premium-action:focus-visible { background: #fff; border-color: #fff; color: var(--nb-navy); transform: translateY(-1px); }
+.premium-hero__foot { margin-top: 30px; color: #c9d6ec; font-size: 13px; letter-spacing: .02em; }
+.premium-hero__foot span + span { border-left-color: #ffffff40; }
+.premium-hero__image figcaption { font-size: 12px; background: #0f2547cc; }
+
+/* ---- directory tabs ---- */
+.directory-switch { margin-top: 22px; border-bottom-color: var(--nb-line); }
+.directory-switch > a { padding: 18px 0; color: var(--nb-muted); font-size: 15px; font-weight: 700; }
+.directory-switch > a:hover { color: var(--nb-red); }
+.directory-switch > a[aria-current] { color: var(--nb-navy); border-color: var(--nb-red); }
+.directory-switch > a > span { background: var(--nb-pink); color: var(--nb-red); font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 999px; }
+.directory-switch .premium-join-link { color: var(--nb-red); }
+.directory-switch .premium-join-link > span { background: transparent; }
+
+/* ---- section heads ---- */
+.pro-directory { background: #fff; }
+.pro-section-head .eyebrow { color: var(--nb-red); font-size: 13px; font-weight: 800; letter-spacing: .18em; }
+.pro-section-head h2 { color: var(--nb-navy); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -.035em; }
+.pro-section-head > p { max-width: 460px; color: var(--nb-text); font-size: 16px; line-height: 1.7; }
+
+/* ---- destination pills and filters ---- */
+.directory-countries button { padding: 11px 20px; border-color: var(--nb-line); border-radius: 999px; color: var(--nb-navy); font-size: 14px; font-weight: 700; }
+.directory-countries button:hover { background: var(--nb-pink); border-color: #f2b6c2; color: var(--nb-red); }
+.directory-countries button[aria-pressed=true] { background: var(--nb-red-bg); border-color: #b80a26; color: #fff; box-shadow: 0 8px 16px -8px rgba(192, 11, 40, .6); }
+.pro-directory .network-filters { background: #f6f8fc; border-color: var(--nb-line); border-radius: 14px; }
+.pro-directory .network-filters label { color: var(--nb-navy); font-size: 14px; font-weight: 700; }
+.pro-directory .network-filters input, .pro-directory .network-filters select { border-color: #cfd9e8; border-radius: 10px; color: var(--nb-navy); font-size: 15px; }
+.pro-directory .network-filters input:focus, .pro-directory .network-filters select:focus { outline: 3px solid #295eac55; border-color: #295eac; }
+.pro-directory .network-filters p { color: var(--nb-muted); font-size: 14px; }
+.network-reset { color: var(--nb-red); font-size: 14px; }
+.pro-directory .network-note { align-items: center; margin-bottom: 26px; padding: 14px 18px; border-left: 3px solid var(--nb-red); border-radius: 0 12px 12px 0; background: #f6f8fc; color: var(--nb-text); font-size: 14px; line-height: 1.6; }
+.network-note > .i { width: 18px; height: 18px; margin-top: 0; color: var(--nb-red); }
+.pro-directory .network-note strong { color: var(--nb-navy); font-weight: 800; }
+
+/* ---- hospital cards ---- */
+.pro-directory .hospital-card { padding: 30px; border-color: var(--nb-line); border-radius: 18px; box-shadow: 0 18px 40px -30px rgba(15, 37, 71, .35); }
+.pro-directory .hospital-card__top > .i { width: 46px; height: 46px; padding: 11px; border: 0; border-radius: 12px; background: var(--nb-pink); color: var(--nb-red); }
+.pro-country-tag { padding: 6px 12px; border: 0; border-radius: 999px; background: var(--nb-pink); color: var(--nb-red); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+.pro-directory .hospital-card .network-location { color: var(--nb-red); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.pro-directory .hospital-card h3 { color: var(--nb-navy); font-size: 24px; font-weight: 800; letter-spacing: -.03em; }
+.pro-directory .hospital-card > p { color: var(--nb-text); font-size: 16px; line-height: 1.65; }
+.premium-source { border-block-color: var(--nb-line); }
+.premium-source summary { color: var(--nb-navy); font-size: 15px; font-weight: 700; }
+.premium-source summary > span { color: var(--nb-red); font-size: 22px; }
+.pro-directory .accreditation-note { background: #f6f8fc; color: var(--nb-text); font-size: 14px; line-height: 1.6; }
+.pro-directory .hospital-card__links { gap: 18px; font-size: 14px; }
+.pro-directory .hospital-card__links a { color: var(--nb-red); font-weight: 700; text-underline-offset: 3px; }
+.pro-directory .hospital-card__links a:hover { color: var(--nb-navy); }
+.directory-compare-choice { color: var(--nb-text); font-size: 14px; }
+.directory-compare-choice input { accent-color: var(--nb-red); }
+.hospital-card.is-selected { border-color: var(--nb-red); box-shadow: 0 0 0 1px var(--nb-red); }
+.directory-compare-bar { background: var(--nb-navy); }
+.directory-compare-bar > span { font-size: 14px; }
+.directory-compare-button { border: 1.5px solid #b80a26; border-radius: 10px; background: var(--nb-red-bg); color: #fff; font-size: 14px; font-weight: 700; }
+.directory-compare-button:hover:not(:disabled) { background: #fff; border-color: #fff; color: var(--nb-navy); }
+.directory-compare-picks button { font-size: 13px; }
+
+/* ---- coordinator cards: four across, brand typography ---- */
+.pro-directory .coordinator-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.pro-directory .coordinator-card { border-color: var(--nb-line); border-radius: 18px; box-shadow: 0 18px 40px -30px rgba(15, 37, 71, .35); }
+.pro-directory .coordinator-card__body { padding: 20px 22px 8px; }
+.pro-directory .sample-label { background: var(--nb-pink); color: var(--nb-red); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.pro-directory .coordinator-card h3 { margin: 12px 0 6px; color: var(--nb-navy); font-size: 20px; font-weight: 800; }
+.pro-directory .coordinator-card p { color: var(--nb-text); font-size: 15px; line-height: 1.55; }
+.pro-directory .coordinator-card .network-location { color: var(--nb-muted); font-size: 14px; }
+.pro-directory .coordinator-languages { color: var(--nb-muted); font-size: 14px !important; }
+.directory-profile-button { color: var(--nb-red); font-size: 14px; font-weight: 700; }
+.directory-profile-button:hover { color: var(--nb-navy); }
+.directory-more { padding: 14px 26px; border: 1.5px solid #b80a26; border-radius: 10px; background: var(--nb-red-bg); color: #fff; font-size: 15px; font-weight: 700; }
+.directory-more:hover { background: var(--nb-navy); border-color: var(--nb-navy); color: #fff; }
+
+/* ---- support section ---- */
+.pro-support { background: #f6f8fc; border-block-color: var(--nb-line); }
+.pro-support-icon > .i { width: 48px; height: 48px; padding: 12px; border: 0; border-radius: 14px; background: var(--nb-pink); color: var(--nb-red); }
+.pro-support-icon > span { color: var(--nb-red); font-size: 13px; font-weight: 800; }
+.pro-support-grid h3 { color: var(--nb-navy); font-size: 21px; font-weight: 800; }
+.pro-support-grid p { color: var(--nb-text); font-size: 16px; line-height: 1.65; }
+
+/* ---- join band ---- */
+.premium-partner__panel { border-radius: 22px; border-bottom: 4px solid var(--nb-red); background: linear-gradient(135deg, #0f2547, #14305c); }
+.premium-partner .eyebrow { color: #ffb3c1; font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+.premium-partner h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; }
+.premium-partner p { color: #e3ebf7; font-size: 16px; line-height: 1.7; }
+.premium-partner small { color: #b4c5df; font-size: 12px; }
+.premium-partner figcaption { font-size: 12px; }
+
+/* ---- dialogs ---- */
+.directory-dialog { color: var(--nb-text); border-radius: 18px; }
+.directory-dialog h2 { color: var(--nb-navy); font-weight: 800; }
+.directory-dialog h3 { color: var(--nb-navy); font-weight: 800; }
+.directory-dialog p { color: var(--nb-text); font-size: 15px; line-height: 1.7; }
+.directory-dialog-eyebrow { color: var(--nb-red) !important; font-size: 12px !important; font-weight: 800; }
+.directory-dialog-notice { font-size: 14px !important; }
+.directory-dialog-close { border-radius: 10px; color: var(--nb-navy); font-size: 14px; font-weight: 700; }
+.directory-comparison h4 { color: var(--nb-red); font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.directory-comparison .hospital-card__links a { color: var(--nb-red); font-size: 14px; }
+
+/* ---- hover ---- */
+@media (hover: hover) {
+  .pro-directory .hospital-card:hover, .pro-directory .coordinator-card:hover { border-color: #ef9aaa; box-shadow: 0 22px 44px -26px rgba(196, 0, 42, .35); transform: translateY(-3px); }
+  .pro-directory .hospital-card, .pro-directory .coordinator-card { transition: border-color .2s, box-shadow .25s, transform .25s; }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 1180px) { .pro-directory .coordinator-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 860px) {
+  .pro-directory .coordinator-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .premium-hero h1 { font-size: clamp(2rem, 7vw, 2.6rem); }
+  .premium-hero__description { font-size: 16px; }
+}
+@media (max-width: 550px) {
+  .premium-hero .eyebrow { font-size: 11px; letter-spacing: .1em; }
+  .premium-hero__foot { font-size: 12px; }
+  .premium-hero__image figcaption { font-size: 11px; }
+  .directory-switch { gap: 16px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .directory-switch::-webkit-scrollbar { display: none; }
+  .directory-switch > a { flex: none; white-space: nowrap; font-size: 13px; gap: 6px; }
+  .directory-switch > a > span { font-size: 11px; }
+  .pro-section-head .eyebrow { font-size: 12px; }
+  .pro-section-head > p { font-size: 15px; }
+  .directory-countries button { font-size: 13px; }
+  .pro-directory .network-note { font-size: 13px; }
+  .pro-directory .hospital-card h3 { font-size: 22px; }
+  .pro-directory .hospital-card > p { font-size: 15px; }
+  .pro-directory .coordinator-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pro-directory .coordinator-card__body { padding: 14px 14px 6px; }
+  .pro-directory .coordinator-card h3 { font-size: 17px; }
+  .pro-directory .coordinator-card p { font-size: 13px; }
+  .pro-directory .coordinator-card .network-location, .pro-directory .coordinator-languages { font-size: 12px !important; }
+  .pro-directory .sample-label { font-size: 10px; }
+  .premium-partner .eyebrow { font-size: 11px; }
+  .directory-compare-bar > span { font-size: 13px; }
+  .directory-compare-picks button { font-size: 12px; }
+}
+
+/* ---- Hospital cards (reference layout): banner photo on top, consistent crop, readable text ---- */
+html body .reference-network .hospital-grid { gap: 28px; }
+html body .reference-network .hospital-card { position: relative; display: flex; flex-direction: column; gap: 0; padding: 0; overflow: hidden; border: 1px solid var(--nb-line); border-radius: 20px; background: #fff; box-shadow: 0 18px 40px -30px rgba(15, 37, 71, .4); }
+html body .reference-hospital-photo { flex: none; min-height: 0; height: clamp(190px, 17vw, 240px); border-radius: 0; background: linear-gradient(135deg, #e8eef8, #f6f8fc); }
+html body .reference-hospital-photo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 46%; background: linear-gradient(180deg, transparent, rgba(15, 37, 71, .28)); pointer-events: none; }
+html body .reference-hospital-photo img { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+html body .reference-hospital-photo img[src*="aga-khan"] { object-position: 50% 60%; }
+html body .reference-hospital-photo img[src*="shifa"] { object-position: 70% 50%; }
+html body .reference-hospital-photo img[src*="bumrungrad"] { object-position: 60% 50%; }
+html body .reference-hospital-photo img[src*="samitivej"] { object-position: 50% 100%; transform: scale(1.14); transform-origin: 50% 100%; }
+html body .reference-hospital-photo img[src*="ijn"] { object-position: 50% 40%; }
+html body .reference-hospital-photo img[src*="gleneagles"] { object-position: 55% 50%; }
+@media (hover: hover) {
+html body .reference-network .hospital-card:hover .reference-hospital-photo img { transform: scale(1.04); } }
+html body .reference-hospital-body { flex: 1; padding: 22px 26px 26px; }
+html body .reference-network .hospital-card__top { right: 16px; top: 16px; z-index: 2; margin: 0; }
+html body .reference-network .pro-country-tag { padding: 6px 12px; border-radius: 999px; background: #fff; color: var(--nb-navy); font-size: 12px; font-weight: 800; letter-spacing: .03em; box-shadow: 0 6px 14px -6px rgba(15, 37, 71, .45); }
+html body .reference-network .hospital-card .network-location { min-height: 0; margin: 0 0 8px; padding-right: 0; color: var(--nb-red); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+html body .reference-network .hospital-card .network-location::before { content: "\25CF"; margin-right: 8px; font-size: 8px; vertical-align: middle; }
+html body .reference-network .hospital-card h3 { margin: 0 0 8px; color: var(--nb-navy); font-size: 22px; font-weight: 800; letter-spacing: -.03em; }
+html body .reference-network .hospital-card h3 + p { min-height: 0; margin: 0 0 16px; color: var(--nb-text); font-size: 15px; line-height: 1.6; }
+html body .reference-service-tags { flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+html body .reference-service-tags li { flex: 0 1 auto; gap: 8px; padding: 8px 12px; border-color: var(--nb-line); border-radius: 999px; background: #f6f8fc; }
+html body .reference-service-tags .i { width: 16px; height: 16px; color: var(--nb-red); }
+html body .reference-service-tags span { color: var(--nb-navy); font-size: 13px; font-weight: 700; }
+html body .reference-network .premium-source { margin: 0 0 18px; border-block: 1px solid var(--nb-line); }
+html body .reference-network .premium-source summary { padding: 12px 0; color: var(--nb-navy); font-size: 14px; font-weight: 700; }
+html body .reference-network .premium-source summary::before { content: none; }
+html body .reference-network .premium-source summary > span { color: var(--nb-red); font-size: 22px; }
+html body .reference-network .accreditation-note { margin: 0 0 12px; padding: 12px 14px; background: #f6f8fc; color: var(--nb-text); font-size: 14px; line-height: 1.55; }
+html body .reference-card-actions { gap: 12px; }
+html body .reference-details-button { min-height: 46px; padding: 0 22px; border-radius: 10px; font-size: 14px; }
+html body .reference-network .directory-compare-choice { min-height: 46px; border: 1.5px solid #cfd9e8; border-radius: 10px; color: var(--nb-navy); font-size: 14px; }
+html body .reference-network .directory-compare-choice input { width: 16px; height: 16px; accent-color: var(--nb-red); }
+html body .reference-network .hospital-card.is-selected { border-color: var(--nb-red); box-shadow: 0 0 0 1px var(--nb-red); }
+@media (max-width: 860px) {
+html body .reference-network .hospital-grid { grid-template-columns: 1fr; }
+html body .reference-hospital-photo { height: 210px; } }
+@media (max-width: 550px) {
+html body .reference-hospital-body { padding: 18px 18px 20px; }
+html body .reference-network .hospital-card h3 { font-size: 20px; }
+html body .reference-service-tags span { font-size: 12px; } }
+

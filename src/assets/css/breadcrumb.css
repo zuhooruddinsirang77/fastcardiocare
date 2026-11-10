@@ -1,0 +1,17 @@
+/* One breadcrumb, one place: a bar directly under the header on every page (built in by build.py). */
+.crumb-bar { position: relative; z-index: 3; padding: 16px 0 14px; background: #fff; }
+.crumb-bar {
+  --crumb-home: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 10.5 12 3l9 7.5'/%3E%3Cpath d='M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5'/%3E%3C/svg%3E");
+}
+.crumb-bar .breadcrumb { margin: 0; }
+.crumb-bar .breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.crumb-bar .breadcrumb li + li::before { content: "\203A"; margin-right: 8px; color: #8c98ab; font-size: 16px; line-height: 1; }
+.crumb-bar .breadcrumb a { color: var(--navy); text-decoration: none; }
+.crumb-bar .breadcrumb a:hover { color: var(--red-700); }
+.crumb-bar .breadcrumb li:first-child a { display: inline-flex; align-items: center; gap: 7px; }
+.crumb-bar .breadcrumb li:first-child a::before { content: ""; width: 15px; height: 15px; background: currentColor; -webkit-mask: var(--crumb-home) center / contain no-repeat; mask: var(--crumb-home) center / contain no-repeat; }
+.crumb-bar .breadcrumb [aria-current="page"] { color: var(--navy); font-weight: 650; }
+@media (max-width: 700px) { .crumb-bar { padding: 12px 0 10px; } .crumb-bar .breadcrumb ol { font-size: 13px; } }
+
+/* long dropdowns (all procedures) scroll inside the viewport instead of running off the screen */
+.nav-dropdown > ul { max-height: calc(100vh - 130px); overflow-y: auto; overscroll-behavior: contain; min-width: 270px; }

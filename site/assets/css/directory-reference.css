@@ -1,0 +1,206 @@
+/* Layout details from the supplied hospital and coordinator references. */
+html body .hospital-theme .network-filters{display:flex!important}
+html body .hospital-theme .directory-countries{display:flex!important}
+html body .hospital-theme .pro-section-head>p{padding-left:24px;border-left:1px solid #b8c6d8;max-width:535px}
+html body .hospital-theme .pro-section-head h2{position:relative;padding-bottom:15px}
+html body .hospital-theme .pro-section-head h2>span{color:var(--red)}
+html body .hospital-theme .pro-section-head h2::after{content:'';position:absolute;left:1px;bottom:0;width:130px;height:6px;border-top:4px solid var(--red);border-radius:60%;transform:rotate(-4deg)}
+html body .hospital-theme .hospital-card{border:1px solid #e0e7f1;border-radius:19px;box-shadow:0 9px 22px #132d4a09;overflow:hidden}
+html body .hospital-theme .reference-hospital-photo{height:260px;isolation:isolate}
+.hospital-photo-location{position:absolute;z-index:2;left:20px;top:18px;display:flex;align-items:center;gap:8px;background:#ffffffed;color:#142e50;padding:9px 14px;border-radius:30px;font-size:12px;font-weight:650;box-shadow:0 5px 14px #11294412}
+.hospital-photo-location .i{width:16px;height:16px;color:var(--red)}
+.hospital-save{position:absolute;z-index:3;right:18px;top:17px;display:flex;align-items:center;justify-content:center;width:39px;height:39px;border-radius:50%;border:1px solid #ffffffcc;background:#fffffff2;box-shadow:0 4px 12px #132d4a14;cursor:pointer;color:var(--red)}
+.hospital-save svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hospital-save[aria-pressed=true] svg{fill:currentColor}
+.hospital-save:hover{background:#fff2f5}
+.hospital-photo-location{max-width:calc(100% - 85px)}
+.hospital-photo-info{display:flex;align-items:center;gap:12px;position:absolute;z-index:2;left:0;bottom:0;right:0;padding:30px 20px 15px;background:linear-gradient(transparent,#0f2547e8);color:#fff}
+.hospital-photo-info>span{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:550;padding:6px 9px;border:1px solid #ffffff28;border-radius:20px;background:#10244164}
+.hospital-photo-info .i{width:15px;height:15px;flex-shrink:0}
+html body .hospital-theme .reference-hospital-body{padding:25px 26px 26px}
+html body .hospital-theme .hospital-card .network-location{display:none}
+html body .hospital-theme .hospital-card h3{font-size:23px;padding-right:80px;line-height:1.35;letter-spacing:-.03em;margin-bottom:10px}
+html body .hospital-theme .hospital-card h3+p{font-size:14px;line-height:1.75;min-height:48px;margin-bottom:21px}
+html body .hospital-theme .hospital-card__top{top:26px;right:24px}
+html body .hospital-theme .pro-country-tag{padding:7px 9px;font-size:10px;box-shadow:0 4px 10px #132d4a05}
+html body .hospital-theme .reference-service-tags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:18px}
+html body .hospital-theme .reference-service-tags li{border:0;background:linear-gradient(90deg,#fff0f3,#f8f9fc 75%);padding:9px 8px;display:flex;align-items:center;gap:9px;min-height:58px;border-radius:9px}
+html body .hospital-theme .reference-service-tags .i{width:29px;height:29px;flex-shrink:0;color:#df0032;stroke-width:1.5}
+html body .hospital-theme .reference-service-tags span{font-size:11px;font-weight:600;line-height:1.5;color:#1e3454}
+html body .hospital-theme .premium-source{border-block:1px solid #e5ebf3;margin-bottom:19px}
+html body .hospital-theme .premium-source summary{font-size:14px;font-weight:650;min-height:53px;padding-block:13px}
+html body .hospital-theme .premium-source summary>span{font-size:0;width:9px;height:9px;border-right:2px solid #193655;border-bottom:2px solid #193655;transform:rotate(45deg);margin-right:5px;align-self:center}
+html body .hospital-theme .premium-source[open] summary>span{transform:rotate(225deg)}
+html body .hospital-theme .reference-details-button{min-width:190px;min-height:46px;font-size:14px;padding:12px 24px}
+html body .hospital-theme .network-filters{padding:6px;border:1px solid #cdd8e8;background:#fff;border-radius:9px;align-items:center;gap:12px;margin-bottom:29px}
+html body .hospital-theme .network-filters .directory-country-select{display:none}
+html body .hospital-theme .network-filters label{font-size:0;display:block;flex:1}
+html body .hospital-theme .network-filters input{font-size:14px;border:0;min-height:44px;background:transparent}
+html body .hospital-theme .network-filters p{padding:0 8px;margin:0;font-size:11px}
+html body .hospital-theme .reference-search-button{min-height:43px;min-width:115px;font-size:13px}
+html body .hospital-theme .directory-countries{gap:11px;margin-bottom:20px}
+html body .hospital-theme .directory-countries button{display:flex;align-items:center;gap:8px;padding:11px 18px;border:1px solid #d4deec;background:#fff;border-radius:7px;color:#2d4667;font:inherit;font-size:12px;cursor:pointer}
+html body .hospital-theme .directory-countries button[aria-pressed=true]{background:linear-gradient(130deg,#234b70,#0f2547);color:#fff;border-color:#173451;box-shadow:0 3px 7px #132d4a12}
+.care-reference{--pc-red:var(--red);--pc-line:var(--line);--pc-soft:var(--bg-soft);--pc-pink:var(--red-50);color:var(--navy)}
+.care-reference-hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 30% 0,#1a416b,transparent 70%),#0c2345;color:#fff}
+.care-reference-hero>.container{position:relative;min-height:405px;display:flex;align-items:center}
+.care-reference-hero__copy{position:relative;z-index:3;width:48%;padding:42px 25px 42px 0}
+.care-reference-hero .eyebrow{color:#d5e2f2;font-size:11px;letter-spacing:.15em;margin-bottom:18px}
+.care-reference-hero h1{font-size:clamp(34px,3.7vw,51px);line-height:1.07;color:white;font-weight:800;letter-spacing:-.04em;margin-bottom:20px}
+.care-reference-hero h1 span{color:#ff3557}
+.care-reference-hero .lead{font-size:15px;line-height:1.8;color:#e3eaf5;max-width:520px;margin-bottom:23px}
+.care-reference-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.care-reference-actions .btn{font-size:13px;min-height:44px;padding:11px 18px;gap:10px}
+.care-reference-outline{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:10px 17px;border:1px solid #c5d1e4;border-radius:7px;color:#fff;font-size:12px;font-weight:600;text-decoration:none}
+.care-reference-outline:hover{color:#fff;background:#ffffff12}
+.care-reference-outline .i{width:17px;height:17px}
+.care-reference-hero ul{display:flex;flex-wrap:wrap;gap:11px 20px;padding:0;margin:25px 0 0;list-style:none}
+.care-reference-hero ul li{font-size:11px;color:#e5edf7;display:flex;align-items:center;gap:7px}
+.care-reference-hero ul li::before{content:'✓';width:17px;height:17px;display:flex;align-items:center;justify-content:center;border:1px solid #ff3a5e;border-radius:50%;font-size:10px}
+.care-reference-hero__art{position:absolute;z-index:1;top:0;bottom:0;right:0;width:55%;border-left:9px solid #fc3254;border-top-left-radius:55% 100%;border-bottom-left-radius:17% 50%;overflow:hidden}
+.care-reference-hero__art img{width:100%;height:100%;object-fit:cover;object-position:58% center}
+.care-reference-hero__art small{position:absolute;right:14px;bottom:12px;font-size:9px;background:#102441b3;color:white;padding:5px 8px;border-radius:4px}
+.care-reference-navigation{padding-top:18px}
+.care-reference-navigation .breadcrumb{font-size:12px;margin-bottom:20px}
+.care-role-tabs{display:flex;gap:12px;align-items:stretch;overflow:auto;border-bottom:1px solid #cdd9e8;padding:0;margin:0;scrollbar-width:thin}
+.care-role-tabs button{background:transparent;border:0;border-bottom:3px solid transparent;border-radius:0;white-space:nowrap;font:inherit;font-size:12px;font-weight:600;color:#354b6a;padding:17px 13px;cursor:pointer;min-height:51px}
+.care-role-tabs button[aria-pressed=true]{border-color:var(--red);color:var(--red)}
+html[data-page="coordinators"] body .care-reference .pro-coordinator-directory{padding:37px 0 48px}
+html[data-page="coordinators"] body .care-reference .pro-section-head{display:flex;align-items:center;gap:35px;justify-content:space-between;margin-bottom:28px}
+html[data-page="coordinators"] body .care-reference .pro-section-head .eyebrow{font-size:11px;letter-spacing:.14em;color:var(--navy);margin-bottom:13px}
+html[data-page="coordinators"] body .care-reference .pro-section-head h2{font-size:35px;font-weight:800;letter-spacing:-.035em;color:var(--navy);line-height:1.2}
+html[data-page="coordinators"] body .care-reference .pro-section-head>p{max-width:475px;padding-left:23px;border-left:1px solid #cad5e5;font-size:14px;line-height:1.8;color:#536982}
+html[data-page="coordinators"] body .care-reference .directory-countries{display:none}
+html[data-page="coordinators"] body .care-reference .network-filters{display:grid;grid-template-columns:1fr 1fr 1.5fr auto;gap:18px;padding:20px 22px;border:0;border-radius:13px;background:linear-gradient(120deg,#eef4fb,#dfe9f5);margin-bottom:20px;align-items:end}
+html[data-page="coordinators"] body .care-reference .network-filters label{display:grid;min-width:0;font-size:11px;gap:7px;color:#384c68;font-weight:550}
+html[data-page="coordinators"] body .care-reference .network-filters label[for=destination]{display:grid;order:2}
+html[data-page="coordinators"] body .care-reference .network-filters label[for=coordination-role]{order:1}
+html[data-page="coordinators"] body .care-reference .network-filters label[for=network-search]{order:3}
+html[data-page="coordinators"] body .care-reference .network-filters input,html[data-page="coordinators"] body .care-reference .network-filters select{font-size:12px;border:1px solid #bccde1;background:#ffffffc9;min-height:44px;padding:10px 12px;border-radius:7px;color:#344a67}
+html[data-page="coordinators"] body .care-reference .network-filters p{order:4;grid-column:1/-1;font-size:11px;padding:0;margin:0;color:#71849d}
+html[data-page="coordinators"] body .care-reference .network-reset{order:4;font-size:12px;align-self:center}
+html[data-page="coordinators"] body .care-reference .network-note{font-size:11px;line-height:1.7;padding:11px 14px;margin-bottom:23px;background:#f5f7fa;border-color:#e7edf5;color:#6d8096}
+html[data-page="coordinators"] body .care-reference .coordinator-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+html[data-page="coordinators"] body .care-reference .coordinator-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;border:1px solid #e1e7ef;box-shadow:0 5px 12px #142d4c09;border-radius:12px;overflow:hidden;background:linear-gradient(#fff,#fcfdff)}
+.care-portrait-frame{position:relative;aspect-ratio:1.3;overflow:hidden;background:#dae6f0}
+html[data-page="coordinators"] body .care-reference .care-portrait-frame .coordinator-portrait{position:absolute;width:100%;height:auto;aspect-ratio:1;top:0;left:0;border:0;border-radius:0;background-size:600% 500%}
+html[data-page="coordinators"] body .care-reference .coordinator-card__body{padding:17px 17px 19px;display:flex;flex-direction:column;align-items:start;flex:1;min-width:0}
+html[data-page="coordinators"] body .care-reference .coordinator-card h3{font-size:18px;line-height:1.25;font-weight:750;color:#102746;margin:0 0 8px;letter-spacing:-.025em}
+html[data-page="coordinators"] body .care-reference .sample-label{font-size:8px;line-height:1.4;font-weight:500;letter-spacing:.07em;border-radius:3px;padding:3px 5px;background:#f0f3f8;color:#788ba0;margin:0 0 9px;align-self:start}
+html[data-page="coordinators"] body .care-reference .coordinator-card p{font-size:12px;line-height:1.6;color:#354b66;margin:0 0 10px}
+html[data-page="coordinators"] body .care-reference .coordinator-card .network-location{display:flex;gap:5px;align-items:start;color:#5e738c;font-size:11px;line-height:1.5;margin-bottom:9px}
+.care-reference .network-location .i{width:14px;height:14px;color:var(--red);flex-shrink:0;margin-top:1px}
+html[data-page="coordinators"] body .care-reference .coordinator-languages{font-size:11px!important;color:#6d8198;margin-top:0;margin-bottom:15px;gap:6px}
+html[data-page="coordinators"] body .care-reference .directory-profile-button{width:auto;min-height:34px;margin-top:auto;padding:7px 11px;border:0;border-radius:5px;box-shadow:none;background:#ffe7ec;color:#ca0030;font-size:11px;font-weight:650;text-align:center;display:flex}
+html[data-page="coordinators"] body .care-reference .directory-profile-button:hover{background:#c8102e;color:#fff}
+.care-reference-support{padding:37px 0 44px;background:linear-gradient(160deg,#f4f7fb,#fff 55%)}
+.care-reference-support h2 span{color:var(--red)}
+.care-reference-support__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:32px}
+.care-reference-support__grid article>.i{width:46px;height:46px;padding:10px;background:#fff0f4;border-radius:12px;color:var(--red);margin-bottom:17px}
+.care-reference-support__grid h3{font-size:17px;line-height:1.3;font-weight:750;margin-bottom:10px}
+.care-reference-support__grid p{font-size:13px;line-height:1.8;color:#536982;margin:0}
+.care-reference-cta{padding:0 0 30px}
+.care-reference-cta__panel{display:grid;grid-template-columns:1.15fr 1fr;gap:42px;position:relative;isolation:isolate;padding:36px 180px 36px 38px;background:radial-gradient(ellipse at 105% 65%,#bf0036,transparent 50%),linear-gradient(120deg,#0d2e50,#111a34);border-radius:17px;color:white;overflow:hidden}
+.care-reference-cta h2{font-size:31px;font-weight:750;line-height:1.15;letter-spacing:-.03em;color:white;margin-bottom:15px}
+.care-reference-cta h2 span{color:#ff3155}
+.care-reference-cta__panel>div>p{font-size:13px;line-height:1.7;color:#e1e9f3;max-width:440px;margin-bottom:21px}
+.care-reference-cta ul{display:flex;flex-direction:column;justify-content:center;gap:17px;list-style:none;padding:3px 0 3px 28px;margin:0;border-left:1px solid #8c9caf66}
+.care-reference-cta ul li{position:relative;padding-left:28px;font-size:12px;color:#e6edf7;line-height:1.7}
+.care-reference-cta ul li::before{content:'✓';position:absolute;left:0;top:1px;width:18px;height:18px;border:1px solid #ff3155;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px}
+.care-reference-cta__panel>img{position:absolute;z-index:-1;right:-40px;top:50%;transform:translateY(-50%) rotate(5deg);width:235px;opacity:.72;filter:drop-shadow(0 0 18px #ef1b4d88)}
+.care-reference-join{font-size:12px;line-height:1.8;text-align:center;color:#708299;margin:20px 0 0}
+.care-reference-join a{font-weight:650;margin-left:6px}
+@media(max-width:1100px){html[data-page="coordinators"] body .care-reference .coordinator-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.care-reference-hero__copy{width:51%}.care-reference-hero__art{width:51%}.care-reference-hero h1{font-size:42px}.care-reference-hero .lead{font-size:14px}.care-reference-cta__panel{padding:32px 120px 32px 32px;gap:28px}.care-reference-cta__panel>img{width:200px;right:-70px}}
+@media(max-width:800px){html body .hospital-theme .hospital-card h3{font-size:24px}html body .hospital-theme .reference-hospital-photo{height:260px}html body .hospital-theme .reference-service-tags span{font-size:12px}.care-reference-hero__copy{width:58%;padding-right:20px}.care-reference-hero__art{width:45%;opacity:.65}.care-reference-hero h1{font-size:38px}.care-reference-hero .lead{font-size:13px}.care-reference-hero>.container{min-height:420px}html[data-page="coordinators"] body .care-reference .coordinator-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}html[data-page="coordinators"] body .care-reference .pro-section-head{display:block}html[data-page="coordinators"] body .care-reference .pro-section-head>p{margin-top:16px;padding-left:16px;max-width:100%}html[data-page="coordinators"] body .care-reference .network-filters{grid-template-columns:1fr 1fr;gap:15px}html[data-page="coordinators"] body .care-reference .network-filters label[for=network-search]{grid-column:1/-1}.care-reference-support__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.care-reference-cta__panel{grid-template-columns:1fr;padding:32px 100px 32px 30px;gap:23px}.care-reference-cta ul{border-left:0;border-top:1px solid #ffffff35;padding:23px 0 0}.care-reference-cta__panel>img{right:-90px}}
+@media(max-width:550px){html body .hospital-theme .pro-section-head>p{padding-left:16px}html body .hospital-theme .reference-hospital-photo{height:210px}.hospital-photo-location{left:13px;top:13px;padding:7px 11px;font-size:11px}.hospital-photo-info{gap:7px;padding:25px 12px 12px}.hospital-photo-info>span{font-size:9px;padding:5px 7px;gap:5px}html body .hospital-theme .reference-hospital-body{padding:22px}html body .hospital-theme .hospital-card h3{font-size:22px;padding-right:64px}html body .hospital-theme .pro-country-tag{font-size:9px;padding:5px 7px}html body .hospital-theme .hospital-card__top{top:23px;right:19px}html body .hospital-theme .reference-service-tags{gap:7px}html body .hospital-theme .reference-service-tags li{padding:8px 5px;gap:6px;min-height:59px}html body .hospital-theme .reference-service-tags .i{width:23px;height:23px}html body .hospital-theme .reference-service-tags span{font-size:10px}html body .hospital-theme .premium-source summary{font-size:13px}html body .hospital-theme .reference-details-button{min-width:0;width:100%;font-size:13px}html body .hospital-theme .directory-countries{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}html body .hospital-theme .directory-countries button{font-size:11px;padding:10px 9px;justify-content:center}html body .hospital-theme .network-filters{flex-wrap:wrap;gap:7px}html body .hospital-theme .network-filters label{flex-basis:calc(100% - 95px)}html body .hospital-theme .network-filters input{font-size:12px;padding:10px}html body .hospital-theme .reference-search-button{min-width:78px;font-size:12px}html body .hospital-theme .network-filters p{order:3;flex:1;padding:4px}html body .hospital-theme .network-filters .network-reset{order:4;font-size:11px;padding:4px}.care-reference-hero>.container{min-height:0;display:block}.care-reference-hero__copy{width:100%;padding:32px 0 29px}.care-reference-hero h1{font-size:36px}.care-reference-hero .eyebrow{font-size:10px}.care-reference-hero .lead{font-size:14px;max-width:100%}.care-reference-hero__art{position:relative;width:100%;height:235px;border-left:0;border-top:5px solid #ef1740;border-radius:42px 0 0;opacity:1}.care-reference-hero__art small{font-size:8px}.care-reference-actions{gap:11px}.care-reference-actions .btn{font-size:12px}.care-reference-outline{font-size:11px;padding:10px 13px}.care-reference-hero ul{gap:10px 14px;margin-top:22px}.care-reference-hero ul li{font-size:10px}.care-reference-navigation{padding-top:16px}.care-reference-navigation .breadcrumb{font-size:11px;margin-bottom:13px}.care-role-tabs{gap:6px}.care-role-tabs button{font-size:11px;padding:14px 11px}html[data-page="coordinators"] body .care-reference .pro-coordinator-directory{padding:29px 0 37px}html[data-page="coordinators"] body .care-reference .pro-section-head h2{font-size:28px}html[data-page="coordinators"] body .care-reference .pro-section-head .eyebrow{font-size:10px}html[data-page="coordinators"] body .care-reference .pro-section-head>p{font-size:13px}html[data-page="coordinators"] body .care-reference .network-filters{grid-template-columns:1fr;gap:13px;padding:17px}html[data-page="coordinators"] body .care-reference .network-filters label{font-size:11px}html[data-page="coordinators"] body .care-reference .network-filters input,html[data-page="coordinators"] body .care-reference .network-filters select{font-size:13px;min-height:45px}html[data-page="coordinators"] body .care-reference .network-note{font-size:10px}html[data-page="coordinators"] body .care-reference .coordinator-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}html[data-page="coordinators"] body .care-reference .coordinator-card__body{padding:13px}html[data-page="coordinators"] body .care-reference .coordinator-card h3{font-size:16px}html[data-page="coordinators"] body .care-reference .coordinator-card p{font-size:11px}html[data-page="coordinators"] body .care-reference .coordinator-card .network-location{font-size:10px;gap:4px}html[data-page="coordinators"] body .care-reference .sample-label{font-size:7px}html[data-page="coordinators"] body .care-reference .coordinator-languages{font-size:10px!important;gap:5px}html[data-page="coordinators"] body .care-reference .directory-profile-button{font-size:10px;padding:8px;min-height:36px}.care-reference-support{padding:29px 0 35px}.care-reference-support__grid{gap:23px 21px;margin-top:26px}.care-reference-support__grid h3{font-size:15px}.care-reference-support__grid p{font-size:12px}.care-reference-cta__panel{padding:28px 24px;gap:23px;border-radius:13px}.care-reference-cta h2{font-size:29px}.care-reference-cta__panel>img{opacity:.25}.care-reference-cta__panel>div>p{font-size:13px}.care-reference-cta ul li{font-size:12px}.care-reference-join{font-size:11px}}
+@media(max-width:360px){html[data-page="coordinators"] body .care-reference .coordinator-grid{grid-template-columns:1fr}html[data-page="coordinators"] body .care-reference .coordinator-card__body{padding:19px}html[data-page="coordinators"] body .care-reference .coordinator-card h3{font-size:21px}html[data-page="coordinators"] body .care-reference .coordinator-card p{font-size:13px}html[data-page="coordinators"] body .care-reference .coordinator-card .network-location{font-size:12px}html[data-page="coordinators"] body .care-reference .sample-label{font-size:9px}html[data-page="coordinators"] body .care-reference .directory-profile-button{font-size:12px;min-height:42px}html body .hospital-theme .hospital-card h3{font-size:21px}html body .hospital-theme .reference-service-tags{grid-template-columns:1fr}html body .hospital-theme .reference-service-tags li{min-height:44px;padding:8px 10px}html body .hospital-theme .reference-service-tags span{font-size:12px}.care-reference-hero h1{font-size:32px}}
+
+/* Latest hospital card reference: red photo edge and compact service chips. */
+html body .hospital-theme [data-filters="off"] .network-filters,
+html body .hospital-theme [data-filters="off"] .directory-countries{display:none!important}
+html body .hospital-theme .pro-section-head h2{padding-bottom:0;font-weight:800;letter-spacing:-.04em}
+html body .hospital-theme .pro-section-head h2::after{display:none}
+html body .hospital-theme .pro-section-head .eyebrow{display:flex;align-items:center;gap:12px}
+html body .hospital-theme .pro-section-head .eyebrow::after{content:'';height:2px;width:50px;background:var(--red)}
+html body .hospital-theme .reference-hospital-photo{height:235px}
+.hospital-photo-source{position:absolute;z-index:3;top:18px;left:19px;display:flex;align-items:center;gap:7px;max-width:calc(100% - 85px);background:#fffffff0;color:#233d5c;border-radius:30px;padding:8px 12px;font-size:11px;font-weight:650;box-shadow:0 4px 11px #122e4c12}
+.hospital-photo-source>.i{color:var(--red);width:16px;height:16px;flex-shrink:0}
+.hospital-photo-wave{position:absolute;z-index:2;bottom:-1px;left:0;right:0;width:100%;height:68px;pointer-events:none}
+html body .hospital-theme .reference-hospital-body{padding:23px 25px 25px}
+html body .hospital-theme .hospital-card .network-location{display:flex;font-size:13px;line-height:1.5;min-height:26px;gap:7px;color:#415c7b;font-weight:600;padding-right:90px;margin-bottom:10px}
+html body .hospital-theme .hospital-card__top{top:22px;right:22px}
+html body .hospital-theme .pro-country-tag{font-size:11px;border-radius:20px;padding:5px 10px;background:#f2f5f9;border:0;color:#3b5271}
+html body .hospital-theme .hospital-card h3{padding-right:0;font-size:23px;line-height:1.3;margin:0 0 12px;color:var(--navy)}
+html body .hospital-theme .hospital-card h3+p{min-height:0;font-size:14px;line-height:1.75;margin-bottom:18px}
+html body .hospital-theme .reference-service-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:19px}
+html body .hospital-theme .reference-service-tags li{flex:0 1 auto;min-height:0;gap:7px;border-radius:7px;background:#fff0f4;padding:8px 11px}
+html body .hospital-theme .reference-service-tags .i{width:21px;height:21px}
+html body .hospital-theme .reference-service-tags span{font-size:12px;line-height:1.5;font-weight:600}
+html body .hospital-theme .premium-source{margin-bottom:18px}
+html body .hospital-theme .premium-source summary{min-height:48px;font-size:13px;padding-block:12px}
+html body .hospital-theme .premium-source summary>span{transform:rotate(-45deg);width:8px;height:8px}
+html body .hospital-theme .premium-source[open] summary>span{transform:rotate(45deg)}
+html body .hospital-theme .reference-details-button{min-width:185px;min-height:44px;font-size:13px;padding:11px 22px}
+@media(max-width:550px){html body .hospital-theme .reference-hospital-photo{height:195px}.hospital-photo-source{left:13px;top:13px;font-size:10px;padding:7px 10px}.hospital-photo-wave{height:53px}.hospital-save{right:13px;top:12px;width:36px;height:36px}html body .hospital-theme .reference-hospital-body{padding:21px}html body .hospital-theme .hospital-card h3{font-size:22px}html body .hospital-theme .hospital-card .network-location{font-size:12px}html body .hospital-theme .hospital-card__top{right:19px;top:20px}html body .hospital-theme .pro-country-tag{font-size:10px}html body .hospital-theme .reference-service-tags li{padding:7px 9px}html body .hospital-theme .reference-service-tags span{font-size:11px}html body .hospital-theme .reference-service-tags .i{width:18px;height:18px}html body .hospital-theme .reference-details-button{width:100%;min-height:45px}}
+
+/* Compact hospital grid: three columns on desktop, two on tablets. */
+html body .hospital-theme .hospital-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+html body .hospital-theme .reference-hospital-photo{height:175px}
+html body .hospital-theme .reference-hospital-body{padding:17px 18px 19px}
+html body .hospital-theme .hospital-card .network-location{font-size:11px;min-height:22px;line-height:1.5;padding-right:80px;margin-bottom:8px}
+html body .hospital-theme .hospital-card__top{top:16px;right:16px}
+html body .hospital-theme .pro-country-tag{font-size:10px;padding:4px 8px}
+html body .hospital-theme .hospital-card h3{font-size:20px;line-height:1.3;margin-bottom:10px}
+html body .hospital-theme .hospital-card h3+p{font-size:13px;line-height:1.65;margin-bottom:13px}
+html body .hospital-theme .reference-service-tags{gap:6px;margin-bottom:13px}
+html body .hospital-theme .reference-service-tags li{padding:6px 8px;gap:6px}
+html body .hospital-theme .reference-service-tags span{font-size:11px;line-height:1.45}
+html body .hospital-theme .reference-service-tags .i{width:16px;height:16px}
+html body .hospital-theme .premium-source{margin-bottom:13px}
+html body .hospital-theme .premium-source summary{font-size:12px;min-height:42px;padding-block:10px}
+html body .hospital-theme .reference-details-button{min-height:42px;min-width:156px;padding:10px 17px;font-size:12px}
+.hospital-theme .hospital-photo-source{top:12px;left:12px;font-size:10px;padding:6px 9px}
+.hospital-theme .hospital-save{top:11px;right:11px;width:33px;height:33px}
+.hospital-theme .hospital-save svg{width:19px;height:19px}
+.hospital-theme .hospital-photo-wave{height:46px}
+
+/* Guidance cards follow the red and blue wave reference. */
+html body .hospital-theme .pro-support{background:radial-gradient(ellipse at 97% 0,#fff0f5,transparent 38%),linear-gradient(160deg,#f7faff,#fff 68%);padding:45px 0 51px;border:0}
+html body .hospital-theme .pro-support .pro-section-head h2>span{color:var(--red)}
+html body .hospital-theme .pro-support .pro-section-head h2{position:relative;padding-bottom:14px}
+html body .hospital-theme .pro-support .pro-section-head h2::after{display:block;content:'';position:absolute;bottom:0;left:1px;width:128px;height:7px;border-top:4px solid var(--red);border-radius:70%;transform:rotate(-3deg)}
+html body .hospital-theme .pro-support-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:19px;margin-top:32px}
+html body .hospital-theme .pro-support-grid>article{--support-accent:#df1036;--support-wash:#fff0f4;position:relative;isolation:isolate;overflow:hidden;min-height:260px;border:1px solid #e0e7f0;border-radius:19px;padding:20px 21px 81px;background:#ffffffed;box-shadow:0 8px 17px #122c4c0c}
+html body .hospital-theme .pro-support-grid>article:nth-child(even){--support-accent:#195eab;--support-wash:#edf5ff}
+html body .hospital-theme .pro-support-icon{margin-bottom:14px}
+html body .hospital-theme .pro-support-icon>.i{width:47px;height:47px;padding:10px;border-radius:12px;background:var(--support-wash);border:1px solid color-mix(in srgb,var(--support-accent) 12%,white);color:var(--support-accent)}
+html body .hospital-theme .pro-support-grid h3{font-size:17px;font-weight:750;line-height:1.3;margin-bottom:12px;letter-spacing:-.03em}
+html body .hospital-theme .pro-support-grid p{font-size:13px;line-height:1.75;color:#53657e;margin:0}
+.support-card-wave{position:absolute;z-index:-1;left:0;bottom:-1px;width:100%;height:76px;pointer-events:none}
+.support-card-wave__wash{fill:var(--support-wash)}
+.support-card-wave__color{fill:var(--support-accent)}
+.support-card-corner{position:absolute;right:18px;bottom:15px;width:30px;height:30px;color:#fff;stroke-width:1.5}
+@media(max-width:1099px){html body .hospital-theme .hospital-grid{grid-template-columns:repeat(2,minmax(0,1fr))}html body .hospital-theme .pro-support-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}html body .hospital-theme .pro-support-grid>article{min-height:245px}}
+@media(max-width:639px){html body .hospital-theme .hospital-grid{grid-template-columns:1fr;gap:20px}html body .hospital-theme .reference-hospital-photo{height:170px}html body .hospital-theme .reference-hospital-body{padding:18px 19px 20px}html body .hospital-theme .hospital-card h3{font-size:21px}html body .hospital-theme .hospital-card h3+p{font-size:14px}html body .hospital-theme .reference-service-tags span{font-size:11px}html body .hospital-theme .reference-details-button{min-height:44px;font-size:13px}html body .hospital-theme .pro-support{padding:34px 0 39px}html body .hospital-theme .pro-support-grid{grid-template-columns:1fr;gap:18px;margin-top:27px}html body .hospital-theme .pro-support-grid>article{min-height:225px;padding:21px 23px 76px}html body .hospital-theme .pro-support-grid h3{font-size:19px}html body .hospital-theme .pro-support-grid p{font-size:14px;max-width:440px}}
+
+/* Coordinator guidance matches the hospital guidance cards. */
+html body .hospital-theme .reference-service-tags{display:flex;flex-wrap:nowrap;gap:5px}
+html body .hospital-theme .reference-service-tags li{flex:1 1 0;min-width:0;gap:4px;padding:6px 5px}
+html body .hospital-theme .reference-service-tags span{font-size:10px;line-height:1.3;white-space:normal;overflow-wrap:normal;letter-spacing:-.015em}
+html body .hospital-theme .reference-service-tags .i{width:13px;height:13px;flex-shrink:0}
+@media(max-width:360px){html body .hospital-theme .reference-service-tags .i{display:none}}
+html body .hospital-theme .reference-service-tags span{font-size:10px;font-weight:500;line-height:1.4}
+.care-reference-support{background:radial-gradient(ellipse at 96% 0,#fff0f5,transparent 40%),linear-gradient(160deg,#f7faff,#fff 68%);padding:45px 0 51px}
+html[data-page="coordinators"] body .care-reference-support .pro-section-head h2{position:relative;padding-bottom:15px}
+html[data-page="coordinators"] body .care-reference-support .pro-section-head h2::after{content:'';position:absolute;bottom:0;right:0;width:140px;height:7px;border-top:4px solid var(--red);border-radius:70%;transform:rotate(-3deg)}
+html[data-page="coordinators"] body .care-reference-support .pro-section-head .eyebrow{display:flex;align-items:center;gap:12px}
+.care-reference-support .pro-section-head .eyebrow::after{content:'';display:block;width:100px;height:2px;background:var(--red)}
+.care-reference-support__grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:19px;margin-top:32px}
+.care-reference-support__grid>article{--support-accent:#df1036;--support-wash:#fff0f4;position:relative;isolation:isolate;overflow:hidden;min-height:260px;border:1px solid #e0e7f0;border-radius:19px;padding:20px 21px 81px;background:#ffffffed;box-shadow:0 8px 17px #122c4c0c}
+.care-reference-support__grid>article:nth-child(even){--support-accent:#195eab;--support-wash:#edf5ff}
+.care-reference-support__grid>article>.i:not(.support-card-corner){width:47px;height:47px;padding:10px;border-radius:12px;background:var(--support-wash);border:1px solid color-mix(in srgb,var(--support-accent) 12%,white);color:var(--support-accent);margin-bottom:14px}
+.care-reference-support__grid h3{font-size:17px;font-weight:750;line-height:1.3;margin-bottom:12px;letter-spacing:-.03em}
+.care-reference-support__grid p{font-size:13px;line-height:1.75;color:#53657e;margin:0}
+.care-reference-support__grid>article>.support-card-corner{position:absolute;right:18px;bottom:15px;width:30px;height:30px;margin:0;padding:0;border:0;background:none;color:#fff;border-radius:0;stroke-width:1.5}
+@media(max-width:1099px){.care-reference-support__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.care-reference-support__grid>article{min-height:245px}}
+@media(max-width:639px){.care-reference-support{padding:34px 0 39px}.care-reference-support__grid{grid-template-columns:1fr;gap:18px;margin-top:27px}.care-reference-support__grid>article{min-height:225px;padding:21px 23px 76px}.care-reference-support__grid h3{font-size:19px}.care-reference-support__grid p{font-size:14px;max-width:440px}}

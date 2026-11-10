@@ -38,6 +38,16 @@
   <link rel="stylesheet" href="assets/css/hero-redesign.css">
   <link rel="stylesheet" href="assets/css/stepper.css">
   <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/network.css">
+  <link rel="stylesheet" href="assets/css/network-brand.css">
+  <link rel="stylesheet" href="assets/css/network-reference.css">
+  <link rel="stylesheet" href="assets/css/network-final.css">
+  <link rel="stylesheet" href="assets/css/hospital-theme.css">
+  <link rel="stylesheet" href="assets/css/coordinator-cards.css">
+  <link rel="stylesheet" href="assets/css/directory-reference.css">
+  <link rel="stylesheet" href="assets/css/breadcrumb.css">
+  <link rel="stylesheet" href="assets/css/coordinator-mockup.css">
+  <link rel="stylesheet" href="assets/css/home-network.css">
   <script>
     (function (d) {
       d.classList.replace('no-js', 'js');
@@ -124,9 +134,9 @@
       <nav aria-label="Main">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
-          <li class="nav-group"><details class="nav-dropdown"><summary>Who We Are <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="who-we-are.html">Who We Are</a></li><li><a href="why-fastcardiocare.html">Why FastCardioCare</a></li></ul></details></li>
-          <li class="nav-group"><details class="nav-dropdown"><summary>Procedures <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="procedures.html">All Procedures</a></li><li><a href="procedures.html#angiography">Coronary Angiography</a></li><li><a href="procedures.html#pci">Angioplasty &amp; Stenting</a></li><li><a href="procedures.html#cabg">Bypass Surgery</a></li><li><a href="procedures.html#valve">Heart Valve Treatment</a></li></ul></details></li>
+          <li class="nav-group"><details class="nav-dropdown"><summary>Procedures <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="procedures.html">All Procedures</a></li><li><a href="procedures.html#angiography">Coronary Angiography</a></li><li><a href="procedures.html#pci">Angioplasty &amp; Stenting</a></li><li><a href="procedures.html#cabg">Bypass Surgery</a></li><li><a href="procedures.html#valve">Heart Valve Treatment</a></li><li><a href="procedures.html#tavi">TAVR / TAVI</a></li><li><a href="procedures.html#ablation">Catheter Ablation</a></li><li><a href="procedures.html#pacemaker">Pacemaker Implantation</a></li><li><a href="procedures.html#icd-crt">ICD / CRT Devices</a></li><li><a href="procedures.html#congenital">Congenital Heart Repair</a></li><li><a href="procedures.html#advanced">Advanced Heart-Failure Care</a></li></ul></details></li>
           <li><a href="how-it-works.html">How It Works</a></li>
+<li class="nav-group"><details class="nav-dropdown"><summary>Our Network <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary><ul><li><a href="accredited-network.html">Our Network</a></li><li><a href="hospitals.html">Cardiac Hospitals</a></li><li><a href="medical-coordinators.html">Medical Coordinators</a></li></ul></details></li>
           <li><a href="packages.html">Packages</a></li>
           <li><a href="faqs.html">FAQs</a></li>
         </ul>
@@ -146,6 +156,7 @@
 </header>
 
 <main id="main" tabindex="-1">
+<div class="crumb-bar"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Contact</span></li></ol></nav></div></div>
 <section class="section service-content enquiry-section" aria-label="Enquiry form and contact options">
   <div class="container">
     <div class="note alert-emergency" role="note" style="margin-bottom:28px">
@@ -158,7 +169,7 @@
 
     <div class="contact-grid">
 <div class="contact-introduction">
-      <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Contact</span></li></ol></nav>
+
       <p class="eyebrow">Contact us</p>
       <h1 id="page-title">Start with a confidential<br><span>conversation.</span></h1>
       <p class="lead">Tell us how to reach you and which heart-care question you are exploring. A coordinator will respond using the contact details you provide. Please do not use this form for urgent symptoms or emergencies.</p>
@@ -224,11 +235,14 @@
               <div class="choices choices--3">
                 <label class="choice"><input type="radio" id="enquirer-patient" name="enquirer" value="patient"> The patient</label>
                 <label class="choice"><input type="radio" id="enquirer-family" name="enquirer" value="family"> A family member or companion</label>
+                <label class="choice"><input type="radio" id="enquirer-hospital" name="enquirer" value="hospital"> A hospital or healthcare organization</label>
+                <label class="choice"><input type="radio" id="enquirer-coordinator" name="enquirer" value="medical_coordinator"> A medical coordinator</label>
                 <label class="choice"><input type="radio" id="enquirer-partner" name="enquirer" value="referral_partner"> A referral partner</label>
               </div>
               <p class="error-msg" id="err-enquirer"></p>
             </fieldset>
 
+            <div class="network-application" data-network-application hidden><h3>Joining enquiry</h3><p>Introduce your organization or coordinator experience. This enquiry does not confirm membership.</p><div class="field"><label for="organization">Organization or professional name</label><input id="organization" name="organization" maxlength="160"></div><div class="field"><label for="destination-country">Country of operation</label><select id="destination-country" name="destination_country"><option value="">Choose a country</option><option>Pakistan</option><option>Thailand</option><option>Malaysia</option></select></div><div class="field"><label for="organization-website">Official website (optional)</label><input id="organization-website" name="organization_website" type="url" placeholder="https://" maxlength="240"></div><div class="field"><label for="accreditation-reference">Accreditation reference or coordination experience (optional)</label><textarea id="accreditation-reference" name="accreditation_reference" rows="3" maxlength="1200"></textarea></div></div>
             <details class="form-additional"><summary>Additional preferences <span>(optional)</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
 <div class="form-row">
               <div class="field">
@@ -341,7 +355,7 @@
       <nav aria-label="Footer">
         <h2>Explore</h2>
         <ul class="footer__links">
-          <li><a href="who-we-are.html">About</a></li>
+          <li><a href="who-we-are.html">Who We Are</a></li>
           <li><a href="why-fastcardiocare.html">Why FastCardioCare</a></li>
           <li><a href="procedures.html">Procedures</a></li>
           <li><a href="how-it-works.html">How It Works</a></li>
@@ -352,6 +366,8 @@
         <ul class="footer__links">
           <li><a href="packages.html">Packages</a></li>
           <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="hospitals.html">Cardiac Hospitals</a></li>
+          <li><a href="medical-coordinators.html">Medical Coordinators</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -390,5 +406,6 @@
 <script src="assets/js/home-interactive.js" defer></script>
 <script src="assets/js/home-flair.js" defer></script>
 <script src="assets/js/stepper.js" defer></script>
+<script src="assets/js/network.js" defer></script>
 </body>
 </html>

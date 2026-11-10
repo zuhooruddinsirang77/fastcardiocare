@@ -1,0 +1,79 @@
+/* Hospital pages reuse the Procedures hero and the shared site CTA. */
+.hospital-theme{--pc-red:var(--red);--pc-ink:#4a5a73;--pc-line:var(--line);--pc-soft:var(--bg-soft);--pc-pink:var(--red-50)}
+.hospital-theme .hospital-theme-caption{position:absolute;bottom:23px;right:18px;z-index:2;color:#fff;background:#0f2547b3;font-size:11px;padding:4px 8px;border-radius:4px}
+.hospital-theme .proc-features .i{color:var(--red)}
+.hospital-theme .pro-directory{padding:52px 0 64px;background:#fff}
+.hospital-theme .pro-section-head{display:flex;justify-content:space-between;gap:48px;align-items:end;margin-bottom:30px}
+.hospital-theme .pro-section-head .eyebrow{display:block;color:var(--red);font-size:13px;letter-spacing:.12em;margin-bottom:12px;font-weight:750}
+.hospital-theme .pro-section-head h2{font-size:36px;line-height:1.2;font-weight:800;letter-spacing:-.035em;color:var(--navy)}
+.hospital-theme .pro-section-head>p{max-width:470px;font-size:14px;line-height:1.8;color:var(--muted);margin:0}
+.hospital-theme .network-filters,.hospital-theme .directory-countries,.hospital-theme .network-note{display:none!important}
+.hospital-theme .hospital-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.hospital-theme .hospital-card{display:flex;flex-direction:column;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow-sm);padding:0;gap:0;transition:box-shadow .2s,border-color .2s}
+html body .hospital-theme .reference-hospital-photo{position:relative;flex:none;min-height:0;height:220px;border-radius:0;background:var(--bg-soft)}
+html body .hospital-theme .reference-hospital-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:none;transition:none}
+html body .hospital-theme .reference-hospital-photo::after{display:none}
+html body .hospital-theme .reference-hospital-body{display:flex;flex-direction:column;padding:26px;flex:1;position:relative;min-width:0}
+.hospital-theme .hospital-card__top{position:absolute;right:22px;top:22px;margin:0}
+.hospital-theme .pro-country-tag{display:inline-block;background:var(--red-50);border:1px solid #f5dce3;border-radius:6px;color:var(--red-700);font-size:11px;line-height:1.4;font-weight:650;padding:5px 9px;box-shadow:none;letter-spacing:0}
+.hospital-theme .hospital-card .network-location{display:flex;align-items:center;gap:6px;min-height:25px;font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0;text-transform:none;padding-right:90px;margin:0 0 12px}
+.hospital-theme .hospital-card .network-location::before{display:none}
+.hospital-theme .network-location .i{width:15px;height:15px;color:var(--red);flex-shrink:0}
+.hospital-theme .hospital-card h3{font-size:24px;font-weight:750;line-height:1.3;letter-spacing:-.025em;margin:0 0 13px;color:var(--navy)}
+.hospital-theme .hospital-card h3+p{font-size:15px;line-height:1.75;color:var(--muted);margin:0 0 20px}
+.hospital-theme .reference-service-tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0 0 18px;list-style:none}
+.hospital-theme .reference-service-tags li{display:flex;align-items:center;gap:7px;flex:0 1 auto;padding:7px 9px;border-radius:6px;border:1px solid var(--line);background:var(--bg-soft)}
+.hospital-theme .reference-service-tags .i{width:16px;height:16px;color:var(--red)}
+.hospital-theme .reference-service-tags span{font-size:12px;font-weight:550;line-height:1.5;color:var(--navy)}
+.hospital-theme .premium-source{margin:0 0 20px;border-block:1px solid var(--line);padding:0}
+.hospital-theme .premium-source summary{display:flex;align-items:center;gap:9px;min-height:46px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;list-style:none;padding:12px 0}
+.hospital-theme .premium-source summary::before{display:none}
+.hospital-theme .premium-source summary>.i{width:17px;height:17px;flex-shrink:0;color:var(--red)}
+.hospital-theme .premium-source summary>span{margin-left:auto;font-size:19px;font-weight:400;color:var(--red)}
+.hospital-theme .premium-source[open] summary>span{transform:rotate(45deg)}
+.hospital-theme .accreditation-note{background:var(--bg-soft);font-size:13px;line-height:1.8;color:var(--muted);padding:14px;border-radius:7px;margin:0 0 13px}
+.js .hospital-theme .hospital-card .hospital-card__links{display:none}
+.hospital-theme .reference-card-actions{display:flex;gap:12px;margin-top:auto}
+.hospital-theme .reference-details-button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:11px 18px;border:1px solid var(--red);border-radius:10px;background:var(--btn-red-bg);color:#fff;font-size:14px;font-weight:650;box-shadow:var(--btn-red-shadow);flex:1;cursor:pointer}
+.hospital-theme .reference-details-button:hover{background:var(--btn-navy-bg-hover);border-color:var(--navy)}
+.hospital-theme .directory-compare-choice{display:flex;align-items:center;justify-content:center;gap:9px;min-height:45px;padding:11px 16px;border:1px solid var(--line-strong);border-radius:10px;background:#fff;color:var(--navy);font-size:14px;font-weight:600;flex:1;cursor:pointer}
+.hospital-theme .directory-compare-choice input{width:16px;height:16px;accent-color:var(--red);margin:0}
+.hospital-theme .hospital-card.is-selected{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.hospital-theme .pro-support{padding:52px 0;background:var(--bg-soft);border-block:1px solid var(--line)}
+.hospital-theme .pro-support-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-top:32px}
+.hospital-theme .pro-support-icon{display:flex;align-items:center;margin-bottom:18px}
+.hospital-theme .pro-support-icon>.i{width:43px;height:43px;padding:10px;border:1px solid #f4dce3;border-radius:10px;background:var(--red-50);color:var(--red)}
+.hospital-theme .pro-support-icon>span{display:none}
+.hospital-theme .pro-support-grid h3{font-size:18px;font-weight:750;color:var(--navy);line-height:1.3;margin-bottom:11px}
+.hospital-theme .pro-support-grid p{font-size:14px;line-height:1.8;color:var(--muted);margin:0}
+.hospital-theme-cta{padding-top:48px!important}
+.hospital-theme-join{text-align:center;color:var(--muted);font-size:13px;margin:21px 0 0;line-height:1.8}
+.hospital-theme-join a{font-weight:650;margin-left:7px}
+@media(min-width:900px){html:is([data-page=network],[data-page=hospitals]) body .utility-bar{display:block}}
+@media(hover:hover){.hospital-theme .hospital-card:hover{border-color:#c8d4e5;box-shadow:var(--shadow)}}
+@media(max-width:1000px){.hospital-theme .pro-section-head{gap:32px}.hospital-theme .pro-section-head h2{font-size:32px}.hospital-theme .pro-support-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.hospital-theme .hospital-card h3{font-size:22px}.hospital-theme .reference-hospital-body{padding:23px}}
+@media(max-width:700px){.hospital-theme .hospital-grid{grid-template-columns:1fr;gap:23px}.hospital-theme .pro-section-head{display:block;margin-bottom:25px}.hospital-theme .pro-section-head>p{margin-top:16px;max-width:100%}.hospital-theme .pro-directory{padding:38px 0 42px}.hospital-theme .pro-section-head h2{font-size:29px}.hospital-theme .pro-section-head .eyebrow{font-size:11px}.hospital-theme .hospital-theme-caption{font-size:9px;bottom:12px}.hospital-theme .hospital-card h3{font-size:23px}.hospital-theme .pro-support{padding:36px 0}.hospital-theme .pro-support-grid{gap:27px 23px}.hospital-theme .pro-support-grid h3{font-size:17px}.hospital-theme .pro-support-grid p{font-size:13px}.hospital-theme-join{font-size:12px}.hospital-theme .reference-details-button,.hospital-theme .directory-compare-choice{font-size:13px}}
+@media(max-width:380px){html body .hospital-theme .reference-hospital-body{padding:20px}.hospital-theme .hospital-card h3{font-size:22px}.hospital-theme .pro-support-grid{grid-template-columns:1fr}.hospital-theme .hospital-card .network-location{font-size:11px}.hospital-theme .pro-country-tag{font-size:10px}.hospital-theme .reference-card-actions{gap:9px}}
+@media(prefers-reduced-motion:reduce){.hospital-theme .hospital-card{transition:none}}
+
+/* A single, well-defined action and a quieter card hierarchy. */
+html body .hospital-theme .hospital-card{border-radius:15px;border-color:#e0e7f0;box-shadow:0 3px 12px #142d4c05}
+html body .hospital-theme .reference-hospital-photo{height:215px}
+html body .hospital-theme .reference-hospital-body{padding:27px 28px 25px}
+.hospital-theme .hospital-card .network-location{font-size:12px;color:#64768e;margin-bottom:14px;min-height:27px}
+.hospital-theme .hospital-card__top{right:27px;top:25px}
+.hospital-theme .pro-country-tag{font-size:11px;font-weight:600;background:#f6f8fc;color:#526a87;border:1px solid #e7edf5;padding:5px 9px;line-height:1.5}
+.hospital-theme .hospital-card h3{font-size:23px;font-weight:700;letter-spacing:-.025em;line-height:1.35;margin-bottom:14px}
+.hospital-theme .hospital-card h3+p{font-size:15px;line-height:1.85;color:#5c708a;margin-bottom:22px}
+.hospital-theme .reference-service-tags{gap:8px;margin-bottom:21px}
+.hospital-theme .reference-service-tags li{border:0;border-radius:5px;background:#f2f5fa;padding:7px 10px;gap:7px}
+.hospital-theme .reference-service-tags span{font-size:12px;font-weight:500;color:#4c6380}
+.hospital-theme .reference-service-tags .i{width:15px;height:15px;stroke-width:1.6}
+.hospital-theme .premium-source{border-top:1px solid #e8edf4;border-bottom:0;margin-bottom:17px}
+.hospital-theme .premium-source summary{padding:15px 0 12px;font-size:13px;font-weight:600;color:#435b77}
+.hospital-theme .premium-source summary>.i{width:16px;height:16px}
+.hospital-theme .premium-source summary>span{font-size:17px;color:#8092a9}
+.hospital-theme .reference-card-actions{padding-top:3px;display:flex;justify-content:flex-start;margin-top:auto}
+.hospital-theme .reference-details-button{flex:0 0 auto;width:auto;min-width:174px;min-height:44px;padding:11px 20px;font-size:13px;font-weight:650;border-radius:8px;box-shadow:0 4px 9px #c4002a12}
+@media(max-width:700px){html body .hospital-theme .reference-hospital-body{padding:23px}.hospital-theme .hospital-card__top{top:22px;right:23px}.hospital-theme .hospital-card h3{font-size:23px}.hospital-theme .reference-details-button{width:100%;min-height:46px}.hospital-theme .reference-service-tags span{font-size:12px}}
+@media(max-width:380px){html body .hospital-theme .reference-hospital-body{padding:20px}.hospital-theme .hospital-card__top{right:20px;top:19px}.hospital-theme .hospital-card h3{font-size:21px}.hospital-theme .hospital-card h3+p{font-size:14px}.hospital-theme .reference-service-tags li{padding:7px 8px;gap:6px}}

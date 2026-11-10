@@ -241,8 +241,8 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
 /* ---------- Spec copy restored on the home page: trust line, feature cards, process preview ---------- */
 /* Homepage process preview: spec heading and text, centred. */
 .home-page .process-preview {
-  padding-block: clamp(48px, 6vw, 88px);
-  margin-bottom: clamp(40px, 5vw, 64px);
+  padding-block: clamp(40px, 4.5vw, 64px) clamp(32px, 3.5vw, 48px);
+  margin-bottom: 0;
   border-block: 1px solid #e8edf4;
   background: linear-gradient(115deg, #f6f8fc, #fcfdff 65%, #f8f9fc);
 }

@@ -79,11 +79,14 @@
               <div class="choices choices--3">
                 <label class="choice"><input type="radio" id="enquirer-patient" name="enquirer" value="patient"> The patient</label>
                 <label class="choice"><input type="radio" id="enquirer-family" name="enquirer" value="family"> A family member or companion</label>
+                <label class="choice"><input type="radio" id="enquirer-hospital" name="enquirer" value="hospital"> A hospital or healthcare organization</label>
+                <label class="choice"><input type="radio" id="enquirer-coordinator" name="enquirer" value="medical_coordinator"> A medical coordinator</label>
                 <label class="choice"><input type="radio" id="enquirer-partner" name="enquirer" value="referral_partner"> A referral partner</label>
               </div>
               <p class="error-msg" id="err-enquirer"></p>
             </fieldset>
 
+            <div class="network-application" data-network-application hidden><h3>Joining enquiry</h3><p>Introduce your organization or coordinator experience. This enquiry does not confirm membership.</p><div class="field"><label for="organization">Organization or professional name</label><input id="organization" name="organization" maxlength="160"></div><div class="field"><label for="destination-country">Country of operation</label><select id="destination-country" name="destination_country"><option value="">Choose a country</option><option>Pakistan</option><option>Thailand</option><option>Malaysia</option></select></div><div class="field"><label for="organization-website">Official website (optional)</label><input id="organization-website" name="organization_website" type="url" placeholder="https://" maxlength="240"></div><div class="field"><label for="accreditation-reference">Accreditation reference or coordination experience (optional)</label><textarea id="accreditation-reference" name="accreditation_reference" rows="3" maxlength="1200"></textarea></div></div>
             <details class="form-additional"><summary>Additional preferences <span>(optional)</span><svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
 <div class="form-row">
               <div class="field">

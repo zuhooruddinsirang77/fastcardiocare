@@ -1,0 +1,53 @@
+/* Home: "Explore care in Pakistan, Thailand and Malaysia" section. */
+.home-network { position: relative; overflow: hidden; padding: clamp(40px, 5vw, 64px) 0; background: linear-gradient(135deg, #f6f8fc, #fff 55%, #fdf1f4); }
+.home-network__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-bottom: 34px; }
+.home-network .eyebrow { display: flex; align-items: center; gap: 14px; margin: 0 0 16px; color: var(--red); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.home-network .eyebrow::after { content: ""; width: 120px; height: 2px; background: var(--red); }
+.home-network h2 { margin: 0 0 16px; color: var(--navy); font-size: clamp(2rem, 3.6vw, 3.1rem); font-weight: 800; line-height: 1.08; letter-spacing: -.04em; }
+.home-network h2 span { color: var(--red); }
+.home-network__copy > p { max-width: 34em; margin: 0; color: var(--ink); font-size: clamp(1rem, 1.2vw, 1.12rem); line-height: 1.7; }
+
+/* three slanted country panels */
+.home-network__places { position: relative; display: flex; height: clamp(180px, 20vw, 250px); border-radius: 22px 22px 22px 90px; overflow: hidden; box-shadow: 0 24px 50px -32px rgba(15, 37, 71, .55); background: #e8eef8; }
+.home-place { position: relative; flex: 1 1 0; min-width: 0; margin: 0 0 0 -34px; overflow: hidden; clip-path: polygon(34px 0, 100% 0, calc(100% - 34px) 100%, 0 100%); }
+.home-place:first-of-type { margin-left: 0; clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0 100%); }
+.home-place:last-of-type { clip-path: polygon(34px 0, 100% 0, 100% 100%, 0 100%); }
+.home-place img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.home-place--pk img { object-position: 50% 60%; }
+.home-place--th img { object-position: 62% 50%; }
+.home-place--my img { object-position: 50% 35%; }
+.home-place figcaption { position: absolute; z-index: 2; top: 14px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 8px; border-radius: 999px; background: rgba(255, 255, 255, .96); color: var(--navy); font-size: 14px; font-weight: 800; white-space: nowrap; box-shadow: 0 8px 18px -10px rgba(15, 37, 71, .5); }
+.flag { width: 24px; height: 24px; border-radius: 50%; box-shadow: 0 0 0 1px #0f254722; }
+.flag--pk { background: linear-gradient(90deg, #fff 0 25%, #075b31 25%); }
+.flag--th { background: linear-gradient(#bd1734 0 17%, #fff 17% 33%, #24345d 33% 67%, #fff 67% 83%, #bd1734 83%); }
+.flag--my { background: linear-gradient(#cb1e37 0 50%, #fff 50%), #cb1e37; background: repeating-linear-gradient(#cb1e37 0 3px, #fff 3px 6px); }
+.home-network__wave { position: absolute; z-index: 3; right: 0; bottom: 0; width: 46%; height: 42%; fill: var(--red); pointer-events: none; }
+.home-network__heart { position: absolute; z-index: 4; right: 22px; bottom: 16px; width: 44px; height: 44px; padding: 8px; border-radius: 50%; background: #fff; color: var(--red); box-shadow: 0 10px 22px -10px rgba(0, 0, 0, .5); }
+
+/* three cards */
+.home-network__cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.home-net-card { position: relative; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-content: start; overflow: hidden; padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: #fff; color: var(--ink); text-decoration: none; box-shadow: 0 18px 40px -30px rgba(15, 37, 71, .4); transition: border-color .2s, box-shadow .25s, transform .25s; }
+.home-net-card::after { content: ""; position: absolute; right: -40px; bottom: -60px; width: 220px; height: 150px; border-radius: 50%; background: radial-gradient(closest-side, #fdecef, transparent); pointer-events: none; }
+.home-net-card:hover { border-color: #ef9aaa; box-shadow: 0 24px 46px -26px rgba(196, 0, 42, .35); transform: translateY(-3px); }
+.home-net-card__icon { grid-row: 1; display: grid; place-items: center; width: 62px; height: 62px; border-radius: 16px; background: #fdecef; color: var(--red); }
+.home-net-card__icon .i { width: 32px; height: 32px; stroke-width: 1.6; }
+.home-net-card__body h3 { margin: 4px 0 6px; color: var(--navy); font-size: 22px; font-weight: 800; letter-spacing: -.03em; }
+.home-net-card__body p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.55; }
+.home-net-card__cta { grid-column: 1 / -1; justify-self: start; margin-top: 18px; position: relative; z-index: 1; }
+.home-net-card:hover .home-net-card__cta { border-color: #0f2547 !important; background: #0f2547 !important; background-image: none !important; }
+
+@media (max-width: 1000px) {
+  .home-network__head { grid-template-columns: 1fr; }
+  .home-network__cards { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 560px) {
+  .home-network__places { height: 170px; border-radius: 18px 18px 18px 56px; }
+  .home-place { margin-left: -22px; clip-path: polygon(22px 0, 100% 0, calc(100% - 22px) 100%, 0 100%); }
+  .home-place:first-of-type { clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%); }
+  .home-place:last-of-type { clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%); }
+  .home-place figcaption { top: 10px; padding: 5px 10px 5px 6px; font-size: 12px; gap: 6px; }
+  .flag { width: 18px; height: 18px; }
+  .home-net-card { padding: 20px; gap: 6px 14px; }
+  .home-net-card__icon { width: 52px; height: 52px; }
+  .home-net-card__cta { width: 100%; justify-content: center; }
+}
