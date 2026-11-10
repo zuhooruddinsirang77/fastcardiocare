@@ -51,3 +51,8 @@
   .home-net-card__icon { width: 52px; height: 52px; }
   .home-net-card__cta { width: 100%; justify-content: center; }
 }
+
+/* the three buttons sit on the same line: the text area grows, the button is pinned to the bottom of each card */
+.home-net-card { grid-template-rows: 1fr auto; align-content: stretch; }
+.home-net-card__icon, .home-net-card__body { align-self: start; }
+.home-net-card__cta { align-self: end; }
