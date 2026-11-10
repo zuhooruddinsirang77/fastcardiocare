@@ -46,9 +46,9 @@ html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) .btn
   html body.home-page .hero__features li:first-child { padding-left: 0; }
   html body.home-page .hero__features li + li { border-left: 1px solid #dfe5ef; }
   html body.home-page .hero__art { max-width: none; min-height: 520px; justify-content: flex-start; }
-  html body.home-page .hero__art > img { width: 64%; max-width: none; max-height: none; margin-left: -2%; filter: drop-shadow(0 0 26px rgba(255, 64, 96, .38)) drop-shadow(0 24px 30px rgba(140, 10, 30, .25)); }
-  html body.home-page .hero__art::before { left: -3%; width: 70%; border: 2px solid rgba(224, 21, 53, .13); box-shadow: 0 0 0 12px rgba(224, 21, 53, .03); background: radial-gradient(circle, rgba(255, 255, 255, .95) 0%, rgba(253, 236, 240, .75) 60%, rgba(253, 236, 240, 0) 76%); }
-  html body.home-page .hero-ecg { left: -9%; top: 33%; width: 34%; height: 30%; stroke: #f26b86; stroke-width: 2.6; filter: drop-shadow(0 0 3px rgba(255, 60, 90, .4)); }
+  html body.home-page .hero__art > img { width: 64%; max-width: none; max-height: none; margin-left: 2%; filter: drop-shadow(0 0 26px rgba(255, 64, 96, .38)) drop-shadow(0 24px 30px rgba(140, 10, 30, .25)); }
+  html body.home-page .hero__art::before { left: 1%; width: 70%; border: 2px solid rgba(224, 21, 53, .13); box-shadow: 0 0 0 12px rgba(224, 21, 53, .03); background: radial-gradient(circle, rgba(255, 255, 255, .95) 0%, rgba(253, 236, 240, .75) 60%, rgba(253, 236, 240, 0) 76%); }
+  html body.home-page .hero-ecg { left: -5%; top: 33%; width: 34%; height: 30%; stroke: #f26b86; stroke-width: 2.6; filter: drop-shadow(0 0 3px rgba(255, 60, 90, .4)); }
   html body.home-page .hero__chip { width: 254px; height: 76px; min-width: 0; padding: 0 14px; gap: 12px; align-items: center; }
   html body.home-page .hero__chip--1 { top: 15%; right: 0; left: auto; }
   html body.home-page .hero__chip--2 { top: calc(50% - 38px); right: -26px; left: auto; }
@@ -56,7 +56,7 @@ html body.home-page .hero__actions .btn--outline:is(:hover, :focus-visible) .btn
     html body.home-page .hero__strip-ecg { display: block; }
 }
 @media (min-width: 960px) and (max-width: 1199px) {
-  html body.home-page .hero__art > img { width: 58%; margin-left: -10%; }
+  html body.home-page .hero__art > img { width: 58%; margin-left: -6%; }
   html body.home-page .hero__chip { width: 216px; height: 72px; }
   html body.home-page .hero__chip small { font-size: 12px; }
   html body.home-page .hero__chip--2 { right: -10px; }
@@ -93,3 +93,26 @@ html body.home-page .hero__strip-ecg { margin-left: auto; }
   html body.home-page .hero__strip .motion-toggle { order: 2; margin: 0; }
   html body.home-page .hero__strip .hero__note { order: 3; flex: 0 0 100%; padding-top: 12px; border-top: 1px solid #ffffff22; }
 }
+
+/* Desktop: hero + navy strip fit the first screen, so "Follow the journey" is visible without scrolling.
+   Spacing and type scale with the viewport height; the art height absorbs the rest. */
+@media (min-width: 960px) {
+  html body.home-page .hero__grid { padding-block: clamp(10px, 1.8vh, 28px) clamp(56px, 7.4vh, 80px); }
+  html body.home-page .hero__art { min-height: clamp(300px, calc(100svh - 330px), 520px); }
+  html body.home-page .hero__copy > .eyebrow { margin-bottom: clamp(10px, 1.8vh, 22px); padding-block: clamp(6px, 1vh, 10px); }
+  html body.home-page .hero h1 { margin-bottom: clamp(24px, 3.8vh, 38px); font-size: clamp(2.2rem, min(4.3vw, 7vh), 4rem); }
+  html body.home-page .hero .lead { max-width: 40em; font-size: clamp(.94rem, 2.1vh, 1.18rem); line-height: 1.5; }
+  html body.home-page .hero__actions { margin-top: clamp(14px, 2.4vh, 28px); }
+  html body.home-page .hero__features { margin-top: clamp(12px, 2.2vh, 30px); }
+  html body.home-page .hero__strip { padding: clamp(34px, 4.4vh, 44px) 0 clamp(10px, 1.8vh, 20px); }
+}
+
+/* Hero cards: one aligned column, equal width, hairline border, soft shadow, squared icon tile. */
+@media (min-width: 960px) {
+  html body.home-page .hero__chip { width: 248px; height: 74px; padding: 0 16px; gap: 14px; border: 1px solid #e6ebf3; border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(15, 37, 71, .05), 0 14px 28px -16px rgba(15, 37, 71, .28); }
+  html body.home-page .hero__chip--1, html body.home-page .hero__chip--2, html body.home-page .hero__chip--3 { right: 0; left: auto; }
+  html body.home-page .hero__chip > .i { width: 20px; height: 20px; padding: 11px; border-radius: 10px; background: #fdecef; color: #c4002a; stroke-width: 1.7; }
+  html body.home-page .hero__chip strong { color: #0f2547; font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
+  html body.home-page .hero__chip small { margin-top: 3px; color: #5a6a84; font-size: 12.5px; font-weight: 500; }
+}
+@media (min-width: 960px) and (max-width: 1199px) { html body.home-page .hero__chip { width: 220px; } }

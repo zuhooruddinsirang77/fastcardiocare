@@ -134,3 +134,16 @@ html.motion-ok body:not(.motion-paused) .stepper__panel.is-entering .step-media 
   .stepper__controls { display: none; }
   .stepper { padding-bottom: 72px; }
 }
+
+/* ---- desktop: Previous / Next are round arrows on the card's left and right edges; the counter stays below ---- */
+@media (min-width: 900px) {
+  .step-arrows { position: absolute; z-index: 3; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; pointer-events: none; }
+  .step-arrow { display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border-radius: 50%; box-shadow: 0 12px 24px -10px #0b1e3bb3; cursor: pointer; pointer-events: auto; }
+  .step-arrow .i { width: 20px; height: 20px; }
+  .step-arrow[data-step-prev] .i { transform: scaleX(-1); }
+  .step-arrow:disabled { opacity: 0; pointer-events: none; }
+  .step-arrow:focus-visible { outline: 3px solid var(--focus, #295eac); outline-offset: 2px; }
+  .step-body { padding-right: clamp(64px, 6vw, 80px); }
+  .stepper__controls { grid-template-columns: 1fr; margin-top: 16px; }
+  .stepper__controls .stepper__btn { display: none; }
+}

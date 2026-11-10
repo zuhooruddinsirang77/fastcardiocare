@@ -259,11 +259,7 @@ html.motion-ok .home-page .story .chapter h3 .w > span { transform: none; }
 }
 .home-page .process-preview__intro > p:not(.eyebrow) { font-size: 1rem; line-height: 1.8; }
 .home-page .process-preview .process-section__more { margin: 28px 0 14px; }
-.home-page .process-preview .btn {
-  gap: 20px; background: var(--navy); border-color: var(--navy); color: #fff;
-  border-radius: 9px; box-shadow: 0 6px 14px -10px #10234380;
-}
-.home-page .process-preview .btn:is(:hover, :focus-visible) { background: #243d62; border-color: #243d62; color: #fff; }
+.home-page .process-preview .btn { gap: 20px; }
 .home-page .process-preview__intro .process-preview__reassurance {
   display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; font-size: .79rem;
   color: #586780; line-height: 1.5;
