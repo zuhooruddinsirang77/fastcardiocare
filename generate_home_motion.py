@@ -1,5 +1,6 @@
 """Generate small, original brand motion graphics and matching accessible stills.
 
+
 Run with python generate_home_motion.py. Requires Pillow. No external assets.
 """
 import math
@@ -72,3 +73,6 @@ for name in ('cardiac-pulse','clear-plan','connected-care'):
     indexed[0].save(OUT/(name+'.gif'),save_all=True,append_images=indexed[1:],duration=60,loop=0,optimize=True,disposal=2)
     frames[30].save(OUT/(name+'.png'),optimize=True)
     print(name, (OUT/(name+'.gif')).stat().st_size, 'bytes')
+
+
+
