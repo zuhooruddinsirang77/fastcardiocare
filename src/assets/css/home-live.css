@@ -1,0 +1,200 @@
+/* Home live layer (pairs with home-live.js). Loaded last and scoped to the home page.
+   Every hidden-until-revealed state and every loop is gated on html.motion-ok (no reduced-motion)
+   and body:not(.motion-paused), so the OS setting and the "Pause motion" control switch all of it off.
+   Entrances use the individual translate / scale / opacity properties, so they never fight
+   the transforms that hover states and older layers already use. */
+.home-page { --live-ease: cubic-bezier(.22, 1, .36, 1); --live-red: 196, 0, 42; }
+
+/* ---------- 1. Reveals ---------- */
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live] {
+  transition: opacity .8s var(--live-ease) var(--ld, 0ms), translate .9s var(--live-ease) var(--ld, 0ms), scale .9s var(--live-ease) var(--ld, 0ms), clip-path 1.1s var(--live-ease) var(--ld, 0ms);
+}
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="up"]:not(.live-in) { opacity: 0; translate: 0 26px; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="left"]:not(.live-in) { opacity: 0; translate: 34px 0; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="pop"]:not(.live-in) { opacity: 0; scale: .86; translate: 0 12px; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="card"]:not(.live-in) { opacity: 0; translate: 0 44px; scale: .96; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="wipe"]:not(.live-in) { opacity: 0; clip-path: inset(-60px 100% -80px -60px); translate: -18px 0; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="wipe"] { clip-path: inset(-60px -60px -80px -60px); }
+/* "words" and "rule" keep their box in place; only their inner parts move. */
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="words"],
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="rule"] { transition: none; }
+
+/* headings rise word by word from behind a mask */
+.home-page .lw { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .06em .16em; margin: 0 -.06em -.16em; }
+.home-page .lw > span { display: inline-block; }
+/* word wrappers never pick up colours meant for a heading's own accent spans */
+.home-page .lw, .home-page .lw > span { color: inherit; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="words"] .lw > span {
+  transition: translate .8s cubic-bezier(.2, .8, .2, 1); transition-delay: calc(var(--wi, 0) * 48ms + var(--ld, 0ms));
+}
+html.motion-ok body.home-page.live-ready:not(.motion-paused) [data-live="words"]:not(.live-in) .lw > span { translate: 0 112%; }
+
+/* the hand-drawn underline under the intro heading draws itself after the words land */
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .story-intro__heading h2[data-live]::after { transition: clip-path .9s var(--live-ease) .65s; clip-path: inset(0 0 0 0); }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .story-intro__heading h2[data-live]:not(.live-in)::after { clip-path: inset(0 100% 0 0); }
+/* the red rule beside the intro copy grows down */
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .story-intro__copy[data-live]::before { transform-origin: 50% 0; transition: transform .8s var(--live-ease) .1s; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .story-intro__copy[data-live]:not(.live-in)::before { transform: scaleY(0); }
+
+/* procedure photos settle as their card arrives */
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .proc-mini[data-live] .procedure-photo { transition: scale 1.3s var(--live-ease) var(--ld, 0ms); }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .proc-mini[data-live]:not(.live-in) .procedure-photo { scale: 1.14; }
+
+/* ---------- 2. Hero ---------- */
+/* swoosh under the headline draws in once */
+@media (min-width: 960px) {
+  html.motion-ok body.home-page.motion-ready:not(.motion-paused) .hero h1::after { animation: live-draw 1s var(--live-ease) .75s both; }
+}
+@keyframes live-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* pointer light */
+.home-page .hero-spot { position: absolute; z-index: 0; inset: 0; pointer-events: none; opacity: 0; transition: opacity .5s ease;
+  background: radial-gradient(420px circle at var(--sx, 50%) var(--sy, 40%), rgba(255, 92, 122, .13), rgba(110, 150, 215, .07) 45%, transparent 70%); }
+html.motion-ok body.home-page:not(.motion-paused) .hero-spot.is-on { opacity: 1; }
+
+/* links from the heart to the three cards */
+.home-page .hero-links { display: none; }
+@media (min-width: 960px) {
+  .home-page .hero-links { display: block; position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; fill: none; }
+  .home-page .hero__art > img { position: relative; z-index: 1; }
+  .home-page .hero-ecg { z-index: 1; }
+  .home-page .hero__chip { z-index: 2; }
+  .home-page .hero-link__base { stroke: rgba(var(--live-red), .24); stroke-width: 1.5; stroke-dasharray: .012 .02; stroke-linecap: round; transition: stroke .3s, stroke-width .3s; }
+  .home-page .hero-link__pulse { stroke: #ff3b5c; stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: .09 .91; stroke-dashoffset: .1; opacity: 0; filter: drop-shadow(0 0 4px rgba(255, 59, 92, .8)); }
+  .home-page .hero-link.is-hot .hero-link__base { stroke: rgba(var(--live-red), .7); stroke-width: 2; }
+  html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero-link__pulse { animation: live-link 3.6s cubic-bezier(.45, 0, .3, 1) infinite; }
+  html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero-link--2 .hero-link__pulse { animation-delay: 1.2s; }
+  html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero-link--3 .hero-link__pulse { animation-delay: 2.4s; }
+  html.motion-ok body.home-page.hero-motion-active:not(.motion-paused) .hero-link.is-hot .hero-link__pulse { animation-duration: 1.3s; animation-delay: 0s; }
+  html.motion-ok body.home-page.motion-ready:not(.motion-paused) .hero-links { animation: live-fade 1s ease 1.1s both; }
+
+  /* the cards answer the pointer */
+  .home-page .hero__chip { cursor: default; transition: box-shadow .3s, border-color .3s, scale .35s var(--live-ease), opacity .3s; }
+  .home-page .hero__chip > .i { transition: background-color .3s, color .3s, rotate .35s var(--live-ease); }
+  html.motion-ok body.home-page:not(.motion-paused) .hero__chip:hover { scale: 1.045; border-color: #f3b3c0; box-shadow: 0 1px 2px rgba(15, 37, 71, .05), 0 22px 36px -18px rgba(var(--live-red), .5); }
+  html.motion-ok body.home-page:not(.motion-paused) .hero__chip:hover > .i { background: linear-gradient(135deg, #e01535, #c00b28); color: #fff; rotate: -6deg; }
+  html.motion-ok body.home-page:not(.motion-paused) .hero__art.has-hot-chip .hero__chip:not(:hover) { opacity: .82; }
+}
+@keyframes live-link { 0% { stroke-dashoffset: .1; opacity: 0; } 12% { opacity: 1; } 55% { opacity: 1; } 70%, 100% { stroke-dashoffset: -.95; opacity: 0; } }
+@keyframes live-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* click / tap on the heart */
+.home-page .hero__art > img { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.home-page .heart-burst { position: absolute; z-index: 0; left: var(--ring-x, 39%); top: var(--ring-y, 50%); width: 64%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; pointer-events: none; opacity: 0;
+  border: 2px solid rgba(var(--live-red), .6); box-shadow: 0 0 0 12px rgba(var(--live-red), .06), inset 0 0 30px rgba(var(--live-red), .12); }
+
+/* ---------- 3. Journey stepper ---------- */
+/* red progress line fills along the step row */
+.stepper__nav.has-fill::after { content: ""; position: absolute; z-index: 0; top: 29px; left: calc(100% / 14); right: calc(100% / 14); height: 2px; border-radius: 2px; pointer-events: none;
+  background: linear-gradient(90deg, #c4002a, #ff3b5c); transform-origin: 0 50%; transform: scaleX(var(--step-p, 0)); transition: transform .55s var(--live-ease); box-shadow: 0 0 8px rgba(255, 59, 92, .5); }
+.stepper__nav.has-fill.is-scrolling::after { transition: transform .18s linear; }
+@media (max-width: 1099px) { .stepper__nav.has-fill::after { top: 26px; } }
+@media (max-width: 759px) { .stepper__nav.has-fill::after { top: 21px; } }
+/* steps already visited stay marked */
+.stepper__tab.is-done .stepper__num { border-color: #c4002a; background: #fff; }
+/* the current step breathes */
+html.motion-ok body.home-page:not(.motion-paused) .stepper.live-onscreen .stepper__tab[aria-selected="true"] .stepper__num { animation: live-step-ring 2.4s ease-out infinite; }
+@keyframes live-step-ring { 0% { box-shadow: 0 0 0 0 rgba(196, 0, 42, .35), 0 12px 20px -12px #a80a26; } 70%, 100% { box-shadow: 0 0 0 12px rgba(196, 0, 42, 0), 0 12px 20px -12px #a80a26; } }
+html.motion-ok body.home-page:not(.motion-paused) .stepper__tab[aria-selected="true"] .stepper__num .i { animation: live-icon-pop .5s var(--live-ease) both; }
+@keyframes live-icon-pop { from { scale: .6; rotate: -14deg; } to { scale: 1; rotate: 0deg; } }
+
+/* panels slide in from the side you are travelling towards */
+html.motion-ok body.home-page:not(.motion-paused) .stepper[data-dir="next"] .stepper__panel.is-entering .step-body > * { animation-name: live-step-next; animation-duration: .55s; }
+html.motion-ok body.home-page:not(.motion-paused) .stepper[data-dir="prev"] .stepper__panel.is-entering .step-body > * { animation-name: live-step-prev; animation-duration: .55s; }
+html.motion-ok body.home-page:not(.motion-paused) .stepper[data-dir="next"] .stepper__panel.is-entering .step-media { animation: live-media-next .7s var(--live-ease) both; }
+html.motion-ok body.home-page:not(.motion-paused) .stepper[data-dir="prev"] .stepper__panel.is-entering .step-media { animation: live-media-prev .7s var(--live-ease) both; }
+@keyframes live-step-next { from { opacity: 0; transform: translateX(34px); } to { opacity: 1; transform: none; } }
+@keyframes live-step-prev { from { opacity: 0; transform: translateX(-34px); } to { opacity: 1; transform: none; } }
+@keyframes live-media-next { from { opacity: .2; translate: 26px 0; } to { opacity: 1; translate: 0 0; } }
+@keyframes live-media-prev { from { opacity: .2; translate: -26px 0; } to { opacity: 1; translate: 0 0; } }
+/* photographs drift very slowly while their step is open */
+html.motion-ok body.home-page:not(.motion-paused) .stepper.live-onscreen .stepper__panel:not([hidden]) .step-media:not(.step-media--heart) > img { animation: live-kenburns 14s ease-out both; }
+@keyframes live-kenburns { from { scale: 1.09; } to { scale: 1; } }
+/* tags and caption follow their picture */
+html.motion-ok body.home-page:not(.motion-paused) .stepper__panel.is-entering :is(.step-tags li, .step-caption) { animation: live-tag-in .6s var(--live-ease) .25s both; }
+html.motion-ok body.home-page:not(.motion-paused) .stepper__panel.is-entering .step-tags li:nth-child(2) { animation-delay: .35s; }
+html.motion-ok body.home-page:not(.motion-paused) .stepper__panel.is-entering .step-tags li:nth-child(3) { animation-delay: .45s; }
+@keyframes live-tag-in { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+
+/* step 1: beating heart over a travelling ECG signal */
+.stepper .step-ecg__base { opacity: .45; }
+.stepper .step-ecg__signal { stroke: #e01535; stroke-width: 2.8; opacity: 0; }
+html.motion-ok body.home-page:not(.motion-paused) .stepper.live-onscreen .stepper__panel:not([hidden]) .step-ecg__signal { opacity: 1; stroke-dasharray: .14 .86; animation: live-trace 2.76s linear infinite; filter: drop-shadow(0 0 4px rgba(224, 21, 53, .55)); }
+html.motion-ok body.home-page:not(.motion-paused) .stepper.live-onscreen .stepper__panel:not([hidden]) .step-heart { transform-origin: 50% 62%; animation: home-heartbeat .92s cubic-bezier(.33, 0, .33, 1) infinite; }
+@keyframes live-trace { from { stroke-dashoffset: 1.14; } to { stroke-dashoffset: .14; } }
+
+/* pointer light on the open step */
+.stepper__panel::before { content: ""; position: absolute; z-index: 1; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .4s ease;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(196, 0, 42, .055), transparent 70%); }
+html.motion-ok body.home-page:not(.motion-paused) .stepper__panel.is-lit::before { opacity: 1; }
+
+/* ---------- 4. Procedures ---------- */
+/* sliding pill behind the selected filter */
+.procedure-filters { position: relative; }
+.procedure-filters .filter-pill { display: none; }
+.procedure-filters.has-pill .filter-pill { display: block; position: absolute; z-index: 0; top: 0; left: 0; border-radius: 24px; background: linear-gradient(135deg, #14305c, #0f2547); box-shadow: 0 10px 18px -10px rgba(15, 37, 71, .7); pointer-events: none; }
+html.motion-ok body.home-page:not(.motion-paused) .procedure-filters.has-pill .filter-pill { transition: translate .5s var(--live-ease), width .5s var(--live-ease); }
+.procedure-filters.has-pill button { position: relative; z-index: 1; }
+.procedure-filters.has-pill button[aria-pressed="true"] { background: transparent; border-color: transparent; }
+.procedure-filters button:active { scale: .96; }
+
+/* tilt towards the pointer (story.css holds the base rule; this wins over the plain hover lift) */
+@media (hover: hover) and (pointer: fine) {
+  html.motion-ok body.home-page:not(.motion-paused) .procedures-section .proc-mini.is-tilting {
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px); transition: transform .12s linear, box-shadow .3s, border-color .25s;
+    border-color: #f0b9c5; box-shadow: 0 30px 50px -28px rgba(11, 30, 59, .45);
+  }
+}
+/* "Learn more" underline grows from the left */
+.home-page .proc-mini .text-link { position: relative; width: fit-content; align-self: flex-start; }
+.home-page .proc-mini .text-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; border-radius: 2px; background: currentColor; transform: scaleX(0); transform-origin: 0 50%; transition: transform .4s var(--live-ease); }
+.home-page .proc-mini:is(:hover, :focus-visible) .text-link::after { transform: scaleX(1); }
+
+/* ---------- 5. Network ---------- */
+/* destination panels: the active one opens, the others step back */
+.home-network__places.is-live .home-place { cursor: pointer; transition: flex-grow .8s var(--live-ease); }
+.home-network__places.is-live .home-place.is-active { flex-grow: 1.9; }
+.home-network__places.is-live .home-place img { transition: scale 1.4s var(--live-ease), filter .6s ease; filter: saturate(.75) brightness(.9); }
+.home-network__places.is-live .home-place.is-active img { scale: 1.07; filter: none; }
+.home-network__places.is-live .home-place figcaption { transition: background-color .35s, color .35s, box-shadow .35s; }
+.home-network__places.is-live .home-place.is-active figcaption { background: #c4002a; color: #fff; box-shadow: 0 10px 20px -8px rgba(196, 0, 42, .7); }
+html:not(.motion-ok) .home-network__places.is-live .home-place, html:not(.motion-ok) .home-network__places.is-live .home-place img,
+body.motion-paused .home-network__places.is-live .home-place, body.motion-paused .home-network__places.is-live .home-place img { transition: none; }
+/* heart badge pings */
+html.motion-ok body.home-page:not(.motion-paused) .home-network.live-onscreen .home-network__heart { animation: live-badge 2.8s ease-out infinite; }
+@keyframes live-badge { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .7), 0 10px 22px -10px rgba(0, 0, 0, .5); } 60%, 100% { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0), 0 10px 22px -10px rgba(0, 0, 0, .5); } }
+/* eyebrow rule draws out */
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .home-network .eyebrow[data-live]::after { transform-origin: 0 50%; transition: transform .9s var(--live-ease) .25s; }
+html.motion-ok body.home-page.live-ready:not(.motion-paused) .home-network .eyebrow[data-live]:not(.live-in)::after { transform: scaleX(0); }
+
+/* cards: pointer light, lively icon */
+.home-net-card::before { content: ""; position: absolute; z-index: 0; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s ease;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(196, 0, 42, .09), transparent 70%); }
+html.motion-ok body.home-page:not(.motion-paused) .home-net-card.is-lit::before { opacity: 1; }
+.home-net-card__icon, .home-net-card__body { position: relative; z-index: 1; }
+.home-net-card__icon { transition: background-color .3s, color .3s, scale .4s var(--live-ease), rotate .4s var(--live-ease), box-shadow .3s; }
+.home-net-card:is(:hover, :focus-visible) .home-net-card__icon { background: linear-gradient(135deg, #e01535, #c00b28); color: #fff; box-shadow: 0 12px 22px -10px rgba(196, 0, 42, .7); }
+html.motion-ok body.home-page:not(.motion-paused) .home-net-card:is(:hover, :focus-visible) .home-net-card__icon { scale: 1.08; rotate: -6deg; }
+.home-net-card::after { transition: scale .6s var(--live-ease); }
+html.motion-ok body.home-page:not(.motion-paused) .home-net-card:hover::after { scale: 1.5; }
+.home-net-card:active { scale: .985; }
+
+/* ---------- 6. Closing band ---------- */
+html body .conversation-section .cta-band > .live-spot { position: absolute; z-index: 0; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s ease;
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, .2), transparent 70%); }
+html.motion-ok body.home-page:not(.motion-paused) .conversation-section .cta-band.is-lit > .live-spot { opacity: 1; }
+html.motion-ok body.home-page:not(.motion-paused) .conversation-section.live-onscreen .cta-band::after { animation: live-watermark 5.5s ease-in-out infinite; }
+@keyframes live-watermark { 0%, 100% { scale: 1; opacity: .08; } 50% { scale: 1.08; opacity: .13; } }
+
+/* ---------- touch feedback ---------- */
+@media (hover: none) {
+  .home-page .proc-mini:active, .home-page .stepper__tab:active .stepper__num { scale: .97; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page [data-live], .home-page .lw > span { opacity: 1 !important; translate: none !important; scale: none !important; clip-path: none !important; }
+}
+@media print {
+  .home-page [data-live], .home-page .lw > span { opacity: 1 !important; translate: none !important; scale: none !important; clip-path: none !important; }
+  .hero-links, .hero-spot, .filter-pill { display: none !important; }
+}

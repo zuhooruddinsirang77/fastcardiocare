@@ -18,7 +18,7 @@
 .home-place--my img { object-position: 50% 35%; }
 .home-place figcaption { position: absolute; z-index: 2; top: 14px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 8px; border-radius: 999px; background: rgba(255, 255, 255, .96); color: var(--navy); font-size: 14px; font-weight: 800; white-space: nowrap; box-shadow: 0 8px 18px -10px rgba(15, 37, 71, .5); }
 .flag { width: 24px; height: 24px; border-radius: 50%; box-shadow: 0 0 0 1px #0f254722; }
-.flag--pk { background: linear-gradient(90deg, #fff 0 25%, #075b31 25%); }
+.flag--pk { background: url('../img/flag-pakistan.svg') center / 100% 100% no-repeat; }
 .flag--th { background: linear-gradient(#bd1734 0 17%, #fff 17% 33%, #24345d 33% 67%, #fff 67% 83%, #bd1734 83%); }
 .flag--my { background: linear-gradient(#cb1e37 0 50%, #fff 50%), #cb1e37; background: repeating-linear-gradient(#cb1e37 0 3px, #fff 3px 6px); }
 .home-network__wave { position: absolute; z-index: 3; right: 0; bottom: 0; width: 46%; height: 42%; fill: var(--red); pointer-events: none; }

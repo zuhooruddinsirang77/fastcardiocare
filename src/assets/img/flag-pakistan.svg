@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20">
+  <path fill="#01411c" d="M0 0h30v20H0z"/>
+  <path fill="#fff" d="M0 0h7.5v20H0z"/>
+  <defs><mask id="crescent"><path fill="#fff" d="M0 0h30v20H0z"/><circle cx="20.2" cy="8.4" r="4.7" fill="#000"/></mask></defs>
+  <circle cx="18.5" cy="10" r="5.5" fill="#fff" mask="url(#crescent)"/>
+  <path fill="#fff" d="m22 4.4.65 1.94h2.04l-1.65 1.2.63 1.94L22 8.28l-1.66 1.2.63-1.94-1.65-1.2h2.04Z" transform="rotate(15 22 7)"/>
+</svg>
