@@ -2,6 +2,7 @@
 
 ## Licensed anatomical animation
 
+
 `motion/anatomical-heart.gif` is an archived, unused photogrammetry-based 3D beating-heart animation. The homepage now uses `heart-support.webp` with a subtle CSS heartbeat. It is **Animated Heart** by **DrJanaOfficial**, downloaded unchanged from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Animated_Heart.gif), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Original: https://upload.wikimedia.org/wikipedia/commons/6/62/Animated_Heart.gif (800 × 800, 25 frames, 1-second loop). `motion/anatomical-heart.png` is the first frame extracted without visual changes for paused and reduced-motion playback, under the same license. These archived files are not loaded or displayed by the website; any future display must include creator and license links. This is a 3D illustration, not live patient footage or a diagnostic measurement.
 
 ## Generated imagery
