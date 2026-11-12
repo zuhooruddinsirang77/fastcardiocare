@@ -1,6 +1,7 @@
 """Generate small, original brand motion graphics and matching accessible stills.
 
 
+
 Run with python generate_home_motion.py. Requires Pillow. No external assets.
 """
 
