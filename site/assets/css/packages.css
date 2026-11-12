@@ -157,7 +157,7 @@ html body.packages-page main .pkg-cta .cta-band { grid-template-columns: auto mi
 .packages-page .pkg-dialog h2 { font-size: 25px; margin: 8px 28px 20px 0; }
 .packages-page .pkg-dialog .eyebrow { font-size: 11px; color: var(--pkg-red); }
 .packages-page .pkg-dialog__content > p { font-size: 14px; line-height: 1.65; margin: 20px 0; }
-.packages-page .pkg-dialog__close { position: absolute; right: 16px; top: 12px; width: 36px; height: 36px; border: 1px solid #e6eaf2; border-radius: 50%; background: #fff; color: var(--pkg-navy); font-size: 26px; cursor: pointer; }
+.packages-page .pkg-dialog__close { position: absolute; right: 24px; top: 21px; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid #e6eaf2; border-radius: 50%; background: #fff; color: var(--pkg-navy); line-height: 1; cursor: pointer; }
 .packages-page .pkg-dialog button:focus-visible, .packages-page .pkg-tab:focus-visible { outline: 3px solid #236fcc; outline-offset: 3px; }
 @media (max-width: 1100px) { .packages-page .pkg-hero__card { display: none; } }
 @media (max-width: 760px) {
@@ -177,6 +177,7 @@ html body.packages-page main .pkg-cta .cta-band { grid-template-columns: auto mi
  .packages-page .pkg-hero__trust strong { font-size: 10px; }
  .packages-page .pkg-hero__trust li { font-size: 10px; }
  .packages-page .pkg-dialog { padding: 24px; }
+ .packages-page .pkg-dialog__close { right: 16px; top: 13px; }
  .packages-page .pkg-cta .cta-band { padding: 24px; }
 }
 

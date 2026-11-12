@@ -7,7 +7,7 @@ html[data-page="coordinators"] body .care-reference .coordinator-card[data-role=
 
 /* portrait frame */
 html[data-page="coordinators"] body .care-reference .care-portrait-frame { position: relative; aspect-ratio: 1.45; overflow: hidden; background: #dbe8f5; border-radius: 20px 20px 0 0; }
-html[data-page="coordinators"] body .care-reference .care-portrait-frame .coordinator-portrait { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; background-size: 600% auto; background-position: var(--portrait-x) calc(var(--portrait-y) * .93); }
+html[data-page="coordinators"] body .care-reference .care-portrait-frame .coordinator-portrait { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; background-size: cover; background-position: center 30%; }
 html[data-page="coordinators"] body .care-reference .coordinator-photo-wave { position: absolute; right: 0; bottom: 0; width: 66%; height: 40%; pointer-events: none; }
 html[data-page="coordinators"] body .care-reference .coordinator-photo-wave__edge { fill: var(--tone-b); opacity: .55; }
 html[data-page="coordinators"] body .care-reference .coordinator-photo-wave__main { fill: var(--tone); }

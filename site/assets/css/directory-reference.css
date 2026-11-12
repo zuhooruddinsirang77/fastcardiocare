@@ -83,7 +83,7 @@ html[data-page="coordinators"] body .care-reference .network-note{font-size:11px
 html[data-page="coordinators"] body .care-reference .coordinator-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 html[data-page="coordinators"] body .care-reference .coordinator-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0;border:1px solid #e1e7ef;box-shadow:0 5px 12px #142d4c09;border-radius:12px;overflow:hidden;background:linear-gradient(#fff,#fcfdff)}
 .care-portrait-frame{position:relative;aspect-ratio:1.3;overflow:hidden;background:#dae6f0}
-html[data-page="coordinators"] body .care-reference .care-portrait-frame .coordinator-portrait{position:absolute;width:100%;height:auto;aspect-ratio:1;top:0;left:0;border:0;border-radius:0;background-size:600% 500%}
+html[data-page="coordinators"] body .care-reference .care-portrait-frame .coordinator-portrait{position:absolute;width:100%;height:auto;aspect-ratio:1;top:0;left:0;border:0;border-radius:0;background-size:cover}
 html[data-page="coordinators"] body .care-reference .coordinator-card__body{padding:17px 17px 19px;display:flex;flex-direction:column;align-items:start;flex:1;min-width:0}
 html[data-page="coordinators"] body .care-reference .coordinator-card h3{font-size:18px;line-height:1.25;font-weight:750;color:#102746;margin:0 0 8px;letter-spacing:-.025em}
 html[data-page="coordinators"] body .care-reference .sample-label{font-size:8px;line-height:1.4;font-weight:500;letter-spacing:.07em;border-radius:3px;padding:3px 5px;background:#f0f3f8;color:#788ba0;margin:0 0 9px;align-self:start}

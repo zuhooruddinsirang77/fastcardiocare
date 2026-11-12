@@ -71,15 +71,30 @@
   var back = guide.querySelector('.pkg-guide-back');
   var next = guide.querySelector('.pkg-guide-next');
   var enquiry = guide.querySelector('.pkg-guide-enquire');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var panelAnimation;
   var current = 0;
   function select(index) {
+    var changed = current !== index;
     current = index;
     buttons.forEach(function (button, i) {
       button.setAttribute('aria-expanded', String(i === index));
+      if (i === index) button.setAttribute('aria-current', 'step');
+      else button.removeAttribute('aria-current');
       button.closest('li').classList.toggle('is-selected', i === index);
     });
+    if (panelAnimation) panelAnimation.cancel();
     panels.forEach(function (panel, i) { panel.hidden = i !== index; });
     guide.querySelector('.pkg-step-progress').textContent = 'Step ' + (index + 1) + ' of ' + panels.length;
+    guide.style.setProperty('--guide-progress', ((index + 1) / panels.length * 100) + '%');
+    guide.querySelector('.pkg-guide-upnext').textContent = index < panels.length - 1
+      ? 'Up next: ' + buttons[index + 1].textContent : 'Ready when you are';
+    if (changed && !reduceMotion.matches && panels[index].animate) {
+      panelAnimation = panels[index].animate([
+        { opacity: 0, transform: 'translateY(7px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: 230, easing: 'ease-out' });
+    }
     back.disabled = index === 0;
     next.hidden = index === panels.length - 1;
     enquiry.hidden = index !== panels.length - 1;
@@ -105,6 +120,19 @@
     if (next.hidden) enquiry.focus();
   });
   select(0);
+})();
+
+/* Native disclosure controls retain keyboard and no-JavaScript support. */
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.pkg-faq details, .pkg-travel-detail').forEach(function (detail) {
+    detail.addEventListener('toggle', function () {
+      var answer = detail.querySelector('p');
+      if (!detail.open || !answer || reduced.matches || !answer.animate) return;
+      answer.animate([{ opacity: 0, transform: 'translateY(-4px)' },
+        { opacity: 1, transform: 'translateY(0)' }], { duration: 200, easing: 'ease-out' });
+    });
+  });
 })();
 
 /* A local review checklist and a downloadable enquiry preparation note. */

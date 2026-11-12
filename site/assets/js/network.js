@@ -16,7 +16,7 @@
     countries.className = 'directory-countries';
     countries.setAttribute('role', 'group');
     countries.setAttribute('aria-label', 'Choose a destination');
-    ['all', 'Pakistan', 'Thailand', 'Malaysia'].forEach(function (name) {
+    ['all'].concat(Array.from(new Set(cards.map(function (card) { return card.dataset.country; })))).forEach(function (name) {
       var button = document.createElement('button');
       button.type = 'button';
       button.dataset.destination = name;

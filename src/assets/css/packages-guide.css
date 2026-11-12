@@ -1,0 +1,116 @@
+/* The estimate journey, practical costs and questions share one visual language. */
+.packages-page .pkg-steps { padding-block: 42px; }
+.packages-page .pkg-process-head { margin-bottom: 28px; }
+.packages-page .pkg-process-head h2 { font-size: clamp(27px, 2.8vw, 36px); letter-spacing: -1.1px; }
+.packages-page .pkg-process-head > p { font-size: 14px; max-width: 330px; }
+.packages-page .pkg-steps__list { gap: 16px; margin-bottom: 20px; }
+.packages-page .pkg-steps__list li { padding: 26px 22px 38px; border-radius: 16px; overflow: hidden; transition: transform .22s, border-color .22s, background .22s, box-shadow .22s; }
+.packages-page .pkg-steps__list li::before { content: ''; position: absolute; bottom: 0; left: 22px; right: 22px; height: 3px; background: #e8edf5; border-radius: 4px 4px 0 0; }
+.packages-page .pkg-steps__num { top: 28px; right: 22px; font-size: 26px; color: #b4c0d3; }
+.packages-page .pkg-steps__icon { width: 48px; height: 48px; margin-bottom: 23px; transition: background .22s, color .22s; }
+.packages-page .pkg-steps__list h3 { font-size: 16px; margin-bottom: 10px; }
+.packages-page .pkg-steps__list p { font-size: 13px; line-height: 1.7; }
+.packages-page .pkg-steps__list li.is-selected { background: linear-gradient(135deg, #17365c, #0f2547); border-color: #17365c; box-shadow: 0 16px 30px -18px #0f254780; }
+.packages-page .pkg-steps__list li.is-selected h3 { color: #fff; }
+.packages-page .pkg-steps__list li.is-selected p { color: #d0dced; }
+.packages-page .pkg-steps__list li.is-selected .pkg-steps__num { color: #a9bbd3; }
+.packages-page .pkg-steps__list li.is-selected .pkg-steps__icon { color: #fff; background: #ffffff12; border-color: #ffffff26; }
+.packages-page .pkg-steps__list li.is-selected::before { background: #ef1944; }
+.packages-page .pkg-step-select::after { border-radius: 16px; }
+.packages-page .pkg-step-guide { position: relative; padding: 0; margin: 0 0 24px; border-radius: 18px; background: #fff; overflow: hidden; box-shadow: 0 12px 35px -24px #0f254750; }
+.packages-page .pkg-guide-heading { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 20px 28px 16px; background: #f6f8fc; }
+.packages-page .pkg-guide-heading .pkg-step-progress { margin: 0; font-size: 11px; }
+.packages-page .pkg-guide-heading > span { font-size: 12px; color: #65758c; }
+.packages-page .pkg-guide-track { height: 3px; background: #e8edf5; }
+.packages-page .pkg-guide-track > span { display: block; height: 100%; width: var(--guide-progress, 25%); background: linear-gradient(90deg, #b5052b, #ee2047); transition: width .35s ease; }
+.packages-page .pkg-step-panel { padding: 28px; grid-template-columns: .95fr 1.05fr; gap: 38px; align-items: center; min-height: 184px; }
+.packages-page .pkg-step-panel h3 { font-size: 22px; line-height: 1.3; margin-bottom: 12px; }
+.packages-page .pkg-step-panel p { font-size: 14px; line-height: 1.8; }
+.packages-page .pkg-step-panel .pkg-checks { padding: 0 0 0 28px; margin: 0; border-left: 1px solid #e5eaf3; font-size: 13px; gap: 12px; }
+.packages-page .pkg-step-panel .pkg-checks li { padding: 10px 12px 10px 38px; border-radius: 9px; background: #f6f8fc; }
+.packages-page .pkg-step-panel .pkg-checks li::before { left: 13px; top: 10px; }
+.packages-page .pkg-step-controls { margin: 0; padding: 18px 28px; background: #fafbfd; border-top: 1px solid #e8edf5; }
+.packages-page .pkg-guide-upnext { flex: 1; text-align: right; margin: 0 8px; color: #65758c; font-size: 12px; }
+.packages-page .pkg-step-controls button, .packages-page .pkg-guide-enquire { min-height: 44px; border-radius: 9px; font-size: 13px; transition: background .2s, box-shadow .2s; }
+.packages-page .pkg-guide-back .i { transform: rotate(180deg); }
+.packages-page .pkg-step-controls .pkg-guide-next, .packages-page .pkg-guide-enquire { background: linear-gradient(120deg, #e00c36, #bd0529); border-color: #c90930; box-shadow: 0 5px 12px -7px #b5052b80; }
+.packages-page .pkg-guide-enquire:hover, .packages-page .pkg-step-controls .pkg-guide-next:hover { background: #aa0425; box-shadow: 0 7px 14px -7px #b5052b99; }
+
+/* Cost details remain usable native disclosures without JavaScript. */
+.packages-page .pkg-travel { padding-block: 24px; }
+.packages-page .pkg-travel__inner { background: #f5f7fb; border-color: #e0e7f1; gap: 36px; align-items: center; }
+.packages-page .pkg-travel h2 { font-size: clamp(28px, 2.6vw, 36px); }
+.packages-page .pkg-travel__services { gap: 12px; padding: 0; align-items: start; }
+.packages-page .pkg-travel__services li { display: block; }
+.packages-page .pkg-travel-detail { width: 100%; border: 1px solid #e1e7f0; border-radius: 13px; background: #fff; overflow: hidden; transition: border-color .22s, box-shadow .22s; }
+.packages-page .pkg-travel-detail summary { padding: 18px 14px; gap: 11px; border-radius: 0; min-height: 128px; align-items: flex-start; }
+.packages-page .pkg-travel-detail summary:hover { background: #fafbfd; }
+.packages-page .pkg-travel-detail strong { font-size: 13px; line-height: 1.5; margin: 1px 0 6px; }
+.packages-page .pkg-travel-summary { font-size: 12px; line-height: 1.65; }
+.packages-page .pkg-travel__service-icon { width: 37px; height: 37px; border-radius: 10px; }
+.packages-page .pkg-travel__service-icon .i { width: 20px; height: 20px; }
+.packages-page .pkg-travel-detail .pkg-travel-chevron { margin-top: 10px; width: 13px; height: 13px; }
+.packages-page .pkg-travel-detail[open] { border-color: #dba2af; box-shadow: 0 8px 20px -14px #b5052b55; }
+.packages-page .pkg-travel-detail[open] summary { background: #fff5f7; }
+.packages-page .pkg-travel__services .pkg-travel-answer { padding: 16px; margin: 0; border-top: 1px solid #f1dfe5; color: #53647e; font-size: 13px; line-height: 1.8; }
+
+/* Numbered question cards and a quiet help footer. */
+.packages-page .pkg-faq { padding-block: 20px 38px; }
+.packages-page .pkg-faq-list { gap: 14px; }
+.packages-page .pkg-faq details { border-radius: 13px; overflow: hidden; transition: border-color .22s, box-shadow .22s; }
+.packages-page .pkg-faq summary { justify-content: flex-start; gap: 14px; min-height: 86px; padding: 20px; font-size: 14px; line-height: 1.5; }
+.packages-page .pkg-faq-number { font-size: 12px; font-weight: 700; color: #7a8ba4; font-variant-numeric: tabular-nums; }
+.packages-page .pkg-faq-question { flex: 1; }
+.packages-page .pkg-expand-icon { position: relative; display: block; width: 30px; height: 30px; flex: none; border: 1px solid #f4dbe2; border-radius: 9px; background: #fff4f6; color: var(--pkg-red); }
+.packages-page .pkg-expand-icon::before, .packages-page .pkg-expand-icon::after { content: ''; position: absolute; width: 10px; height: 1.5px; background: currentColor; left: 9px; top: 13px; transition: transform .22s; }
+.packages-page .pkg-expand-icon::after { transform: rotate(90deg); }
+.packages-page .pkg-faq details[open] { border-color: #c7d4e5; background: #fff; box-shadow: 0 10px 24px -18px #0f254760; }
+.packages-page .pkg-faq details[open] summary { background: #f4f7fc; }
+.packages-page .pkg-faq details[open] .pkg-faq-number { color: var(--pkg-red); }
+.packages-page .pkg-faq details[open] .pkg-expand-icon { background: var(--pkg-navy); border-color: var(--pkg-navy); color: white; }
+.packages-page .pkg-faq details[open] .pkg-expand-icon::after { transform: rotate(0); }
+.packages-page .pkg-faq details > p { padding: 22px 24px 24px 53px; border-top: 1px solid #e9eef6; font-size: 14px; line-height: 1.85; color: #53647e; }
+.packages-page .pkg-faq-help { display: flex; justify-content: space-between; gap: 18px; margin-top: 20px; padding: 17px 20px; background: #f6f8fc; border-radius: 11px; color: #52637b; font-size: 13px; }
+.packages-page .pkg-faq-help > span, .packages-page .pkg-faq-help a { display: inline-flex; align-items: center; gap: 10px; }
+.packages-page .pkg-faq-help .i { width: 18px; height: 18px; color: var(--pkg-red); }
+.packages-page .pkg-faq-help a { color: var(--pkg-red); font-weight: 700; text-decoration: none; }
+.packages-page .pkg-faq-help a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (hover:hover) {
+ .packages-page .pkg-steps__list li:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -17px #0f254760; }
+ .packages-page .pkg-faq details:hover, .packages-page .pkg-travel-detail:hover { border-color: #b8c8dc; }
+}
+@media (max-width:1000px) {
+ .packages-page .pkg-travel__inner { grid-template-columns: 1fr; }
+ .packages-page .pkg-travel__copy p:last-child { max-width: 610px; }
+ .packages-page .pkg-travel-detail summary { min-height: 106px; }
+}
+@media (max-width:700px) {
+ .packages-page .pkg-steps__list { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+ .packages-page .pkg-steps__list li { padding: 20px 16px 26px; min-height: 0; }
+ .packages-page .pkg-steps__icon { position: static; margin-bottom: 20px; width: 40px; height: 40px; }
+ .packages-page .pkg-steps__num { left: auto; right: 16px; top: 24px; font-size: 20px; }
+ .packages-page .pkg-steps__list h3 { font-size: 14px; }
+ .packages-page .pkg-steps__list p { font-size: 12px; }
+ .packages-page .pkg-step-panel { grid-template-columns: 1fr; gap: 22px; padding: 24px 20px; }
+ .packages-page .pkg-step-panel .pkg-checks { border: 0; padding: 0; }
+ .packages-page .pkg-step-panel h3 { font-size: 21px; }
+ .packages-page .pkg-guide-heading { padding: 18px 20px; }
+ .packages-page .pkg-guide-heading > span { font-size: 11px; }
+ .packages-page .pkg-step-controls { padding: 18px 20px; }
+ .packages-page .pkg-guide-upnext { display: none; }
+ .packages-page .pkg-faq-list { grid-template-columns: 1fr; }
+ .packages-page .pkg-faq-help { flex-wrap: wrap; }
+}
+@media (max-width:420px) {
+ .packages-page .pkg-travel__inner { padding: 22px 16px; }
+ .packages-page .pkg-travel__services { grid-template-columns: 1fr; }
+ .packages-page .pkg-travel-detail summary { min-height: 100px; }
+ .packages-page .pkg-guide-heading > span { max-width: 110px; text-align: right; }
+ .packages-page .pkg-faq summary { padding: 18px 15px; gap: 10px; }
+ .packages-page .pkg-faq details > p { padding: 18px; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .packages-page .pkg-steps__list li, .packages-page .pkg-steps__icon, .packages-page .pkg-guide-track > span,
+ .packages-page .pkg-travel-detail, .packages-page .pkg-faq details, .packages-page .pkg-expand-icon::after { transition: none; }
+ .packages-page .pkg-steps__list li:hover { transform: none; }
+}
