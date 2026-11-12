@@ -3,6 +3,7 @@
 
 Run with python generate_home_motion.py. Requires Pillow. No external assets.
 """
+
 import math
 from pathlib import Path
 from PIL import Image, ImageDraw
