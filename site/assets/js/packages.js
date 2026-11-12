@@ -1,3 +1,31 @@
+/* Decorative hero motion pauses on request, offscreen and in background tabs. */
+(function () {
+  var hero = document.querySelector('.pkg-hero');
+  if (!hero) return;
+  var toggle = hero.querySelector('.pkg-hero-motion');
+  if (!toggle) return;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var paused = false;
+  var visible = true;
+  function update() {
+    hero.classList.toggle('has-hero-motion', !reduced.matches);
+    hero.classList.toggle('is-hero-moving', !paused && !reduced.matches && visible && !document.hidden);
+    toggle.hidden = reduced.matches;
+    toggle.setAttribute('aria-pressed', String(paused));
+    toggle.querySelector('.pkg-motion-label').textContent = paused ? 'Resume motion' : 'Pause motion';
+  }
+  toggle.addEventListener('click', function () { paused = !paused; update(); });
+  reduced.addEventListener('change', update);
+  document.addEventListener('visibilitychange', update);
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting; update();
+    });
+    observer.observe(hero);
+  }
+  update();
+})();
+
 /* Packages page: filter the "at a glance" cards by cost category. */
 (function () {
   var root = document.querySelector('[data-pkg-filter]');
@@ -74,6 +102,70 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var panelAnimation;
   var current = 0;
+  var checklists = [];
+  var stepHints = buttons.map(function (button) {
+    var hint = document.createElement('span');
+    hint.className = 'pkg-step-hint';
+    hint.setAttribute('aria-hidden', 'true');
+    button.closest('li').appendChild(hint);
+    return hint;
+  });
+  panels.forEach(function (panel, panelIndex) {
+    var list = panel.querySelector('.pkg-checks');
+    var wrapper = document.createElement('div');
+    wrapper.className = 'pkg-preparation';
+    var heading = document.createElement('div');
+    heading.className = 'pkg-preparation-heading';
+    var label = document.createElement('span');
+    label.textContent = 'Your preparation checklist';
+    var count = document.createElement('span');
+    count.className = 'pkg-preparation-count';
+    count.setAttribute('role', 'status');
+    heading.append(label, count);
+    list.before(wrapper);
+    wrapper.append(heading, list);
+    list.classList.add('is-interactive-checklist');
+    var inputs = Array.from(list.children).map(function (item) {
+      var text = item.textContent;
+      var field = document.createElement('label');
+      var input = document.createElement('input');
+      input.type = 'checkbox';
+      var caption = document.createElement('span');
+      caption.textContent = text;
+      field.append(input, caption);
+      item.replaceChildren(field);
+      input.addEventListener('change', updateChecklists);
+      return input;
+    });
+    var footer = document.createElement('div');
+    footer.className = 'pkg-preparation-footer';
+    var help = document.createElement('span');
+    help.textContent = 'Mark each item as you review it.';
+    var clear = document.createElement('button');
+    clear.type = 'button';
+    clear.textContent = 'Clear';
+    clear.setAttribute('aria-label', 'Clear checklist for step ' + (panelIndex + 1));
+    clear.addEventListener('click', function () {
+      inputs.forEach(function (input) { input.checked = false; });
+      updateChecklists();
+      inputs[0].focus();
+    });
+    footer.append(help, clear);
+    wrapper.appendChild(footer);
+    checklists.push({ inputs: inputs, count: count, clear: clear });
+  });
+  function updateChecklists() {
+    checklists.forEach(function (list, index) {
+      var checked = list.inputs.filter(function (input) { return input.checked; }).length;
+      list.count.textContent = checked + ' / ' + list.inputs.length + ' reviewed';
+      list.clear.disabled = checked === 0;
+      var complete = checked === list.inputs.length;
+      buttons[index].closest('li').classList.toggle('is-checklist-reviewed', complete);
+      stepHints[index].textContent = complete ? 'Checklist reviewed' : checked
+        ? checked + ' of ' + list.inputs.length + ' items reviewed'
+        : index === current ? 'You are exploring this step' : 'Explore this step';
+    });
+  }
   function select(index) {
     var changed = current !== index;
     current = index;
@@ -98,6 +190,7 @@
     back.disabled = index === 0;
     next.hidden = index === panels.length - 1;
     enquiry.hidden = index !== panels.length - 1;
+    updateChecklists();
   }
   buttons.forEach(function (button, index) {
     button.addEventListener('click', function () { select(index); });

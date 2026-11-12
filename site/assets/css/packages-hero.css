@@ -1,0 +1,84 @@
+/* Packages hero: restrained movement and the established red/navy palette. */
+.packages-page .pkg-hero { background: radial-gradient(ellipse at 77% 43%, #fbe5eb 0, transparent 43%), linear-gradient(115deg, #fcfdff, #f0f5fc); }
+.packages-page .pkg-hero > .container { grid-template-columns: minmax(0,1.18fr) minmax(0,1fr); gap: 28px; min-height: 520px; padding-block: 48px 62px; }
+.packages-page .pkg-hero .service-hero__copy { max-width: 650px; }
+.packages-page .pkg-hero .eyebrow { padding: 8px 12px; margin-bottom: 22px; border: 1px solid #f9dce3; border-radius: 7px; background: #fff0f4; font-size: 11px; font-weight: 750; letter-spacing: .15em; }
+.packages-page .pkg-hero h1 { font-size: clamp(36px,3.5vw,54px); line-height: 1.12; letter-spacing: -1.8px; margin-bottom: 22px; }
+.packages-page .pkg-hero .lead { font-size: 15px; line-height: 1.85; max-width: 560px; color: #53647e; }
+.packages-page .pkg-hero .service-hero__actions { gap: 12px; margin-top: 28px; }
+.packages-page .pkg-hero .btn { min-height: 49px; border-radius: 10px; font-size: 13px; padding-inline: 18px; }
+.packages-page .pkg-hero .btn .i { transition: transform .2s; }
+.packages-page .pkg-hero .btn:hover .i { transform: translateX(3px); }
+.packages-page .pkg-hero__trust { gap: 12px; margin-top: 30px; padding-top: 24px; border-top: 1px solid #dce4ef; }
+.packages-page .pkg-hero__trust li { flex: 1; padding: 0 8px 0 0; border: 0; gap: 9px; font-size: 11px; line-height: 1.55; }
+.packages-page .pkg-hero__trust li:first-child { padding-left: 0; }
+.packages-page .pkg-hero__trust strong { font-size: 11px; }
+.packages-page .pkg-hero__trust .i { width: 34px; height: 34px; padding: 7px; box-sizing: border-box; background: #fff; border: 1px solid #e3e9f2; border-radius: 10px; }
+.packages-page .pkg-hero .service-heart { min-height: 410px; align-self: stretch; }
+.packages-page .pkg-hero .service-heart__halo { width: 86%; max-width: 410px; max-height: none; background: radial-gradient(circle,#f9dce4aa,#fff8fa77 65%,#fff9 66%,transparent 68%); border: 1px solid #fff; box-shadow: 0 0 0 16px #ffffff50; }
+.packages-page .pkg-heart-orbit { position: absolute; width: 95%; max-width: 455px; aspect-ratio: 1; border: 1px solid #dee5ef99; border-radius: 50%; }
+.packages-page .pkg-hero .service-heart img { height: 360px; width: 85%; margin-right: 42px; transform-origin: 50% 56%; filter: drop-shadow(0 20px 22px #9c16332a); }
+.packages-page .pkg-hero .reference-ecg { width: 110%; left: -5%; top: 33%; height: 34%; opacity: .8; stroke-width: 2; }
+.packages-page .pkg-hero__card { display: block; top: auto; bottom: 64px; right: 0; width: 216px; padding: 17px 10px 9px; border: 1px solid #e6eaf3; border-radius: 15px; background: #fffffff5; box-shadow: 0 18px 40px -22px #0f254760; backdrop-filter: blur(10px); }
+.packages-page .pkg-hero-card-label { display: block; margin: 0 8px 12px; color: #667790; font-size: 9px; text-transform: uppercase; font-weight: 750; letter-spacing: .14em; }
+.packages-page .pkg-hero__card ul { padding: 0; margin: 0; list-style: none; }
+.packages-page .pkg-hero__card li { margin: 0; }
+.packages-page .pkg-hero__card a { padding: 9px 8px; font-size: 11px; border-radius: 7px; transition: color .2s, background .2s; }
+.packages-page .pkg-hero__card a:hover { background: #fff0f4; }
+.packages-page .pkg-hero__card a > .i:first-child { width: 15px; height: 15px; }
+.packages-page .pkg-hero .service-reference-wave { width: 66%; height: 82px; opacity: .95; }
+.packages-page .pkg-hero-motion { position: absolute; z-index: 4; bottom: -4px; left: 14px; display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 6px 10px; border: 1px solid #dce3ed; border-radius: 20px; background: #ffffffda; color: #53647e; font: inherit; font-size: 10px; cursor: pointer; }
+.packages-page .pkg-hero-motion > span:first-child { width: 8px; height: 9px; border-inline: 2px solid currentColor; }
+.packages-page .pkg-hero-motion[aria-pressed=true] > span:first-child { border: 0; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid currentColor; }
+.packages-page .pkg-hero-motion:hover { background: #fff; color: var(--pkg-red); border-color: #d7a1af; }
+.packages-page .pkg-hero-motion:focus-visible { outline: 3px solid #236fcc; outline-offset: 3px; }
+.packages-page .pkg-dialog-scope { padding: 14px; border-radius: 8px; background: #f6f8fc; color: #617087; font-size: 12px; line-height: 1.8; }
+@keyframes pkg-heartbeat { 0%, 18%, 38%, 100% { transform: scale(1); } 8% { transform: scale(1.025); } 28% { transform: scale(1.014); } }
+@keyframes pkg-halo-breathe { 0%,100% { opacity: .6; transform: scale(.98); } 50% { opacity: 1; transform: scale(1.025); } }
+@keyframes pkg-orbit-turn { to { transform: rotate(360deg); } }
+.packages-page .pkg-hero.has-hero-motion .service-heart img { animation: pkg-heartbeat 3.8s ease-in-out infinite; }
+.packages-page .pkg-hero.has-hero-motion .service-heart__halo { animation: pkg-halo-breathe 6s ease-in-out infinite; }
+.packages-page .pkg-hero.has-hero-motion .pkg-heart-orbit { animation: pkg-orbit-turn 42s linear infinite; }
+.packages-page .pkg-hero.has-hero-motion:not(.is-hero-moving) :is(.service-heart img,.service-heart__halo,.pkg-heart-orbit) { animation-play-state: paused; }
+@media (max-width:1100px) {
+ .packages-page .pkg-hero > .container { grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 16px; }
+ .packages-page .pkg-hero__card { bottom: 56px; width: 197px; }
+ .packages-page .pkg-hero .service-heart img { margin-right: 14px; height: 325px; }
+ .packages-page .pkg-hero .service-hero__actions .btn { font-size: 12px; }
+ .packages-page .pkg-hero__trust { gap: 9px; }
+}
+@media (max-width:800px) {
+ .packages-page .pkg-hero > .container { grid-template-columns: 1fr; padding-block: 32px 68px; gap: 14px; }
+ .packages-page .pkg-hero .service-hero__copy { max-width: 650px; }
+ .packages-page .pkg-hero h1 { font-size: clamp(35px,6vw,46px); }
+ .packages-page .pkg-hero .service-heart { min-height: 335px; width: 100%; max-width: 540px; justify-self: center; }
+ .packages-page .pkg-hero .service-heart img { height: 315px; margin-right: 80px; }
+ .packages-page .pkg-hero .service-heart__halo { max-width: 310px; }
+ .packages-page .pkg-heart-orbit { max-width: 345px; }
+ .packages-page .pkg-hero__card { bottom: 90px; right: 24px; width: 208px; }
+ .packages-page .pkg-hero .service-reference-wave { width: 100%; height: 50px; }
+ .packages-page .pkg-hero-motion { bottom: -10px; left: 20px; }
+ .packages-page .pkg-hero__trust { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width:480px) {
+ .packages-page .pkg-hero > .container { padding-top: 26px; padding-bottom: 55px; }
+ .packages-page .pkg-hero h1 { font-size: clamp(31px,8.5vw,39px); letter-spacing: -1.2px; }
+ .packages-page .pkg-hero .lead { font-size: 14px; line-height: 1.75; }
+ .packages-page .pkg-hero .service-hero__actions { display: grid; gap: 10px; }
+ .packages-page .pkg-hero .btn { width: 100%; }
+ .packages-page .pkg-hero__trust { margin-top: 24px; padding-top: 20px; gap: 10px; }
+ .packages-page .pkg-hero__trust li { flex-direction: column; align-items: flex-start; gap: 8px; padding: 0; font-size: 10px; }
+ .packages-page .pkg-hero__trust strong { font-size: 10px; }
+ .packages-page .pkg-hero .service-heart { min-height: 310px; margin: 0; }
+ .packages-page .pkg-hero .service-heart img { height: 280px; margin-right: 70px; }
+ .packages-page .pkg-hero__card { position: relative; bottom: auto; right: auto; width: 100%; padding: 15px 10px 9px; margin-top: 12px; }
+ .packages-page .pkg-hero__card ul { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; }
+ .packages-page .pkg-hero-card-label { font-size: 8px; margin-bottom: 6px; }
+ .packages-page .pkg-hero__card a { font-size: 10px; padding: 8px 6px; gap: 6px; }
+ .packages-page .pkg-hero-motion { left: 0; bottom: -2px; }
+ .packages-page .pkg-hero .service-heart img { margin-right: 0; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .packages-page .pkg-hero.has-hero-motion :is(.service-heart img,.service-heart__halo,.pkg-heart-orbit) { animation: none; }
+ .packages-page .pkg-hero .btn .i, .packages-page .pkg-hero__card a { transition: none; }
+}

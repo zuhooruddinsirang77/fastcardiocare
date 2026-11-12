@@ -1,0 +1,21 @@
+# FastCardioCare
+
+> FastCardioCare is a patient coordination service for planned cardiac care. It helps patients and families communicate with independent licensed providers in Pakistan, Thailand and Malaysia and organise practical, travel-related support. FastCardioCare is not a healthcare provider, does not diagnose or treat conditions, and cannot guarantee clinical outcomes, eligibility, timing or prices. Estimates are case-specific and confirmed in writing by the treating provider. This website is not for emergencies.
+
+## Pages
+
+- [Accessibility](https://www.fastcardiocare.com/accessibility.html): Our commitment to making the FastCardioCare website usable for everyone, targeting WCAG 2.2 AA.
+- [Hospital Network](https://www.fastcardiocare.com/accredited-network.html): Explore cardiac hospitals in Pakistan, Thailand and Malaysia, with published accreditation sources and organization joining enquiries.
+- [Request a confidential consultation](https://www.fastcardiocare.com/contact.html): Start with a confidential conversation. Tell us how to reach you and which heart-care question you are exploring. Not for emergencies.
+- [FAQs](https://www.fastcardiocare.com/faqs.html): Answers to common questions about providers, destinations, medical records, estimates, companions, follow-up and what to do in an emergency.
+- [Cardiac Hospitals](https://www.fastcardiocare.com/hospitals.html): Explore six cardiac hospitals in Pakistan, Thailand and Malaysia with official service and accreditation sources.
+- [How It Works](https://www.fastcardiocare.com/how-it-works.html): See each step from first enquiry through provider review, options and estimate, travel planning, treatment, discharge and records handover, and who is responsible at each stage.
+- [FastCardioCare](https://www.fastcardiocare.com/): FastCardioCare helps patients and families explore planned cardiac treatment with independent providers, with coordinated case review, written estimates and practical travel support.
+- [Medical Coordinators](https://www.fastcardiocare.com/medical-coordinators.html): Explore 30 fictional medical coordinator profiles across Pakistan, Thailand, Malaysia, the United Kingdom and Canada and enquire about joining.
+- [Medical Disclaimer](https://www.fastcardiocare.com/medical-disclaimer.html): FastCardioCare provides patient coordination and travel-related support. It is not a healthcare provider and does not diagnose or treat medical conditions.
+- [Packages and Estimates](https://www.fastcardiocare.com/packages.html): How case-specific cardiac treatment estimates are prepared, what a complete written quote should include, and which travel and support costs are shown separately.
+- [Privacy Notice](https://www.fastcardiocare.com/privacy-notice.html): How FastCardioCare collects, uses, shares and protects personal information, including how health information is shared with providers only with your permission.
+- [Cardiac Procedures Explained](https://www.fastcardiocare.com/procedures.html): Plain-language information about cardiac procedures including angiography, angioplasty, bypass surgery, valve treatment, TAVI, ablation and heart rhythm devices.
+- [Terms of Use](https://www.fastcardiocare.com/terms.html): Terms that apply to using the FastCardioCare website.
+- [Who We Are](https://www.fastcardiocare.com/who-we-are.html): FastCardioCare is an international patient coordination company focused on cardiac care. We help families communicate with independent providers and organise practical parts of a treatment journey.
+- [Why FastCardioCare](https://www.fastcardiocare.com/why-fastcardiocare.html): A cardiac-focused coordination service built around informed choices: provider options, clear written estimates, family-aware planning and respect for clinical independence.

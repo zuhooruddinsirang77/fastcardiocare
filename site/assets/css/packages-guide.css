@@ -1,15 +1,15 @@
 /* The estimate journey, practical costs and questions share one visual language. */
-.packages-page .pkg-steps { padding-block: 42px; }
-.packages-page .pkg-process-head { margin-bottom: 28px; }
-.packages-page .pkg-process-head h2 { font-size: clamp(27px, 2.8vw, 36px); letter-spacing: -1.1px; }
+.packages-page .pkg-steps { padding-block: 30px; }
+.packages-page .pkg-process-head { margin-bottom: 22px; }
+.packages-page .pkg-process-head h2 { font-size: clamp(25px, 2.5vw, 32px); letter-spacing: -1.1px; }
 .packages-page .pkg-process-head > p { font-size: 14px; max-width: 330px; }
-.packages-page .pkg-steps__list { gap: 16px; margin-bottom: 20px; }
-.packages-page .pkg-steps__list li { padding: 26px 22px 38px; border-radius: 16px; overflow: hidden; transition: transform .22s, border-color .22s, background .22s, box-shadow .22s; }
+.packages-page .pkg-steps__list { gap: 14px; margin-bottom: 16px; }
+.packages-page .pkg-steps__list li { padding: 20px 18px 32px; border-radius: 16px; overflow: hidden; transition: transform .22s, border-color .22s, background .22s, box-shadow .22s; }
 .packages-page .pkg-steps__list li::before { content: ''; position: absolute; bottom: 0; left: 22px; right: 22px; height: 3px; background: #e8edf5; border-radius: 4px 4px 0 0; }
-.packages-page .pkg-steps__num { top: 28px; right: 22px; font-size: 26px; color: #b4c0d3; }
-.packages-page .pkg-steps__icon { width: 48px; height: 48px; margin-bottom: 23px; transition: background .22s, color .22s; }
-.packages-page .pkg-steps__list h3 { font-size: 16px; margin-bottom: 10px; }
-.packages-page .pkg-steps__list p { font-size: 13px; line-height: 1.7; }
+.packages-page .pkg-steps__num { top: 24px; right: 18px; font-size: 23px; color: #b4c0d3; }
+.packages-page .pkg-steps__icon { width: 40px; height: 40px; margin-bottom: 17px; transition: background .22s, color .22s; }
+.packages-page .pkg-steps__list h3 { font-size: 15px; margin-bottom: 8px; }
+.packages-page .pkg-steps__list p { font-size: 12px; line-height: 1.65; }
 .packages-page .pkg-steps__list li.is-selected { background: linear-gradient(135deg, #17365c, #0f2547); border-color: #17365c; box-shadow: 0 16px 30px -18px #0f254780; }
 .packages-page .pkg-steps__list li.is-selected h3 { color: #fff; }
 .packages-page .pkg-steps__list li.is-selected p { color: #d0dced; }
@@ -18,18 +18,18 @@
 .packages-page .pkg-steps__list li.is-selected::before { background: #ef1944; }
 .packages-page .pkg-step-select::after { border-radius: 16px; }
 .packages-page .pkg-step-guide { position: relative; padding: 0; margin: 0 0 24px; border-radius: 18px; background: #fff; overflow: hidden; box-shadow: 0 12px 35px -24px #0f254750; }
-.packages-page .pkg-guide-heading { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 20px 28px 16px; background: #f6f8fc; }
+.packages-page .pkg-guide-heading { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 14px 22px; background: #f6f8fc; }
 .packages-page .pkg-guide-heading .pkg-step-progress { margin: 0; font-size: 11px; }
 .packages-page .pkg-guide-heading > span { font-size: 12px; color: #65758c; }
 .packages-page .pkg-guide-track { height: 3px; background: #e8edf5; }
 .packages-page .pkg-guide-track > span { display: block; height: 100%; width: var(--guide-progress, 25%); background: linear-gradient(90deg, #b5052b, #ee2047); transition: width .35s ease; }
-.packages-page .pkg-step-panel { padding: 28px; grid-template-columns: .95fr 1.05fr; gap: 38px; align-items: center; min-height: 184px; }
-.packages-page .pkg-step-panel h3 { font-size: 22px; line-height: 1.3; margin-bottom: 12px; }
-.packages-page .pkg-step-panel p { font-size: 14px; line-height: 1.8; }
+.packages-page .pkg-step-panel { padding: 22px; grid-template-columns: .95fr 1.05fr; gap: 28px; align-items: center; min-height: 0; }
+.packages-page .pkg-step-panel h3 { font-size: 20px; line-height: 1.3; margin-bottom: 10px; }
+.packages-page .pkg-step-panel p { font-size: 13px; line-height: 1.7; }
 .packages-page .pkg-step-panel .pkg-checks { padding: 0 0 0 28px; margin: 0; border-left: 1px solid #e5eaf3; font-size: 13px; gap: 12px; }
 .packages-page .pkg-step-panel .pkg-checks li { padding: 10px 12px 10px 38px; border-radius: 9px; background: #f6f8fc; }
 .packages-page .pkg-step-panel .pkg-checks li::before { left: 13px; top: 10px; }
-.packages-page .pkg-step-controls { margin: 0; padding: 18px 28px; background: #fafbfd; border-top: 1px solid #e8edf5; }
+.packages-page .pkg-step-controls { margin: 0; padding: 13px 22px; background: #fafbfd; border-top: 1px solid #e8edf5; }
 .packages-page .pkg-guide-upnext { flex: 1; text-align: right; margin: 0 8px; color: #65758c; font-size: 12px; }
 .packages-page .pkg-step-controls button, .packages-page .pkg-guide-enquire { min-height: 44px; border-radius: 9px; font-size: 13px; transition: background .2s, box-shadow .2s; }
 .packages-page .pkg-guide-back .i { transform: rotate(180deg); }
@@ -91,7 +91,7 @@
  .packages-page .pkg-steps__num { left: auto; right: 16px; top: 24px; font-size: 20px; }
  .packages-page .pkg-steps__list h3 { font-size: 14px; }
  .packages-page .pkg-steps__list p { font-size: 12px; }
- .packages-page .pkg-step-panel { grid-template-columns: 1fr; gap: 22px; padding: 24px 20px; }
+ .packages-page .pkg-step-panel { grid-template-columns: 1fr; gap: 20px; padding: 20px 18px; }
  .packages-page .pkg-step-panel .pkg-checks { border: 0; padding: 0; }
  .packages-page .pkg-step-panel h3 { font-size: 21px; }
  .packages-page .pkg-guide-heading { padding: 18px 20px; }
@@ -113,4 +113,35 @@
  .packages-page .pkg-steps__list li, .packages-page .pkg-steps__icon, .packages-page .pkg-guide-track > span,
  .packages-page .pkg-travel-detail, .packages-page .pkg-faq details, .packages-page .pkg-expand-icon::after { transition: none; }
  .packages-page .pkg-steps__list li:hover { transform: none; }
+}
+
+/* Each step has a preparation list; reviewing it never blocks navigation. */
+.packages-page .pkg-steps__list li { padding-bottom: 51px; }
+.packages-page .pkg-step-hint { position: absolute; bottom: 17px; left: 18px; right: 18px; display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: #687c97; }
+.packages-page .pkg-step-hint::after { content: '\2192'; font-size: 18px; line-height: 1; transition: transform .2s; }
+.packages-page .pkg-steps__list li:hover .pkg-step-hint::after { transform: translateX(3px); }
+.packages-page .pkg-steps__list li.is-selected .pkg-step-hint { color: #d0dced; }
+.packages-page .pkg-steps__list li.is-checklist-reviewed .pkg-step-hint::after { content: '\2713'; font-size: 14px; }
+.packages-page .pkg-preparation { min-width: 0; padding-left: 22px; border-left: 1px solid #e5eaf3; }
+.packages-page .pkg-preparation-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 13px; font-size: 12px; color: var(--pkg-navy); font-weight: 700; }
+.packages-page .pkg-preparation-count { padding: 4px 8px; border-radius: 6px; background: #fff0f4; color: #b9052a; font-size: 10px; font-weight: 600; white-space: nowrap; }
+.packages-page .pkg-step-panel .is-interactive-checklist { padding: 0; border: 0; gap: 8px; }
+.packages-page .pkg-step-panel .is-interactive-checklist li { padding: 0; background: none; }
+.packages-page .pkg-step-panel .is-interactive-checklist li::before { content: none; }
+.packages-page .is-interactive-checklist label { display: flex; align-items: center; gap: 11px; min-height: 40px; padding: 9px 11px; background: #f6f8fc; border: 1px solid #edf0f6; border-radius: 9px; cursor: pointer; transition: background .2s, border-color .2s; }
+.packages-page .is-interactive-checklist label:hover { background: #edf2f9; border-color: #ced9e9; }
+.packages-page .is-interactive-checklist label:has(input:checked) { background: #fff4f7; border-color: #efbecb; }
+.packages-page .is-interactive-checklist input { appearance: auto; width: 17px; height: 17px; accent-color: #c4002a; flex: none; margin: 0; cursor: pointer; }
+.packages-page .is-interactive-checklist input:focus-visible { outline: 3px solid #236fcc; outline-offset: 3px; }
+.packages-page .pkg-preparation-footer { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-top: 12px; color: #687c97; font-size: 11px; }
+.packages-page .pkg-preparation-footer button { border: 0; padding: 5px 0 5px 10px; background: none; color: #b9052a; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.packages-page .pkg-preparation-footer button:disabled { opacity: .4; cursor: default; }
+.packages-page .pkg-preparation-footer button:focus-visible { outline: 3px solid #236fcc; outline-offset: 3px; }
+@media (max-width:700px) {
+ .packages-page .pkg-preparation { padding: 0; border: 0; }
+ .packages-page .pkg-step-hint { left: 16px; right: 16px; bottom: 18px; font-size: 10px; }
+ .packages-page .pkg-steps__list li { padding-bottom: 54px; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .packages-page .pkg-step-hint::after, .packages-page .is-interactive-checklist label { transition: none; }
 }
